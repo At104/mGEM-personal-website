@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoCloseOutline } from 'react-icons/io5';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface LinkData {
     text: string;
@@ -43,7 +43,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ links, close }) => {
                         {links.map(({ text, path }: LinkData, index: number) => (
                             <Link
                                 key={index}
-                                to={path}
+                                href={path}
                                 className="block py-2 text-zinc-500"
                             >
                                 {text}

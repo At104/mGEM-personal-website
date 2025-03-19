@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import Testimonies from '../components/Testimonies';
+import Testimonies from "../components/Testimonies";
 import Link from 'next/link';
 import MailingList from '../components/MailingList';
-import Image from 'next/image';
+
 
 const GetInvolved = () => {
     return (

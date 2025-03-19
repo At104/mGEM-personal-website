@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from 'react';
 import { ContainerScroll } from '../components/ui/container-scroll-animation';
 import HeroSubSection from '../components/HeroSubSection';

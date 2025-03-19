@@ -119,7 +119,7 @@ const AboutUs = () => {
                     they design and organize workshops tailored to the needs of our teams, coordinating logistics. Their goal 
                     is to enhance productivity, allowing our teams to focus on their core responsibilities and achieve their goals effectively. <br/>
                     <br/>
-                    The Finance Team is dedicated to securing the necessary funding and sponsorships to enable our team’s participation in 
+                    The Finance Team is dedicated to securing the necessary funding and sponsorships to enable our team's participation in 
                     the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, 
                     and building relationships with sponsors and donors. Our responsibilities include budget planning, financial tracking, 
                     and ensuring that our team has the resources needed to successfully complete our project. The Finance Team plays a critical 

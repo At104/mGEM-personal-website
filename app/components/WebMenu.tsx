@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface LinkData {
     text: string;
@@ -12,7 +12,7 @@ const WebMenu = ({ links }: { links: LinkData[] }) => {
             {links.map(({ text, path }: LinkData, index: number) => (
                 <Link
                     key={index}
-                    to={path} // Use "to" instead of "href" for React Router's Link
+                    href={path} // Use "href" instead of "to" for Next.js's Link
                     className="hover:text-red-800 cursor-pointer"
                 >
                     {text}

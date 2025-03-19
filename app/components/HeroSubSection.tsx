@@ -1,7 +1,7 @@
 import React from 'react';
 import { TypewriterEffectSmooth } from './ui/typewriter-effect';
 import { Button } from './ui/moving-border';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const HeroSubSection = () => {
     const words = [
@@ -34,8 +34,10 @@ const HeroSubSection = () => {
               className="max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-4xl w-full break-words px-3"
             />
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-0 md:space-x-4 mt-4">
-              <Link to="/about-us">
-                <button className="w-28 h-8 sm:w-32 sm:h-10 rounded-xl bg-black dark:border-white border-transparent text-white text-xs sm:text-sm hover:scale-110">
+              <Link href="/about-us">
+                <button 
+                  className="w-28 h-8 sm:w-32 sm:h-10 rounded-xl bg-black 
+                  dark:border-white border-transparent text-white text-xs sm:text-sm hover:scale-110">
                   About Us
                 </button>
               </Link>

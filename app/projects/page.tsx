@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from 'react';
 import { PinContainer } from '../components/ui/pin';
 import Title from '../components/Subtitle';
