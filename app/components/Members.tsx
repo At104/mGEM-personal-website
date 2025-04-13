@@ -1,256 +1,376 @@
 import React from 'react';
 import Title from './Subtitle';
 import Link from 'next/link';
-import { DirectionAwareHover } from './ui/direction-aware-hover';
+import { SimpleHover } from './ui/simple-hover';
 
 const Members = () => {
 
-    const advisors = [
-        {
-            name: "Dr. Jonathan Bramson",
-            about: "Vice-Dean, Faculty of Health Sciences",
-            link: "https://experts.mcmaster.ca/display/bramsonj ",
-            cover: "/bramson-jonathan.jpg",
-        }
-
-    ];
     const PI = [
         {
             name: "Dr. Tohid Didar",
             about: "Associate Professor, Mechanical Engineering",
             link: "https://experts.mcmaster.ca/display/didart",
             cover: "/tohid-didar-news-header-470x316.jpg",
+            funFact: ""
         }
-
     ];
+
+    const advisors = [
+        {
+            name: "Dr. Jonathan Bramson",
+            about: "Vice-Dean, Faculty of Health Sciences",
+            link: "https://experts.mcmaster.ca/display/bramsonj",
+            cover: "/bramson-jonathan.jpg",
+            funFact: ""
+        }
+    ];
+    
 
     const pres = [
         {
-            name: "Andrew Chami",
-            about: "Co-President 2024 | Health Science (Honours)",
-            link: "https://www.linkedin.com/in/andrew-chami/",
-            cover: "/Andrew_Chami.JPG",
+            name: "Franky Liu",
+            about: "Co-President | Integrated Biomedical Engineering and Health Sciences (Year 3)",
+            link: "https://www.linkedin.com/in/franky-liu-2a78601a4/",
+            cover: "/Photos/Franky 1.jpg",
+            funFact: "Hamsters are very fragile creatures... Don't ask me how I know"
         },
         {
-            name: "Chantel Luo",
-            about: "Co-President 2024 | Biomedical and Chemical Engineering, Level 3",
-            link: "https://www.linkedin.com/in/chantal-luo/",
-            cover: "/Chantel_Luo.JPG",
+            name: "Derin Sayin",
+            about: "Co-President | Honours Biochemistry",
+            link: "https://www.linkedin.com/in/derin-sayin-733412261",
+            cover: "/Photos/Derin Sayin.jpeg",
+            funFact: "I love sci-fi and fantasy"
         }
-
     ];
 
     const wetlab = [
         {
-            name: "Derin Sayin",
-            about: "Wet Lab Lead | Biochemistry, Level 2",
-            link: "https://www.linkedin.com/in/derin-sayin-733412261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            cover: "/Derin_Sayin.jpg",
-        },
-        {
-            name: "Kevin",
-            about: "Wet Lab Lead | Life Sciences, Level 3",
-            link: "https://www.linkedin.com/in/derin-sayin-733412261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            cover: "/Kevin.JPG",
-        },
-        {
-            name: "Abby Benyair",
-            about: "Wet Lab Member | Materials and Biomedical Engineering, Level 3",
-            link: "http://www.linkedin.com/in/abby-benyair-91516b1b4",
-            cover: "/Abby_Benyair.JPG",
+            name: "Jacob Stotland",
+            about: "Wet Lab Co-Lead | Arts and Science (Year 2)",
+            link: "",
+            cover: "/Photos/Jacob 1.jpg",
+            funFact: "I like transparent liquids"
         },
         {
             name: "Jiawen Ren",
-            about: "Wet Lab Member | Life Sciences, Level 1",
+            about: "Wet Lab Co-Lead | Biochemistry (Year 2)",
             link: "https://www.linkedin.com/in/jiawen-ren-b878a2300/",
-            cover: "/Jiawen_Ren.JPG",
+            cover: "/Photos/Jiawen 1.jpg",
+            funFact: "I love tiramisu"
         },
         {
-            name: "Jacob Stotland",
-            about: "Wet Lab Member | Arts and Science, Level 1",
+            name: "Isabella Valentini",
+            about: "Wet Lab Member | Biomedical Discovery and Commercialization (Year 3)",
+            link: "http://linkedin.com/in/isabellavalentini",
+            cover: "/Photos/Isabella Valentini.JPEG",
+            funFact: "I've been to 4 concerts!"
+        },
+        {
+            name: "Kevin Tan",
+            about: "Wet Lab Member | Life Sciences (Year 4)",
             link: "",
-            cover: "/Jacob_Stotland.JPG",
+            cover: "/Photos/Kevin Tan 2.png",
+            funFact: "I have 2 bunnies"
+        },
+        {
+            name: "Thenuja Vipulananthan",
+            about: "Wet Lab Member | Life Sciences (Year 1)",
+            link: "",
+            cover: "/Photos/Thenuja.PNG",
+            funFact: "I love dogs!"
+        },
+        {
+            name: "Kevin Wang",
+            about: "Wet Lab Member | Life Sciences (Year 1)",
+            link: "www.linkedin.com/in/kevin-wang-789059245",
+            cover: "/Photos/Kevin.jpg",
+            funFact: "I like F1"
+        },
+        {
+            name: "Synthia Xing",
+            about: "Wet Lab Member | Psychology, Neuroscience, & Behaviour (Year 2)",
+            link: "https://www.linkedin.com/in/synthia-xing-5a7146200/",
+            cover: "/Photos/Synthia (preferred).jpg",
+            funFact: "I experience music withdrawal"
         },
         {
             name: "Rubani Suri",
-            about: "Wet Lab Member | Health Sciences, Level 2",
-            link: "http://www.linkedin.com/in/rubani-suri",
-            cover: "/Rubani.jpg",
+            about: "Wet Lab Member | Health Sciences (Year 3)",
+            link: "www.linkedin.com/in/rubani-suri",
+            cover: "/Photos/Rubani.jpg",
+            funFact: "I've seen the Northern Lights!"
         },
         {
-            name: "Isabella",
-            about: "Wet Lab Senior Member | Molecular Biology and Genetics, Level 2",
-            link: "https://www.linkedin.com/in/isabellavalentini?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            cover: "/Isabella.jpg",
-        },
-        {
-            name: "Alice Pao",
-            about: "Wet Lab Senior Member | Biochemistry, Level 3",
-            link: "https://www.linkedin.com/in/alice-pao03?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            cover: "/Alice_Pao.jpg",
+            name: "Thariksha Selvachandran",
+            about: "Wet Lab Member | Honours Biochemistry (Year 3)",
+            link: "https://www.linkedin.com/in/thariksha-selvachandran-b9491030b/",
+            cover: "/Photos/Thariksha.jpg",
+            funFact: "I am a nail tech!"
         },
         {
             name: "Haram",
-            about: "Wet Lab Member | Health Sciences, Level 3",
-            link: "https://www.linkedin.com/in/haram-akram-abb098265/",
-            cover: "/Haram.jpg",
+            about: "Wet Lab Member | Health Sciences (Year 3)",
+            link: "",
+            cover: "/Photos/Haram.JPEG",
+            funFact: "I am a henna artist!"
         }
-
+       
     ];
 
     const drylab = [
         {
-            name: "Alesha Singh",
-            about: "Dry Lab Lead | Health Science (Honours)",
-            link: "",
-            cover: "/Alesha_Singh.jpg",
+            name: "Morgan Puusaari",
+            about: "Dry Lab Co-Lead | Life Sciences (Year 2)",
+            link: "www.linkedin.com/in/morgan-puusaari",
+            cover: "/Photos/Morgan 1.jpg",
+            funFact: "I like to laugh"
         },
         {
-            name: "Franky Liu",
-            about: "Dry Lab Lead | Health, Engineering Science, and Entrepreneurship (HESE), Level III",
-            link: "https://www.linkedin.com/in/franky-liu-2a78601a4/",
-            cover: "/Franky_Liu.jpg",
+            name: "Navid Farkhondehpay",
+            about: "Dry Lab Co-Lead | Honours Health Sciences (Year 2)",
+            link: "",
+            cover: "/Photos/Navid.jpg",
+            funFact: "I grew a pineapple"
+        },
+        {
+            name: "Nilay Goyal",
+            about: "Dry Lab Member | Software Engineering (Year 2)",
+            link: "https://www.linkedin.com/in/nilay-goyal/",
+            cover: "/Photos/nilay_igem.jpg",
+            funFact: "I don't know biology"
+        },
+        {
+            name: "Andrew Lian",
+            about: "Dry Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 1)",
+            link: "www.linkedin.com/in/andrew-lian",
+            cover: "/Photos/Andrew 1.png",
+            funFact: "I've hitch hiked and lived to tell the tale"
+        },
+        {
+            name: "Agnes Kung",
+            about: "Dry Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 1)",
+            link: "www.linkedin.com/in/agnes-kung",
+            cover: "/Photos/Agnes Preferred.jpeg",
+            funFact: "I can't do a cartwheel"
+        },
+        {
+            name: "Cynthia Duan",
+            about: "Dry Lab Member | Health Sciences (Year 2)",
+            link: "",
+            cover: "/Photos/Cynthia.jpg",
+            funFact: "I used to figure skate"
         },
         {
             name: "Marco Tan",
-            about: "Dry Lab Member | Mechatronics and Biomedical Engineering, Level 3",
-            link: "https://www.linkedin.com/in/marcotan04/",
-            cover: "/Marco_Tan.jpg",
-        },
-        {
-            name: "Morgan Puusaari",
-            about: "Dry Lab Member | Life Sciences, Level 1",
-            link: "",
-            cover: "/Morgan_Puusaari.jpg",
-        },
-        {
-            name: "Cynthia",
-            about: "Dry Lab Member | Health Sciences, Level I",
-            link: "",
-            cover: "/Cynthia.jpg",
-        },
-        {
-            name: "Navid",
-            about: "Dry Lab Member | Health Sciences, Level 1",
-            link: "",
-            cover: "/Navid.jpg",
-        },
-        {
-            name: "Jonathan Guan",
-            about: "Dry Lab Member | Health Sciences, Level II",
-            link: "",
-            cover: "/Jonathan_Guan.jpg",
+            about: "Dry Lab Member | Mechatronics and Biomedical Engineering (Year 3)",
+            link: "https://www.linkedin.com/in/marcotan04",
+            cover: "/Photos/Marco Tan.jpg",
+            funFact: "I'm under your floorboards"
         }
+        
     ];
 
     const hp = [
         {
-            name: "Helen Peng",
-            about: "HP Lead | Health Science, Engineering Science, and Entrepreneurship",
-            link: "https://www.linkedin.com/in/helen-peng-0069a61b4",
-            cover: "/Helen_Peng.jpg",
-        },
-        {
-            name: "Anjana Sudharshan",
-            about: "HP Lead | Honours Life Sciences",
-            link: "http://www.linkedin.com/in/anjana-sud",
-            cover: "/Anjana_Sudharshan.jpg",
-        },
-        {
-            name: "Michelle Giang",
-            about: "Outreach | Honours Biochemistry,  Level 3",
-            link: "https://www.linkedin.com/in/marcotan04/",
-            cover: "/Michelle_Giang.jpg",
-        },
-        {
-            name: "Bohdan Mozharivsky ",
-            about: "Entrepreneurship | Health Science, Engineering Science, and Entrepreneurship",
-            link: "http://www.linkedin.com/in/bohdan-mozharivsky-481b9a245",
-            cover: "/Bohdan.jpg",
+            name: "Anh Bui",
+            about: "Human Practices Co-Lead | Arts & Science (Year 2)",
+            link: "https://www.linkedin.com/in/anhbui05/",
+            cover: "/Photos/Anh 2.jpg",
+            funFact: "I love starry nights!"
         },
         {
             name: "Hassan Hassan",
-            about: "Scicomm (Science Communication) | Honours Life Sciences",
-            link: "https://www.linkedin.com/in/hassan-hassan-aa0524184/",
-            cover: "/Hassan_Hassan.JPG",
-        },
-        {
-            name: "Anh Bui",
-            about: "Outreach | Honours Arts & Science",
-            link: "https://www.linkedin.com/in/anhbui05/",
-            cover: "/Anh_Bui.jpg",
-        },
-        {
-            name: "Zoha",
-            about: "Scicomm (Science Communication) | Honours Justice, Political Philosophy and Law",
+            about: "Human Practices Co-Lead | Honours Life Sciences (Year 2)",
             link: "",
-            cover: "",
+            cover: "/Photos/Hassan.JPEG",
+            funFact: "I produce music!"
+        },
+        {
+            name: "Adelina Zhao",
+            about: "Human Practices | Honours Life Sciences (Year 1)",
+            link: "https://www.linkedin.com/in/adelina-zhao-9b40a72b4/",
+            cover: "/Photos/Adelina preferred_.jpg",
+            funFact: "I like tiny little miniscule things"
+        },
+        {
+            name: "Andrea Londono Rios",
+            about: "Human Practices Sci-Comm | Honours Biology (Year 4)",
+            link: "https://www.linkedin.com/in/andrealondo%C3%B1orios/",
+            cover: "/Photos/Andrea Londono Rios.jpg",
+            funFact: "One Direction will always remain my fav band"
+        },
+        {
+            name: "Shankave Sritharan",
+            about: "Human Practices Outreach | Honour Biochemistry (Year 3)",
+            link: "www.linkedin.com/in/sritharanshankave",
+            cover: "/Photos/Shankave Sritharan.jpg",
+            funFact: "I can play the ukulele!"
+        },
+        {
+            name: "Avleen Dhaliwal",
+            about: "Human Practices Sci-Comm | Health Sciences (Year 2)",
+            link: "",
+            cover: "/Photos/Avleen.jpg",
+            funFact: "I'm a lifeguard!"
+        },
+        {
+            name: "Kieran Wilson",
+            about: "Human Practices Entrepreneurship | Heath Sciences (Year 1)",
+            link: "",
+            cover: "/Photos/Kieran.jpg",
+            funFact: "I love basketball!"
+        },
+        {
+            name: "Michelle Giang",
+            about: "Human Practices Outreach | Honours Biochemistry (Year 3)",
+            link: "https://www.linkedin.com/in/giangmichelle/",
+            cover: "/Photos/Michelle Giang preferred.jpg",
+            funFact: "I can't live without music and play alto saxophone, piano and guitar!"
         }
     ];
 
-    const admin = [
+    const outreach = [
         {
             name: "Ashley Qian",
-            about: "Project Manager Co-Lead | Health Science (Honours)",
+            about: "Outreach and Collaborations Lead | Health Sciences (Year 2)",
             link: "https://www.linkedin.com/in/ashley-qian-624043217/",
-            cover: "/Ashley_Qian.jpg",
+            cover: "/Photos/Ashley.JPG",
+            funFact: "I can do magic"
         },
         {
-            name: "Mahnoor Moin",
-            about: "Project Manager Co-Lead | Health Science (Honours)",
-            link: "https://www.linkedin.com/in/mahnoor-moin-8a5554196/",
-            cover: "/Mahnoor_Moin.jpg",
+            name: "Ajeen Kunalan",
+            about: "Outreach and Collaborations Member | Medical and Biological Physics (Year 2)",
+            link: "www.linkedin.com/in/ajeen-kunalan",
+            cover: "/Photos/Ajeen 1.jpg",
+            funFact: "I like running"
         },
         {
-            name: "Mya George",
-            about: "Finance and Sponsorship Co-Lead |Graduate of Health Science (Honours), Child Health Specialization Incoming Masters of Arts Student, Health and Aging  ",
-            link: "https://www.linkedin.com/in/mya-george-160a8b1a9/",
-            cover: "/Mya_George.jpg",
+            name: "Chloe Van Belle",
+            about: "Outreach and Collaborations Member | Molecular Biology & Genetics (Year 3)",
+            link: "https://www.linkedin.com/in/chloe-van-belle-22160a250/",
+            cover: "/Photos/Chloe.jpg",
+            funFact: "I love Lone Star fajitas"
         },
         {
-            name: "Myra Godara",
-            about: "Honours Biochemistry III | Finance and Sponsorship Co-Lead",
-            link: "https://www.linkedin.com/in/myragodara/",
-            cover: "/Myra_Godara.jpg",
-        }
-    ];
-
-    const webDev = [
+            name: "Giovanni Basso",
+            about: "Outreach and Collaborations Member | Honours Biochemistry (Year 2)",
+            link: "https://ca.linkedin.com/in/giovanni-basso-680845281",
+            cover: "/Photos/Giovanni 2.jpg",
+            funFact: "I have seen two total solar eclipses."
+        },
         {
-            name: "Vanessa Lai",
-            about: "Web Dev Lead | Software Engineering, Level 3",
-            link: "https://www.linkedin.com/in/vanessa-lai",
-            cover: "/Vanessa.JPG",
+            name: "Shreya Subramanian",
+            about: "Outreach and Collaborations Member | Life Sciences (year 1)",
+            link: "www.linkedin.com/in/shreya-subramanian-6b10292aa",
+            cover: "/Photos/Shreya Subramanian.jpg",
+            funFact: "I like Pokemon!"
+        },
+        {
+            name: "Kathy He",
+            about: "Outreach and Collaborations Member | Honours Biochemistry (Year 2)",
+            link: "",
+            cover: "/Photos/Kathy prefered.jpg",
+            funFact: "I love grass jelly :)"
         }
     ];
 
     const media = [
         {
-            name: "Jessie Liu",
-            about: "Design Lead | Honours Biochemistry III",
+            name: "Chinyere Iro",
+            about: "Media Team Lead | Honours Health Sci Level I",
+            link: "https://www.linkedin.com/in/chinyere-iro-784834289/",
+            cover: "/Photos/Chinyere Iro 1.png",
+            funFact: "I love emboirdery!"
+        },
+        {
+            name: "Harvey Dang",
+            about: "Media Team Member | Honours Earth and Environmental Science (Year 1)",
+            link: "https://www.linkedin.com/in/harvey-dang-27716731b/",
+            cover: "/Photos/Harvey Dang.jpg",
+            funFact: "I love yogurt"
+        },
+        {
+            name: "Fiona Encarnacion",
+            about: "Media Team Member | Molecular Biology and Genetics (Research Specialization)",
+            link: "www.linkedin.com/in/fiona-encarnacion",
+            cover: "/Photos/Fiona.jpg",
+            funFact: "I like bossa nova!"
+        },
+        {
+            name: "Siya",
+            about: "Social Media Lead | Honours Life Science (Year 3)",
             link: "",
-            cover: "/Jessie_Liu.jpg",
-        },
-        {
-            name: "Rand Al-Wazzan",
-            about: "Social Media Lead | Honours Environmental Sciences, level 4",
-            link: "http://www.linkedin.com/in/rand-al-wazzan-9784bb204",
-            cover: "/Rand.jpg",
-        },
-        {
-            name: "Kaia Seet",
-            about: "Creative Designer | Electrical and Biomedical Engineering, Level II ",
-            link: "http://www.linkedin.com/in/kaiaseet",
-            cover: "/Kaia_Seet.JPG",
-        },
-        {
-            name: "Melody",
-            about: "Graphic Designer | Honours Biochemistry III",
-            link: "https://www.linkedin.com/in/melody-ding/",
-            cover: "/Melody.jpg",
+            cover: "/Photos/Siya.JPG",
+            funFact: "I love mint chocolate chip ice cream :)"
         }
     ];
-    
+
+    const finance = [
+        {
+            name: "Jose Daniel Feijoo Velasco",
+            about: "Finance Lead | Honours Bachelor of Commerce (Year 3)",
+            link: "http://linkedin.com/in/jose-daniel-feijoo-velasco",
+            cover: "/Photos/Jose Daniel Feijoo.JPEG",
+            funFact: "Racket sports enthusiast"
+        },
+        {
+            name: "Myra Godara",
+            about: "Finance Lead | Honours Biochemistry (Year 3)",
+            link: "https://www.linkedin.com/in/myragodara/",
+            cover: "/Photos/Myra 1.JPG",
+            funFact: "I have a puppy named Mylo!"
+        }
+    ];
+
+    const webDev = [
+
+        {
+            name: "Atul Rao",
+            about: "Web Dev | Software Engineering (Year 2)",
+            link: "https://www.linkedin.com/in/atul5rao/",
+            cover: "/Photos/Atul Rao.JPEG",
+            funFact: "I like maps"
+        },
+        {
+            name: "Prisha Bhanot",
+            about: "Web Dev | Chemical and Bio Engineering (Second Year)",
+            link: "https://www.linkedin.com/in/prisha-bhanot-4b8390282/",
+            cover: "/Photos/Prisha.JPEG",
+            funFact: "I love to paint and my favourite artist is Claude Monet!"
+        }
+    ];
+
+    const renderTeamSection = (title: string, members: any[]) => (
+        <>
+            <Title text={title} className="mb-5" />
+            <hr />
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
+                {members.map((member, index) => (
+                    <Link href={member.link} key={index} className={member.link ? "cursor-pointer" : ""}>
+                        {member.cover ? (
+                            <SimpleHover imageUrl={member.cover} className="w-full">
+                                <div className="space-y-5">
+                                    <h1 className="text-2xl font-bold">{member.name}</h1>
+                                    <p>{member.about}</p>
+                                    {member.funFact && (
+                                        <p className="text-sm italic text-white">Fun fact: {member.funFact}</p>
+                                    )}
+                                </div>
+                            </SimpleHover>
+                        ) : (
+                            <div className="space-y-5 p-4 border rounded-lg">
+                                <h1 className="text-2xl font-bold">{member.name}</h1>
+                                <p>{member.about}</p>
+                                {member.funFact && (
+                                    <p className="text-sm italic text-white">Fun fact: {member.funFact}</p>
+                                )}
+                            </div>
+                        )}
+                    </Link>
+                ))}
+            </div>
+        </>
+    );
 
     return (
         <div className="py-20 sm:p-0 text-left px-4">
@@ -258,137 +378,16 @@ const Members = () => {
                 TEAM
             </div>
             
-            <Title text="Principal Investigators" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {PI.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div> 
-            <Title text="Advisors" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {advisors.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>  
-            <Title text="Co-Pres" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {pres.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>            
-            <Title text="Wet Lab" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {wetlab.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>
-
-            <Title text="Dry Lab" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {drylab.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>
-
-            <Title text="Human Practices" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {hp.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>
-
-            <Title text="Web Dev" className="flex flex-col items-start justify-center mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {webDev.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full space-y-5 cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>
-
-            <Title text="Media" className="mb-5" />
-            <hr></hr>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {media.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>
-
-            <Title text="Administration" className="mb-5" />
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 py-6 mb-10 gap-y-5">
-                {admin.map((member, index) => (
-                    <Link href={member.link} key={index}>
-                        <DirectionAwareHover imageUrl={member.cover} className="w-full cursor-pointer">
-                            <div className="space-y-5">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
-                            </div>
-                        </DirectionAwareHover>
-                    </Link>
-                ))}
-            </div>
-
+            {renderTeamSection("Principal Investigators", PI)}
+            {renderTeamSection("Advisors", advisors)}
+            {renderTeamSection("Co-Presidents", pres)}
+            {renderTeamSection("Wet Lab", wetlab)}
+            {renderTeamSection("Dry Lab", drylab)}
+            {renderTeamSection("Human Practices", hp)}
+            {renderTeamSection("Outreach and Collaborations", outreach)}
+            {renderTeamSection("Media and Social Media", media)}
+            {renderTeamSection("Finance", finance)}
+            {renderTeamSection("Web Dev", webDev)}
         </div>
     );
 }
