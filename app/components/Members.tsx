@@ -326,18 +326,11 @@ const Members = () => {
 
         {
             name: "Atul Rao",
-            about: "Web Dev | Software Engineering (Year 2)",
+            about: "Web Dev Lead | Software Engineering (Year 3)",
             link: "https://www.linkedin.com/in/atul5rao/",
             cover: "/Photos/Atul Rao.JPEG",
             funFact: "I like maps"
         },
-        {
-            name: "Prisha Bhanot",
-            about: "Web Dev | Chemical and Bio Engineering (Second Year)",
-            link: "https://www.linkedin.com/in/prisha-bhanot-4b8390282/",
-            cover: "/Photos/Prisha.JPEG",
-            funFact: "I love to paint and my favourite artist is Claude Monet!"
-        }
     ];
 
     const renderTeamSection = (title: string, members: any[]) => (

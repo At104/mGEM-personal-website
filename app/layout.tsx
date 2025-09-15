@@ -21,9 +21,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={montserrat.className}>{children}</body>
-      <Navbar/>
-      <Footer/>
+      <body className={montserrat.className}>
+        <Navbar/>
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 }
