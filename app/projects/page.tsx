@@ -22,6 +22,14 @@ const Projects = () => {
 
     const projects = [
         {
+            href: "https://2024.igem.wiki/mcmaster-canada/",
+            heading: "2024 Hermes Project",
+            description: "Development of a biosensor system for real-time monitoring and analysis.",
+            image: "", // This will be handled as a video in the component
+            isVideo: true,
+            videoSrc: "/Videos/Promo Video McMaster_Canada Final.mp4"
+        },
+        {
             href: "https://2023.igem.wiki/mcmaster-canada/",
             heading: "2023 BacTrack",
             description: "Development of an ingestible biosensor for the in vivo characterization of gut metabolites related to major depressive disorder through a CRISPR mediated reporting system.",
@@ -48,7 +56,7 @@ const Projects = () => {
                 <Title text="Current Projects" className="mb-5" />
                 <hr />
                 <PinContainer className="relative text-slate-700/50 border border-gray-300 rounded w-full">
-                    <h3 className="pb-2 m-0 font-bold text-base text-slate-800"> Hermes Project Promotion </h3>
+                    <h3 className="pb-2 m-0 font-bold text-base text-slate-800"> Current Project </h3>
                     <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                         <video
                             ref={videoRef}
@@ -58,11 +66,11 @@ const Projects = () => {
                             autoPlay
                             muted={isMuted}
                         >
-                            <source src="/Videos/Promo Video McMaster_Canada Final.mp4" type="video/mp4" />
+                            <source src="Videos/React Promo Vid.mp4" type="video/mp4" />
                         </video>
                         <AiFillSound
                             onClick={toggleMute}
-                            className="absolute top-4 right-4 cursor-pointer text-white text-2xl z-10"
+                            className="absolute top-4 right-4 cursor-pointer text-black text-2xl z-10"
                         />
                     </div>
                 </PinContainer>
@@ -86,11 +94,21 @@ const Projects = () => {
                                 <span className="text-slate-700">{project.description}</span>
                             </div>
                             {/* eslint-disable-next-line */}
-                            <img
-                                src={project.image}
-                                alt={project.heading}
-                                className="w-full rounded-lg mt-4"
-                            />
+                            {(project as any).isVideo ? (
+                                <video
+                                    className="w-full rounded-lg mt-4"
+                                    controls
+                                    muted
+                                >
+                                    <source src={(project as any).videoSrc} type="video/mp4" />
+                                </video>
+                            ) : (
+                                <img
+                                    src={project.image}
+                                    alt={project.heading}
+                                    className="w-full rounded-lg mt-4"
+                                />
+                            )}
                         </PinContainer>
                     ))}
                 </div>
