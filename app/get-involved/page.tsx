@@ -37,18 +37,18 @@ const GetInvolved = () => {
                         <h2 className="text-3xl lg:text-4xl font-bold underline underline-offset-2 maroon-decoration">
                             Join the Team
                         </h2>
-                        <p className="lg:w-96 med:w-72 text-lg text-gray-800 py-2 lg:h-64 md:h-96 sm:h-80">
-                            Stay tuned because there's more! We have exciting plans in store for those who want to take their involvement to the next level. We'll be opening applications for individuals eager to join our team and actively participate in groundbreaking research throughout the school year. It's a remarkable opportunity to dive deep into the world of genetic engineering.
+                        <p className="max-w-full text-lg text-gray-800 py-2">
+                            We are now hiring for the upcoming cycle! This is an exciting opportunity for individuals eager to join our team and actively participate in groundbreaking research throughout the school year. Whether you're interested in Wet Lab, Dry Lab, Human Practices, Media, or Admin, we have positions available across all our subcommittees. It's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.
                             <br />
                         </p>
                         <Link 
-                            href="https://docs.google.com/document/d/12x4nh5MbQLHoCbPmu-ArO49y928oCZ-ayRA6sfAx_gU/edit?usp=sharing" 
+                            href="https://drive.google.com/file/d/1S3qan9FuQdgtXN7NrH80ScHk6ooqanGW/view" 
                             className="inline-block" 
                             target="_blank" 
                             rel="noopener noreferrer"
                         >
                             <button className="w-44 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm hover:scale-110 p-1">
-                                Coming Soon
+                                Learn More
                             </button>
                         </Link>
                     </div>
@@ -56,7 +56,7 @@ const GetInvolved = () => {
                         <h2 className="text-3xl lg:text-4xl font-bold underline underline-offset-2 maroon-decoration">
                             Become a General Member
                         </h2>
-                        <p className="lg:w-96 med:w-72 text-lg text-gray-800 py-2 lg:h-64 md:h-96 sm:h-80">
+                        <p className="max-w-full text-lg text-gray-800 py-2">
                             Become a part of our community by signing up as a general member. As a member, you'll gain access to exclusive events and workshops designed to expand your knowledge in synthetic biology.
                             <br />
                         </p>

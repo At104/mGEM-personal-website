@@ -13,8 +13,10 @@ export const ContainerScroll = ({
     target: containerRef,
   });
   const [isMobile, setIsMobile] = React.useState(false);
+  const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
+    setIsMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -26,6 +28,7 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
+    if (!isMounted) return [1.05, 1]; // Return desktop default during SSR
     return isMobile ? [0.7, 0.9] : [1.05, 1];
   };
 

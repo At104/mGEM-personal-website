@@ -24,8 +24,8 @@ const AboutUs = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="stats__item text-center md:border-l-0 border-white">
                             <div className="inline-block">
-                                <h1 className="text-5xl font-bold mb-4">Silver</h1>
-                                <p className="text-xl">Medalist 2024 Overgrad Category</p>
+                                <h1 className="text-5xl font-bold mb-4">Gold</h1>
+                                <p className="text-xl">Medalist 2025 Undergrad Category</p>
                             </div>
                         </div>
                         <div className="stats__item text-center border-white md:border-l md:border-r-0">
@@ -36,7 +36,7 @@ const AboutUs = () => {
                         </div>
                         <div className="stats__item text-center md:border-l md:border-r-0 border-white">
                             <div className="inline-block">
-                                <h1 className="text-5xl font-bold mb-4">36+</h1>
+                                <h1 className="text-5xl font-bold mb-4">30+</h1>
                                 <p className="text-xl">Members</p>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ const AboutUs = () => {
                 </div>
             </div>
 
-            <Title text="Media (Design, Social Media & Web Dev)" className="mb-5 text-right" />
+            <Title text="Media (Design & Social Media)" className="mb-5 text-right" />
             <hr />
             <div className ="flex flex-col items-center justify-between lg:flex-row lg:gap-0 gap-14 py-10">
                 <div>
@@ -102,13 +102,11 @@ const AboutUs = () => {
                 and creating the visuals to help communicate our project to the general public and at the iGEM jamboree 
                 competition. Our Design members are responsible for creating and managing the brand for iGEM and managing 
                 major projects/deliveries. Our social media are pivotal with increasing our outreach within our community 
-                and improve our communication with members. Our Web Dev members will be in charge of the development of 
-                mGEM's personal website and the team's wiki for the competition to document all of our findings in a 
-                clear and visually appealing way. 
+                and improve our communication with members. 
                 </p>
             </div>
 
-            <Title text="Admin (Project Management & Finance)" className="mb-5" />
+            <Title text="Admin (Project Management, Finance & Web Dev)" className="mb-5" />
             <hr />
             <div className ="flex flex-col items-center justify-between lg:flex-row lg:gap-0 gap-14 py-10">
                 <p className = "max-w-2xl text-lg text-gray-800 py-2 font-medium">
@@ -123,7 +121,10 @@ const AboutUs = () => {
                     the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, 
                     and building relationships with sponsors and donors. Our responsibilities include budget planning, financial tracking, 
                     and ensuring that our team has the resources needed to successfully complete our project. The Finance Team plays a critical 
-                    role in ensuring that our team can achieve its goals by effectively managing financial resources and securing the support of key stakeholders.
+                    role in ensuring that our team can achieve its goals by effectively managing financial resources and securing the support of key stakeholders. <br/>
+                    <br/>
+                    Our Web Dev members will be in charge of the development of mGEM's personal website and the team's wiki for the competition 
+                    to document all of our findings in a clear and visually appealing way.
                 </p>
                 <div>
                     <Image src="/Sponsorship.jpg" alt="Logo" width={500} height={500} />

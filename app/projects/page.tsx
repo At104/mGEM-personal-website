@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import { PinContainer } from '../components/ui/pin';
 import Title from '../components/Subtitle';
 import { AiFillSound } from "react-icons/ai";
+import { HiVolumeOff } from "react-icons/hi";
 
 const Projects = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -68,10 +69,17 @@ const Projects = () => {
                         >
                             <source src="Videos/React Promo Vid.mp4" type="video/mp4" />
                         </video>
-                        <AiFillSound
-                            onClick={toggleMute}
-                            className="absolute top-4 right-4 cursor-pointer text-black text-2xl z-10"
-                        />
+                        {isMuted ? (
+                            <HiVolumeOff
+                                onClick={toggleMute}
+                                className="absolute top-4 right-4 cursor-pointer text-black text-2xl z-10 bg-white/80 rounded-full p-1"
+                            />
+                        ) : (
+                            <AiFillSound
+                                onClick={toggleMute}
+                                className="absolute top-4 right-4 cursor-pointer text-black text-2xl z-10 bg-white/80 rounded-full p-1"
+                            />
+                        )}
                     </div>
                 </PinContainer>
                 <Title text="HP Initiatives & StoryBook" className="mb-5" />

@@ -14,8 +14,10 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ links, close }) => {
     const [animation, setAnimation] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        setIsMounted(true);
         setAnimation(true);
         const handleResize = (e: UIEvent) => {
             if ((e.target as Window).innerWidth >= 640) {
@@ -29,6 +31,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ links, close }) => {
             window.removeEventListener("resize", handleResize);
         };
     }, [close]);
+
+    if (!isMounted) return null;
 
     return (
         <div>

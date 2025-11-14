@@ -22,11 +22,12 @@ export const InfiniteMovingCards = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const [start, setStart] = useState(false);
 
   useEffect(() => {
     addAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -48,7 +49,7 @@ export const InfiniteMovingCards = ({
       if (direction === "left") {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "forwards"
+          "normal"
         );
       } else {
         containerRef.current.style.setProperty(
@@ -91,7 +92,7 @@ export const InfiniteMovingCards = ({
               style={{
                   background: "linear-gradient(180deg, #FFFFFF, #FFFFFF)"
               }}
-              key={item.name}
+              key={`${item.name}-${idx}`}
               >
             <blockquote>
               <div
