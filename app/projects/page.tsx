@@ -1,5 +1,6 @@
 "use client"
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 import { PinContainer } from '../components/ui/pin';
 import Title from '../components/Subtitle';
 import { AiFillSound } from "react-icons/ai";
@@ -67,7 +68,7 @@ const Projects = () => {
                             autoPlay
                             muted={isMuted}
                         >
-                            <source src="Videos/React Promo Vid.mp4" type="video/mp4" />
+                            <source src="/Videos/React Promo Vid.mp4" type="video/mp4" />
                         </video>
                         {isMuted ? (
                             <HiVolumeOff
@@ -111,9 +112,11 @@ const Projects = () => {
                                     <source src={(project as any).videoSrc} type="video/mp4" />
                                 </video>
                             ) : (
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.heading}
+                                    width={500}
+                                    height={300}
                                     className="w-full rounded-lg mt-4"
                                 />
                             )}
