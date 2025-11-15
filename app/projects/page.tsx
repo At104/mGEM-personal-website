@@ -55,10 +55,10 @@ const Projects = () => {
         <div className="max-w-7xl py-10 mx-auto max-h-full px-5">
             <div className="text-4xl font-bold text-left mt-32">PROJECTS</div>
             <div>
-                <Title text="Current Projects" className="mb-5" />
+                <Title text="Projects" className="mb-5" />
                 <hr />
                 <PinContainer className="relative text-slate-700/50 border border-gray-300 rounded w-full">
-                    <h3 className="pb-2 m-0 font-bold text-base text-slate-800"> Current Project </h3>
+                    <h3 className="pb-2 m-0 font-bold text-base text-slate-800"> Our Most Recent Project </h3>
                     <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                         <video
                             ref={videoRef}
