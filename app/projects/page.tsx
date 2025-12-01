@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PinContainer } from '../components/ui/pin';
 import Title from '../components/Subtitle';
 import { AiFillSound } from "react-icons/ai";
@@ -10,7 +11,9 @@ const Projects = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
 
-    const toggleMute = () => {
+    const toggleMute = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
         if (videoRef.current) {
             videoRef.current.muted = !isMuted;
             setIsMuted(!isMuted);
@@ -55,10 +58,13 @@ const Projects = () => {
         <div className="max-w-7xl py-10 mx-auto max-h-full px-5">
             <div className="text-4xl font-bold text-left mt-32">PROJECTS</div>
             <div>
-                <Title text="Projects" className="mb-5" />
+                <Title text="Current Project" className="mb-5" />
                 <hr />
-                <PinContainer className="relative text-slate-700/50 border border-gray-300 rounded w-full">
-                    <h3 className="pb-2 m-0 font-bold text-base text-slate-800"> Our Most Recent Project </h3>
+                <PinContainer 
+                    href="https://2025.igem.wiki/mcmaster-canada/"
+                    className="relative text-slate-700/50 border border-gray-300 rounded w-full"
+                >
+                    <h3 className="pb-2 m-0 font-bold text-base text-slate-800">2025 Project</h3>
                     <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                         <video
                             ref={videoRef}
@@ -76,10 +82,10 @@ const Projects = () => {
                                 className="absolute top-4 right-4 cursor-pointer text-black text-2xl z-10 bg-white/80 rounded-full p-1"
                             />
                         ) : (
-                            <AiFillSound
-                                onClick={toggleMute}
+                        <AiFillSound
+                            onClick={toggleMute}
                                 className="absolute top-4 right-4 cursor-pointer text-black text-2xl z-10 bg-white/80 rounded-full p-1"
-                            />
+                        />
                         )}
                     </div>
                 </PinContainer>

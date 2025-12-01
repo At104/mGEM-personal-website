@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { SiGmail, SiInstagram, SiLinkedin } from "react-icons/si";
+import { MdBiotech } from "react-icons/md";
 import { cn } from "@/lib/utils"; // Ensure this utility function is correctly implemented
 import WebMenu from './WebMenu';
 import MobileMenu from './MobileMenu';
@@ -10,7 +11,7 @@ const Navbar: React.FC = () => {
     
     const socials = [
         {
-            link: "mailto:igemmcmaster@gmail.com",
+            link: "mailto:igem@mcmaster.ca",
             label: "Gmail", 
             Icon: SiGmail
         },
@@ -23,6 +24,11 @@ const Navbar: React.FC = () => {
             link: "https://www.linkedin.com/company/igem-mcmaster/",
             label: "Linkedin",
             Icon: SiLinkedin
+        },
+        {
+            link: "https://teams.igem.org/5856",
+            label: "iGEM Team Page",
+            Icon: MdBiotech
         }
     ];
 
