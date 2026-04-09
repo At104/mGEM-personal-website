@@ -28,93 +28,64 @@ const Members = () => {
 
     const pres = [
         {
-            name: "Franky Liu",
-            about: "Co-President | Integrated Biomedical Engineering and Health Sciences (Year 3)",
-            link: "https://www.linkedin.com/in/franky-liu-2a78601a4/",
-            cover: "/Photos/Franky 1.jpg",
-            funFact: "Hamsters are very fragile creatures... Don't ask me how I know"
+            name: "Jiawen Ren",
+            about: "Co-President | Honours Biochemistry Co-op (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Jiawen.jpg",
+            funFact: "I like to paint with Dollarama art supplies!"
         },
         {
-            name: "Derin Sayin",
-            about: "Co-President | Honours Biochemistry",
-            link: "https://www.linkedin.com/in/derin-sayin-733412261",
-            cover: "/Photos/Derin Sayin.jpeg",
-            funFact: "I love sci-fi and fantasy"
+            name: "Morgan Puusaari",
+            about: "Co-President | Life Sciences (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Morgan Puusaari Preferred.jpg",
+            funFact: "Once I tripped on a banana peel"
         }
     ];
 
     const wetlab = [
         {
-            name: "Jacob Stotland",
-            about: "Wet Lab Co-Lead | Arts and Science (Year 2)",
+            name: "Kevin Wang",
+            about: "Wet Lab Co-Lead | Honours Biochemistry  (Year 2)",
             link: "",
-            cover: "/Photos/Jacob 1.jpg",
-            funFact: "I like transparent liquids"
+            cover: "/Photos/2026/Kevin Wang.JPG",
+            funFact: "I went to the same highschool as Anakin Skywalker!"
         },
         {
-            name: "Jiawen Ren",
-            about: "Wet Lab Co-Lead | Biochemistry (Year 2)",
-            link: "https://www.linkedin.com/in/jiawen-ren-b878a2300/",
-            cover: "/Photos/Jiawen 1.jpg",
-            funFact: "I love tiramisu"
-        },
-        {
-            name: "Isabella Valentini",
-            about: "Wet Lab Member | Biomedical Discovery and Commercialization (Year 3)",
-            link: "http://linkedin.com/in/isabellavalentini",
-            cover: "/Photos/Isabella Valentini.JPEG",
-            funFact: "I've been to 4 concerts!"
-        },
-        {
-            name: "Kevin Tan",
-            about: "Wet Lab Member | Life Sciences (Year 4)",
+            name: "Rinee Parikh",
+            about: "Wet Lab Co-Lead | Honours Chemical Biology (Year 2)",
             link: "",
-            cover: "/Photos/Kevin Tan 2.png",
-            funFact: "I have 2 bunnies"
+            cover: "/Photos/2026/Rinee Parikh preferred.jpg",
+            funFact: "I'm learning the guitar!"
+        },
+        {
+            name: "Catherine Luo",
+            about: "Wet Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 1)",
+            link: "",
+            cover: "/Photos/2026/Catherine Luo Preferred.jpg",
+            funFact: "I have held a human heart before!"
+        },
+        {
+            name: "Lucie Huang",
+            about: "Wet Lab Member | Life Sciences Gateway Program (Year 1)",
+            link: "",
+            cover: "/Photos/2026/Lucie Huang Preferred.jpg",
+            funFact: "I do archery"
+        },
+        {
+            name: "Akash Madaram",
+            about: "Wet Lab Member | Life Science (Year 1)",
+            link: "",
+            cover: "/Photos/2026/Akash.jpg",
+            funFact: "I play the violin."
         },
         {
             name: "Thenuja Vipulananthan",
-            about: "Wet Lab Member | Life Sciences (Year 1)",
+            about: "Wet Lab Member | Honours Biochemistry (Year 2)",
             link: "",
-            cover: "/Photos/Thenuja.PNG",
-            funFact: "I love dogs!"
-        },
-        {
-            name: "Kevin Wang",
-            about: "Wet Lab Member | Life Sciences (Year 1)",
-            link: "www.linkedin.com/in/kevin-wang-789059245",
-            cover: "/Photos/Kevin.jpg",
-            funFact: "I like F1"
-        },
-        {
-            name: "Synthia Xing",
-            about: "Wet Lab Member | Psychology, Neuroscience, & Behaviour (Year 2)",
-            link: "https://www.linkedin.com/in/synthia-xing-5a7146200/",
-            cover: "/Photos/Synthia (preferred).jpg",
-            funFact: "I experience music withdrawal"
-        },
-        {
-            name: "Rubani Suri",
-            about: "Wet Lab Member | Health Sciences (Year 3)",
-            link: "www.linkedin.com/in/rubani-suri",
-            cover: "/Photos/Rubani.jpg",
-            funFact: "I've seen the Northern Lights!"
-        },
-        {
-            name: "Thariksha Selvachandran",
-            about: "Wet Lab Member | Honours Biochemistry (Year 3)",
-            link: "https://www.linkedin.com/in/thariksha-selvachandran-b9491030b/",
-            cover: "/Photos/Thariksha.jpg",
-            funFact: "I am a nail tech!"
-        },
-        {
-            name: "Haram",
-            about: "Wet Lab Member | Health Sciences (Year 3)",
-            link: "",
-            cover: "/Photos/Haram.JPEG",
-            funFact: "I am a henna artist!"
+            cover: "/Photos/2026/Thenuja.jpg",
+            funFact: "I love watching sunsets/sunrises!"
         }
-       
     ];
 
     const drylab = [
@@ -173,45 +144,38 @@ const Members = () => {
     const hp = [
         {
             name: "Anh Bui",
-            about: "Human Practices Co-Lead | Arts & Science (Year 2)",
+            about: "Human Practices Co-Lead | Honours Arts & Science (Year 3)",
             link: "https://www.linkedin.com/in/anhbui05/",
             cover: "/Photos/Anh 2.jpg",
-            funFact: "I love starry nights!"
-        },
-        {
-            name: "Hassan Hassan",
-            about: "Human Practices Co-Lead | Honours Life Sciences (Year 2)",
-            link: "",
-            cover: "/Photos/Hassan.JPEG",
-            funFact: "I produce music!"
+            funFact: "I broke my foot twice in first year"
         },
         {
             name: "Adelina Zhao",
-            about: "Human Practices | Honours Life Sciences (Year 1)",
+            about: "Human Practices Co-Lead | Honours Biochemistry (Year 2)",
             link: "https://www.linkedin.com/in/adelina-zhao-9b40a72b4/",
-            cover: "/Photos/Adelina preferred_.jpg",
-            funFact: "I like tiny little miniscule things"
+            cover: "/Photos/2026/Adelina.jpg",
+            funFact: "I can do a mediocore cartwheel"
         },
         {
-            name: "Andrea Londono Rios",
-            about: "Human Practices Sci-Comm | Honours Biology (Year 4)",
-            link: "https://www.linkedin.com/in/andrealondo%C3%B1orios/",
-            cover: "/Photos/Andrea Londono Rios.jpg",
-            funFact: "One Direction will always remain my fav band"
+            name: "Pooja Murali",
+            about: "Human Practices, Entrepreneurship Member | iBioMed and HESE (Year 3)",
+            link: "",
+            cover: "",
+            funFact: "I love Karaoke 🎤"
         },
         {
-            name: "Shankave Sritharan",
-            about: "Human Practices Outreach | Honour Biochemistry (Year 3)",
+            name: "Hassan Hassan",
+            about: "Human Practices Sci-Comm Member | Biology & Pharmacology Co-op (Year 3)",
             link: "www.linkedin.com/in/sritharanshankave",
             cover: "/Photos/Shankave Sritharan.jpg",
-            funFact: "I can play the ukulele!"
+            funFact: "I’m on an a capella team!"
         },
         {
             name: "Avleen Dhaliwal",
-            about: "Human Practices Sci-Comm | Health Sciences (Year 2)",
+            about: "Human Practices Sci-Comm | Honours Health Sciences (Year 3)",
             link: "",
-            cover: "/Photos/Avleen.jpg",
-            funFact: "I'm a lifeguard!"
+            cover: "/Photos/2026/Avleen temp.jpg",
+            funFact: "I eat a container of greek yogurt daily"
         },
         {
             name: "Kieran Wilson",
@@ -277,32 +241,54 @@ const Members = () => {
     const media = [
         {
             name: "Chinyere Iro",
-            about: "Media Team Lead | Honours Health Sci Level I",
+            about: "Media Team Lead | Honours Health Sciences Program, Core (Year 2)",
             link: "https://www.linkedin.com/in/chinyere-iro-784834289/",
-            cover: "/Photos/Chinyere Iro 1.png",
-            funFact: "I love emboirdery!"
+            cover: "/Photos/2026/Chichi Preferred.jpg",
+            funFact: "I enjoy dressmaking"
         },
         {
-            name: "Harvey Dang",
-            about: "Media Team Member | Honours Earth and Environmental Science (Year 1)",
-            link: "https://www.linkedin.com/in/harvey-dang-27716731b/",
-            cover: "/Photos/Harvey Dang.jpg",
-            funFact: "I love yogurt"
-        },
-        {
-            name: "Fiona Encarnacion",
-            about: "Media Team Member | Molecular Biology and Genetics (Research Specialization)",
-            link: "www.linkedin.com/in/fiona-encarnacion",
-            cover: "/Photos/Fiona.jpg",
-            funFact: "I like bossa nova!"
-        },
-        {
-            name: "Siya",
-            about: "Social Media Lead | Honours Life Science (Year 3)",
+            name: "Sophia Chau",
+            about: "Media Lead | Honours Health Sciences Program, Core (Year 2)",
             link: "",
-            cover: "/Photos/Siya.JPG",
-            funFact: "I love mint chocolate chip ice cream :)"
-        }
+            cover: "/Photos/2026/Sophia Chau.jpg",
+            funFact: "I like my water hot "
+        },
+        {
+            name: "Veronica Grignano",
+            about: "Media Team Member | Honours Health Sciences Program (Year 3)",
+            link: "www.linkedin.com/in/fiona-encarnacion",
+            cover: "/Photos/2026/veronica.jpg",
+            funFact: "I'm a member of a competitive a cappella team!"
+        },
+        {
+            name: "Cici Liu",
+            about: "Media Team Member | Honours Health Sciences Program (Year 1)",
+            link: "",
+            cover: "/Photos/2026/Cici Liu.jpg",
+            funFact: "I have a pet rock"
+        },
+        {
+            name: "Chloe Jeng",
+            about: "Media Team Member | Honours Life Sciences (Year 1)",
+            link: "",
+            cover: "/Photos/2026/Chloe Jeng.jpeg",
+            funFact: "I've been to a One Direction concert !"
+        },
+        {
+            name: "Heidi Wang",
+            about: "Media Team Member | Integrated Science (Year 2)",
+            link: "",
+            cover: "",
+            funFact: "I can solve a rubiks cube"
+        },
+        {
+            name: "Vee Le",
+            about: "Media Team Member | Honours Biology Core (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Vee Le.jpg",
+            funFact: "I’m a very snacky person"
+        },
+        
     ];
 
     const finance = [
@@ -326,10 +312,31 @@ const Members = () => {
 
         {
             name: "Atul Rao",
-            about: "Web Dev Lead | Software Engineering (Year 3)",
+            about: "Web Development Lead | Software Engineering (Year 3)",
             link: "https://www.linkedin.com/in/atul5rao/",
-            cover: "/Photos/Atul Rao.JPEG",
-            funFact: "I like maps"
+            cover: "/Photos/2026/Atul Rao.JPG",
+            funFact: "I still like maps"
+        },
+        {
+            name: "Tyler Fong",
+            about: "Web Development Member | IBEHS Electrical and Biomedical Engineering (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Tyler Fong.JPG",
+            funFact: "I know how to juggle"
+        },
+        {
+            name: "Kurlan Beeharry",
+            about: "Web Development Member | Software Engineering Co-op (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Kurlan.JPG",
+            funFact: "I come from Dodo bird land."
+        },
+        {
+            name: "Emma Liu",
+            about: "Web Development Member | Honours Health Sciences Program (Year 1)",
+            link: "",
+            cover: "/Photos/2026/Emma Liu Preferred.jpg",
+            funFact: "My favourite lazy dessert to make is mango coconut sticky rice with ice cream ⸜(｡˃ ᵕ ˂ )⸝♡"
         },
     ];
 
