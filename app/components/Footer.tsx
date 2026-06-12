@@ -1,23 +1,77 @@
-import { SiGithub } from "react-icons/si";
-import Link from 'next/link'; // Updated import for Next.js Link
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { SiGmail, SiInstagram } from "react-icons/si";
+import { MdBiotech } from "react-icons/md";
+import { landAcknowledgment, socials } from "@/lib/content";
+import { LinkedInIcon } from "./LinkedInIcon";
+
+const icons = [SiGmail, SiInstagram, LinkedInIcon, MdBiotech];
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="max-w-screen-xl mx-auto md:py-6 px-3 my-2">
-          <div className="sm:flex sm:items-center sm:justify-between">
-              <Link href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                  {/* eslint-disable-next-line */}
-                  <img src="/MGEM-Logo.png" className="h-8" alt="Flowbite Logo" />
-                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">mGEM</span>
-              </Link>
-              <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 space-x-4">
-                <p className = "text-xs">McMaster iGEM recognizes and acknowledges that it is located on the <br/> traditional territories of the Mississauga and Haudenosaunee nations, and <br/> within the lands protected by the “Dish with One Spoon” wampum agreement.</p>
-              </ul>
+    <footer className="bg-forest text-white">
+      <div className="h-0.5 w-full bg-gradient-to-r from-maroon via-leaf to-cyan" />
+      <div className="section-divider-dark border-b border-white/10" aria-hidden />
+
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1.2fr]">
+          <div>
+            <Link href="/" className="flex items-center gap-3">
+              <Image src="/MGEM-Logo.png" alt="" width={48} height={32} className="h-8 w-auto" />
+              <span className="font-display text-2xl font-bold">mGEM</span>
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
+              McMaster University&apos;s synthetic biology research and design team, competing annually in the international iGEM competition.
+            </p>
+            <div className="mt-6 flex gap-3">
+              {socials.map((s, i) => {
+                const Icon = icons[i];
+                return (
+                  <a
+                    key={s.label}
+                    href={s.link}
+                    aria-label={s.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-white/10 p-2.5 transition hover:bg-leaf"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <Link href="/" className="hover:underline">mGEM™</Link>. All Rights Reserved.</span>
+
+          <nav aria-label="Footer">
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-leaf-300">Pages</p>
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
+              {["About Us", "Our Team", "Projects", "Sponsors", "Get Involved"].map((label, i) => {
+                const hrefs = ["/about-us", "/our-team", "/projects", "/sponsors", "/get-involved"];
+                return (
+                  <li key={label}>
+                    <Link href={hrefs[i]} className="transition hover:text-white">
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-leaf-300">Land acknowledgment</p>
+            <p className="mt-4 text-sm leading-relaxed text-white/60">{landAcknowledgment}</p>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row">
+          <p suppressHydrationWarning>© {new Date().getFullYear()} mGEM — McMaster iGEM</p>
+          <a href="mailto:igemmcmaster@gmail.com" className="hover:text-white">
+            igemmcmaster@gmail.com
+          </a>
+        </div>
       </div>
-  </footer>
+    </footer>
   );
 }

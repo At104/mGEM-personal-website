@@ -1,14 +1,31 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import Navbar from "./components/Navbar";  // Import your Navbar
-import Footer from "./components/Footer";  // Import your Footer
+import { Bricolage_Grotesque, Inter, JetBrains_Mono } from "next/font/google";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
-  title: "McMaster iGEM",
-  description: "mGEM Personal Website",
+  title: {
+    default: "mGEM — McMaster iGEM",
+    template: "%s — McMaster iGEM",
+  },
+  description:
+    "mGEM is McMaster University's award-winning synthetic biology research and design team, competing annually in the international iGEM competition.",
 };
 
 export default function RootLayout({
@@ -17,14 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className={montserrat.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
+    <html
+      lang="en"
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <body className="font-sans">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
