@@ -42,7 +42,7 @@ export default function SponsorsPage() {
                       <img src={s.icon} alt={`${s.name} logo`} className="absolute inset-0 h-full w-full object-contain p-3" loading="lazy" />
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-bold group-hover:text-leaf-deep">{s.name}</h3>
+                      <h3 className="font-display text-lg font-bold group-hover:text-maroon">{s.name}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.description}</p>
                     </div>
                   </a>
@@ -53,10 +53,10 @@ export default function SponsorsPage() {
         ))}
       </div>
 
-      <section className="bg-forest py-20 text-white">
+      <section className="bg-maroon-deep py-20 text-white">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center">
           <div className="max-w-xl">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-leaf-300">Partner with us</p>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/60">Partner with us</p>
             <h2 className="mt-3 font-display text-3xl font-bold">Sponsorship & collaboration</h2>
             <p className="mt-3 text-white/70">{sponsorsPitch.cta}</p>
           </div>

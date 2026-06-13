@@ -2,6 +2,7 @@
   "PI": [
     {
       "name": "Dr. Tohid Didar",
+      "role": "",
       "about": "Associate Professor, Mechanical Engineering",
       "link": "https://experts.mcmaster.ca/display/didart",
       "cover": "/tohid-didar-news-header-470x316.jpg",
@@ -11,6 +12,7 @@
   "advisors": [
     {
       "name": "Dr. Jonathan Bramson",
+      "role": "",
       "about": "Vice-Dean, Faculty of Health Sciences",
       "link": "https://experts.mcmaster.ca/display/bramsonj",
       "cover": "/bramson-jonathan.jpg",
@@ -20,14 +22,16 @@
   "pres": [
     {
       "name": "Jiawen Ren",
-      "about": "Co-President | Honours Biochemistry Co-op (Year 3)",
+      "role": "",
+      "about": "Honours Biochemistry Co-op (Year 3)",
       "link": "https://www.linkedin.com/in/jiawen-ren-b878a2300/",
       "cover": "/Photos/Jiawen.jpg",
       "funFact": "I like to paint with Dollarama art supplies!"
     },
     {
       "name": "Morgan Puusaari",
-      "about": "Co-President | Honours Biochemistry (Year 3)",
+      "role": "",
+      "about": "Honours Biochemistry (Year 3)",
       "link": "https://www.linkedin.com/in/morgan-puusaari",
       "cover": "/Photos/Morgan Puusaari.JPG",
       "funFact": "Once I tripped on a banana peel"
@@ -36,42 +40,48 @@
   "wetlab": [
     {
       "name": "Kevin Wang",
-      "about": "Wet Lab Co-Lead | Honours Biochemistry (Year 2)",
+      "role": "Co-Lead",
+      "about": "Honours Biochemistry (Year 2)",
       "link": "https://www.linkedin.com/in/kevin-wang-789059245",
       "cover": "/Photos/Kevin Wang.JPG",
       "funFact": "I went to the same highschool as Anakin Skywalker!"
     },
     {
       "name": "Rinee Parikh",
-      "about": "Wet Lab Co-Lead | Honours Chemical Biology (Year 2)",
+      "role": "Co-Lead",
+      "about": "Honours Chemical Biology (Year 2)",
       "link": "https://www.linkedin.com/in/jiawen-ren-b878a2300/",
       "cover": "/Photos/Rinee.jpg",
       "funFact": "I'm learning the guitar!"
     },
     {
       "name": "Thenuja Vipulananthan",
-      "about": "Wet Lab Member | Honours Biochemistry (Year 2)",
+      "role": "Member",
+      "about": "Honours Biochemistry (Year 2)",
       "link": "https://www.linkedin.com/in/thenujavipul/",
       "cover": "/Photos/Thenuja.jpg",
       "funFact": "I love watching sunsets/sunrises!"
     },
     {
       "name": "Akash Madaram",
-      "about": "Wet Lab Member | Life Sciences (Year 1)",
+      "role": "Member",
+      "about": "Life Sciences (Year 1)",
       "link": "https://www.linkedin.com/in/akash-madaram-327642296/",
       "cover": "/Photos/Akash.jpg",
       "funFact": "I play the violin."
     },
     {
       "name": "Lucie Huang",
-      "about": "Wet Lab Member | Life Sciences (Year 1)",
+      "role": "Member",
+      "about": "Life Sciences (Year 1)",
       "link": "",
       "cover": "/Photos/Lucie.JPG",
       "funFact": "I do archery"
     },
     {
       "name": "Catherine Luo",
-      "about": "Wet Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 1)",
+      "role": "Member",
+      "about": "Integrated Biomedical Engineering and Health Sciences (Year 1)",
       "link": "https://www.linkedin.com/in/catherine-yuhan-luo/",
       "cover": "/Photos/Catherine.jpg",
       "funFact": "I eat yogurt bowls religiously "
@@ -80,77 +90,88 @@
   "drylab": [
     {
       "name": "Andrew Lian",
-      "about": "Dry Lab Co-Lead | Software and Biomedical Engineering (Year 2)",
+      "role": "Co-Lead",
+      "about": "Software and Biomedical Engineering (Year 2)",
       "link": "https://www.linkedin.com/in/andrew-lian/",
       "cover": "/Photos/andrew.jpg",
       "funFact": "I have perfect pitch!"
     },
     {
       "name": "Agnes Kung",
-      "about": "Dry Lab Co-Lead | Biomedical and Mechanical Engineering (Year 2)",
+      "role": "Co-Lead",
+      "about": "Biomedical and Mechanical Engineering (Year 2)",
       "link": "https://www.linkedin.com/in/agnes-kung/",
       "cover": "/Photos/Agnes.JPG",
       "funFact": "I am a fourth degree black belt in taekwondo"
     },
     {
       "name": "Nilay Goyal",
-      "about": "Dry Lab Member | Software Engineering (Year 3)",
+      "role": "Member",
+      "about": "Software Engineering (Year 3)",
       "link": "https://www.linkedin.com/in/nilay-goyal/",
       "cover": "/Photos/Nilay.jpg",
       "funFact": "I don't know biology"
     },
     {
       "name": "Brandon Yoo",
-      "about": "Dry Lab Member | Chemical & Biomedical Engineering (Year 2)",
+      "role": "Member",
+      "about": "Chemical & Biomedical Engineering (Year 2)",
       "link": "https://www.linkedin.com/in/brandonwsyoo/",
       "cover": "/Photos/Brandon.JPG",
       "funFact": "I'm a dancer"
     },
     {
       "name": "Kathrine Mondshain",
-      "about": "Dry Lab Member | Honours Integrated Science, Biology Concentration (Year 2)",
+      "role": "Member",
+      "about": "Honours Integrated Science, Biology Concentration (Year 2)",
       "link": "https://www.linkedin.com/in/kathrine-mondshain-0a9658289/",
       "cover": "/Photos/Kathrine.JPG",
       "funFact": "I have a grandpa named Electron"
     },
     {
       "name": "Cynthia Duan",
-      "about": "Dry Lab Member | Health Sciences (Year 3)",
+      "role": "Member",
+      "about": "Health Sciences (Year 3)",
       "link": "https://www.linkedin.com/in/cynthia-duan-586043225/",
-      "cover": "/Photos/Cynthia.JPG",
+      "cover": "/Photos/Cynthia.jpg",
       "funFact": "I figure skate in my free time!"
     },
     {
       "name": "Pedram Tizghadam",
-      "about": "Dry Lab Member | Honours Biochemistry (Year 2)",
+      "role": "Member",
+      "about": "Honours Biochemistry (Year 2)",
       "link": "https://www.linkedin.com/in/pedram-tizghadam-0175a52a8/",
       "cover": "/Photos/Pedram.jpg",
       "funFact": "I really like chicken nuggets"
     },
     {
       "name": "Eric Fu",
-      "about": "Dry Lab Member | Honours Health Sciences (Year 1)",
+      "role": "Member",
+      "about": "Honours Health Sciences (Year 1)",
       "link": "https://www.linkedin.com/in/eric-fu-3020112a5/",
       "cover": "/Photos/Eric.JPG",
       "funFact": "1000+ hours in Blender btw"
     },
     {
       "name": "Melina Fatemi",
-      "about": "Dry Lab Member | Life Sciences (Year 1)",
+      "role": "Member",
+      "about": "Life Sciences (Year 1)",
       "link": "https://www.linkedin.com/in/melina-fatemi-136232279/",
       "cover": "/Photos/Melina.jpg",
       "funFact": "I love matcha!"
     },
     {
       "name": "Brevan Dias",
-      "about": "Dry Lab Member | Chemical and Biomedical Engineering (Year 2)",
+      "role": "Member",
+      "about": "Chemical and Biomedical Engineering (Year 2)",
       "link": "https://www.linkedin.com/in/brevan-d/",
       "cover": "/Photos/Brevan.jpg",
       "funFact": "I can solve a Rubik's cube in under 30 seconds"
     },
     {
       "name": "Jasmeh Virk",
-      "about": "Dry Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 2)",
+      "role": "Member",
+      "about": "Integrated Biomedical Engineering and Health Sciences (Year 2)",
       "link": "https://www.linkedin.com/in/jasmeh-virk-01b90735a/",
       "cover": "/Photos/Jasmeh.JPG",
       "funFact": "I have an EpiPen for grass..."
@@ -159,77 +180,88 @@
   "hp": [
     {
       "name": "Anh Bui",
-      "about": "Human Practices Co-Lead | Arts & Science (Year 3)",
+      "role": "Co-Lead",
+      "about": "Arts & Science (Year 3)",
       "link": "https://www.linkedin.com/in/anhbui05/",
       "cover": "",
       "funFact": "I have 6 concerts lined up for 2026!"
     },
     {
       "name": "Adelina Zhao",
-      "about": "Human Practices Co-Lead | Honours Life Sciences (Year 2)",
+      "role": "Co-Lead",
+      "about": "Honours Life Sciences (Year 2)",
       "link": "https://www.linkedin.com/in/adelina-zhao-9b40a72b4/",
       "cover": "/Photos/Adelina.jpg",
       "funFact": "I can do a mediocore cartwheel"
     },
     {
       "name": "Hassan Hassan",
-      "about": "Human Practices Sci-Comm | Biology & Pharmacology Co-op (Year 3)",
+      "role": "Sci-Comm Member",
+      "about": "Biology & Pharmacology Co-op (Year 3)",
       "link": "",
       "cover": "",
-      "funFact": "I'm on an a capella team!"
+      "funFact": "I'm on an acapella team!"
     },
     {
       "name": "Avleen Dhaliwal",
-      "about": "Human Practices Sci-Comm | Health Sciences (Year 3)",
+      "role": "Sci-Comm Member",
+      "about": "Health Sciences (Year 3)",
       "link": "",
       "cover": "/Photos/Avleen.jpg",
       "funFact": "I eat a container of greek yogurt daily"
     },
     {
       "name": "Dilnoor Randhawa",
-      "about": "Human Practices Member | Honours Health Sciences (Year 2)",
+      "role": "Member",
+      "about": "Honours Health Sciences (Year 2)",
       "link": "",
       "cover": "/Photos/Dilnoor.JPG",
       "funFact": "I can say the alphabet backwards!"
     },
     {
       "name": "Shankave Sritharan",
-      "about": "Human Practices Member | Honour Biochemistry (Year 4)",
+      "role": "Member",
+      "about": "Honour Biochemistry (Year 4)",
       "link": "https://www.linkedin.com/in/sritharanshankave/",
       "cover": "/Photos/Shankave.jpg",
       "funFact": "I can play the ukulele!"
     },
     {
       "name": "Nikhitha Marulappa",
-      "about": "Human Practices Member | Honours Biology  (Year 2)",
+      "role": "Member",
+      "about": "Honours Biology (Year 2)",
       "link": "https://www.linkedin.com/in/nikhithamarulappa/",
       "cover": "/Photos/Nikhitha.JPG",
       "funFact": "I am unfortunately a devoted Leafs fan"
     },
     {
       "name": "Aarush Behal",
-      "about": "Human Practices Member | Life Sciences Gateway (Year 1)",
+      "role": "Member",
+      "about": "Life Sciences Gateway (Year 1)",
       "link": "",
       "cover": "/Photos/Aarush.JPG",
       "funFact": "I have a black belt in tae-kwon-do"
     },
     {
       "name": "Kishaani Thavaranjan",
-      "about": "Human Practices Member | Honours Biology - Physiology Research Specialization (Year 2)",
+      "role": "Member",
+      "about": "Honours Biology - Physiology Research Specialization (Year 2)",
       "link": "https://www.linkedin.com/in/kishaani-thavaranjan/",
       "cover": "/Photos/Kishaani.jpg",
       "funFact": "I can speak 3 languages."
     },
     {
       "name": "Shreya Subramanian",
-      "about": "Human Practices Outreach | Honours Molecular Biology and Genetics Research Specialization (Year 2)",
+      "role": "Outreach Member",
+      "about": "Honours Molecular Biology and Genetics Research Specialization (Year 2)",
       "link": "https://www.linkedin.com/in/shreya-subramanian06/",
       "cover": "/Photos/Shreya.JPG",
       "funFact": "I've gone camping in 0 degree weather!"
     },
     {
       "name": "Pooja Murali",
-      "about": "Human Practices Entrepreneurship Member | Integrated Biomedical Engineering and Health Sciences (Year 3)",
+      "role": "Entrepreneurship Member",
+      "about": "Integrated Biomedical Engineering and Health Sciences (Year 3)",
       "link": "https://www.linkedin.com/in/pooja-murali-b1415826b/",
       "cover": "",
       "funFact": "I love Karaoke."
@@ -238,49 +270,56 @@
   "media": [
     {
       "name": "Chinyere Iro",
-      "about": "Media Team Co-Lead | Honours Health Sciences (Year 2)",
+      "role": "Co-Lead",
+      "about": "Honours Health Sciences (Year 2)",
       "link": "https://www.linkedin.com/in/chinyere-iro-784834289/",
       "cover": "/Photos/Chi.JPG",
       "funFact": "I enjoy sewing!"
     },
     {
       "name": "Sophia Chau ",
-      "about": "Media Team Co-Lead | Honours Health Sciences (Year 2)",
+      "role": "Co-Lead",
+      "about": "Honours Health Sciences (Year 2)",
       "link": "",
       "cover": "/Photos/Sophia.JPG",
       "funFact": "I cant live without my eyeliner "
     },
     {
       "name": "Vee Le",
-      "about": "Media Team Member | Honours Biology (Year 2)",
+      "role": "Member",
+      "about": "Honours Biology (Year 2)",
       "link": "https://www.linkedin.com/in/vee-le-513363222/",
       "cover": "/Photos/Vee.JPG",
       "funFact": "I'm a very snacky person"
     },
     {
       "name": "Heidi Wang",
-      "about": "Social Media | Intergated Science (Year 2)",
+      "role": "Social Media Member",
+      "about": "Intergated Science (Year 2)",
       "link": "https://www.linkedin.com/in/heiidilao/",
       "cover": "",
       "funFact": "I can solve a rubiks cube"
     },
     {
       "name": "Chloe Jeng",
-      "about": "Social Media | Honours Life Sciences (Year 1)",
+      "role": "Social Media Member",
+      "about": "Honours Life Sciences (Year 1)",
       "link": "https://www.linkedin.com/in/chloe-jeng-597696284/",
       "cover": "/Photos/Chloe.jpeg",
       "funFact": "I've been to a One Direction concert !"
     },
     {
       "name": "Cici Liu",
-      "about": "Social Media | Honours Health Sciences (Year 1)",
+      "role": "Social Media Member",
+      "about": "Honours Health Sciences (Year 1)",
       "link": "",
       "cover": "/Photos/Cici.JPG",
       "funFact": "I have a pet rock"
     },
     {
       "name": "Veronica Grignano",
-      "about": "Social Media | Honours Health Sciences (Year 3)",
+      "role": "Social Media Member",
+      "about": "Honours Health Sciences (Year 3)",
       "link": "https://www.linkedin.com/in/veronica-grignano-211659239/",
       "cover": "/Photos/Veronica.jpg",
       "funFact": "I'm a member of a competitive a cappella team!"
@@ -289,35 +328,40 @@
   "finance": [
     {
       "name": "Pasquale Del Balso",
-      "about": "Finance and Sponsorships Lead | Honours Bachelor of Health Sciences, Biomedical Discovery and Commercialization (Year 3)",
+      "role": "Lead",
+      "about": "Honours Bachelor of Health Sciences, Biomedical Discovery and Commercialization (Year 3)",
       "link": "https://www.linkedin.com/in/pasquale-del-balso-02642a301/",
       "cover": "/Photos/Pasquale.jpg",
       "funFact": "I am learning Russian!"
     },
     {
       "name": "Sandra Lee",
-      "about": "Finance and Sponsorships Member | Integrated Biomedical Engineering and Health Sciences, Chemical Engineering (Year 3)",
+      "role": "Member",
+      "about": "Integrated Biomedical Engineering and Health Sciences, Chemical Engineering (Year 3)",
       "link": "https://www.linkedin.com/in/sandralee05/",
       "cover": "/Photos/Sandra.JPG",
       "funFact": "Cows are my favourite animal!"
     },
     {
       "name": "Shannon Man",
-      "about": "Finance and Sponsorships Member | Health Sciences (Year 2)",
+      "role": "Member",
+      "about": "Health Sciences (Year 2)",
       "link": "https://www.linkedin.com/in/shannon-man/",
       "cover": "/Photos/Shannon.JPG",
       "funFact": "I love making jewelry"
     },
     {
       "name": "Renee He",
-      "about": "Finance and Sponsorships Member | Biochemistry (Year 2)",
+      "role": "Member",
+      "about": "Biochemistry (Year 2)",
       "link": "https://www.linkedin.com/in/renee-he-b20280259/",
       "cover": "/Photos/Renee.JPG",
       "funFact": "I eat froyo for the peanuts"
     },
     {
       "name": "Melanie Seymour",
-      "about": "Finance and Sponsorships Member | Honours Life Sciences, Origins of Disease Specialization (Year 2)",
+      "role": "Member",
+      "about": "Honours Life Sciences, Origins of Disease Specialization (Year 2)",
       "link": "https://www.linkedin.com/in/melanie-seymour-b46776220/",
       "cover": "/Photos/Melanie.JPG",
       "funFact": "I have a pet guinea pig named Charlie!"
@@ -326,28 +370,32 @@
   "webDev": [
     {
       "name": "Atul Rao",
-      "about": "Web Dev Lead | Software Engineering (Year 3)",
+      "role": "Lead",
+      "about": "Software Engineering (Year 3)",
       "link": "https://www.linkedin.com/in/atul5rao/",
       "cover": "/Photos/Atul.JPG",
       "funFact": "I still like maps"
     },
     {
       "name": "Kurlan Beeharry",
-      "about": "Web Dev Member | Software Engineering (Year 3)",
+      "role": "Member",
+      "about": "Software Engineering (Year 3)",
       "link": "https://www.linkedin.com/in/kurlan-beeharry/",
       "cover": "/Photos/Kurlan.jpg",
       "funFact": "I come from Dodo bird land."
     },
     {
       "name": "Tyler Fong",
-      "about": "Web Dev Member | Electrical and Biomedical Engineering (Year 3)",
+      "role": "Member",
+      "about": "Electrical and Biomedical Engineering (Year 3)",
       "link": "https://www.linkedin.com/in/tylerfong07/",
       "cover": "/Photos/Tyler.JPG",
       "funFact": "I know how to juggle"
     },
     {
       "name": "Emma Liu",
-      "about": "Web Dev Member | Honours Health Sciences Program (Year 1)",
+      "role": "Member",
+      "about": "Honours Health Sciences Program (Year 1)",
       "link": "https://www.linkedin.com/in/emma-liu-a8ba13281/",
       "cover": "/Photos/Emma.jpg",
       "funFact": "My favourite lazy dessert to make is mango coconut sticky rice with ice cream!"

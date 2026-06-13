@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import PageHeader from "../components/PageHeader";
-import StatStrip from "../components/StatStrip";
 import SectionHeading from "../components/SectionHeading";
 import Reveal from "../components/Reveal";
 import ButtonLink from "../components/ButtonLink";
@@ -22,8 +21,6 @@ export default function AboutUs() {
         lede={missionIntro}
         aside={<DnaShowcase className="lg:-my-4" />}
       />
-      <StatStrip />
-
       <section className="mx-auto max-w-7xl px-6 py-24">
         <SectionHeading eyebrow="Our mission" title="Novel biology, real-world impact" />
         <Reveal delay={0.1} className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-soft">

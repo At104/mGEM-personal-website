@@ -50,7 +50,8 @@ function MemberProfilePanel({
   }, [open, node]);
 
   if (!node) return null;
-  const { member, color, text, groupEyebrow, groupLabel } = node;
+  const { member, color, text, groupLabel } = node;
+  const role = member.role ?? "";
 
   const body = (
     <article
@@ -76,21 +77,21 @@ function MemberProfilePanel({
         )}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest/90 to-transparent p-5 pt-16">
           <span className={cn("inline-block rounded-full px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white", node.bar)}>
-            {groupEyebrow}
+            {groupLabel}
           </span>
-          <p className="mt-1 text-xs text-white/70">{groupLabel}</p>
+          {role && <p className="mt-1 text-sm font-semibold text-white">{role}</p>}
         </div>
       </div>
 
       <div className="p-5 sm:p-6">
-        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink-mute">
-          Node on the strand · {groupLabel}
-        </p>
-        <div className="mt-3 flex items-start justify-between gap-3">
+        <div className="flex items-start justify-between gap-3">
           <h3 className="font-display text-2xl font-bold leading-tight sm:text-3xl">{member.name}</h3>
           {member.link && <LinkedInIcon className="mt-1 shrink-0 text-ink-mute" />}
         </div>
-        <p className="mt-3 text-base leading-relaxed text-ink-soft">{member.about}</p>
+
+        {member.about && (
+          <p className="mt-3 text-base leading-relaxed text-ink-soft">{member.about}</p>
+        )}
         {member.funFact && (
           <p className={cn("mt-4 rounded-2xl bg-paper px-4 py-3 text-sm italic leading-relaxed", text)}>
             {member.funFact}

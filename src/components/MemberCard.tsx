@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 export type Member = {
   name: string;
+  role: string;
   about: string;
   link: string;
   cover: string;

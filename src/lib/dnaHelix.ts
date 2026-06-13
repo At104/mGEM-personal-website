@@ -120,27 +120,33 @@ export function addMemberMarkers(
 export function addHelixBackbone(
   group: THREE.Group,
   nodes: HelixNode[],
-  opacity = 0.12
+  opacity = 0.12,
+  // Optional palette — when supplied, backbone spheres cycle through these colours
+  // instead of plain white. Each strand gets its own offset so the two strands differ.
+  palette?: readonly string[]
 ) {
   addHelixRungs(group, nodes, opacity);
   const geo = new THREE.SphereGeometry(0.055, 10, 10);
-  for (const node of nodes) {
-    for (const [x, y, z] of [
-      [node.x1, node.y, node.z1],
-      [node.x2, node.y, node.z2],
-    ] as [number, number, number][]) {
+  nodes.forEach((node, ni) => {
+    ([
+      [node.x1, node.y, node.z1, 0],
+      [node.x2, node.y, node.z2, 1],
+    ] as [number, number, number, number][]).forEach(([x, y, z, si]) => {
+      const c = palette
+        ? palette[(ni + si * 2) % palette.length]
+        : "#ffffff";
       const mat = new THREE.MeshStandardMaterial({
-        color: "#ffffff",
-        emissive: "#ffffff",
-        emissiveIntensity: 0.08,
+        color: c,
+        emissive: new THREE.Color(c),
+        emissiveIntensity: palette ? 0.25 : 0.08,
         transparent: true,
-        opacity: 0.35,
+        opacity: palette ? 0.55 : 0.35,
       });
       const mesh = new THREE.Mesh(geo, mat);
       mesh.position.set(x, y, z);
       group.add(mesh);
-    }
-  }
+    });
+  });
 }
 
 export function helixYAtProgress(nodes: HelixNode[], progress: number): number {

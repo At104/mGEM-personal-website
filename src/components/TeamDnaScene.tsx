@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import {
+  DNA_PALETTE,
   addHelixBackbone,
   addMemberMarkers,
   buildHelixNodes,
@@ -75,9 +76,12 @@ export default function TeamDnaScene({
       height: Math.max(14, count * 0.32),
       colorAt: (i) => colors[i] ?? "#7A003C",
     });
+    // Flip Y so node 0 is at the top of the scene and later nodes are below.
+    // This makes "scroll down → later members come from below" feel natural.
+    helixNodes.forEach((n) => { n.y = -n.y; });
     helixRef.current = helixNodes;
 
-    addHelixBackbone(group, helixNodes, 0.15);
+    addHelixBackbone(group, helixNodes, 0.15, DNA_PALETTE);
     markersRef.current = addMemberMarkers(group, helixNodes, colors, 0.13);
 
     let raf = 0;
