@@ -7,10 +7,12 @@ export default function PageHeader({
   eyebrow,
   title,
   lede,
+  aside,
 }: {
   eyebrow: string;
   title: string;
   lede?: string;
+  aside?: React.ReactNode;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -21,7 +23,8 @@ export default function PageHeader({
         .timeline({ defaults: { ease: "power3.out" } })
         .from(".ph-eyebrow", { autoAlpha: 0, y: 16, duration: 0.5 })
         .from(".ph-title", { yPercent: 110, duration: 0.9 }, "-=0.2")
-        .from(".ph-lede", { autoAlpha: 0, y: 20, duration: 0.6 }, "-=0.45");
+        .from(".ph-lede", { autoAlpha: 0, y: 20, duration: 0.6 }, "-=0.45")
+        .from(".ph-aside", { autoAlpha: 0, x: 32, duration: 0.8 }, "-=0.5");
     },
     { scope: ref }
   );
@@ -36,19 +39,30 @@ export default function PageHeader({
       <div className="glow right-0 top-10 h-64 w-64 bg-cyan/15" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <p className="ph-eyebrow font-mono text-xs font-semibold uppercase tracking-[0.3em] text-leaf-deep">
-          {eyebrow}
-        </p>
-        <div className="overflow-hidden">
-          <h1 className="ph-title mt-4 max-w-4xl font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-            {title}
-          </h1>
+        <div
+          className={
+            aside
+              ? "grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,22rem)] lg:gap-12 xl:grid-cols-[1fr_minmax(0,26rem)]"
+              : undefined
+          }
+        >
+          <div>
+            <p className="ph-eyebrow font-mono text-xs font-semibold uppercase tracking-[0.3em] text-leaf-deep">
+              {eyebrow}
+            </p>
+            <div className="overflow-hidden">
+              <h1 className="ph-title mt-4 max-w-4xl font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:max-w-none lg:text-6xl">
+                {title}
+              </h1>
+            </div>
+            {lede && (
+              <p className="ph-lede mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft lg:max-w-none">
+                {lede}
+              </p>
+            )}
+          </div>
+          {aside && <div className="ph-aside mx-auto w-full max-w-sm lg:max-w-none">{aside}</div>}
         </div>
-        {lede && (
-          <p className="ph-lede mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            {lede}
-          </p>
-        )}
       </div>
     </header>
   );

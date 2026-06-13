@@ -1,16 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { HiArrowRight } from "react-icons/hi";
 import Hero from "./components/Hero";
 import StatStrip from "./components/StatStrip";
 import CentralDogma from "./components/CentralDogma";
 import SectionHeading from "./components/SectionHeading";
 import Reveal from "./components/Reveal";
-import ButtonLink from "./components/ButtonLink";
-import VideoPlayer from "./components/VideoPlayer";
 import MailingListForm from "./components/MailingListForm";
-import { igemIntro, subteams, showcasePhotos } from "@/lib/content";
+import { subteams, showcasePhotos } from "@/lib/content";
 
 export default function Page() {
   return (
@@ -18,23 +15,6 @@ export default function Page() {
       <Hero />
       <StatStrip />
       <CentralDogma />
-
-      {/* iGEM intro — video left, copy right (new layout) */}
-      <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal from="left">
-            <VideoPlayer src="/Videos/what_is_igemf.mp4" />
-          </Reveal>
-          <div>
-            <SectionHeading eyebrow="The competition" title="What is iGEM?" description={igemIntro} />
-            <Reveal delay={0.1}>
-              <ButtonLink href="/about-us" variant="outline" className="mt-8">
-                About mGEM <HiArrowRight aria-hidden />
-              </ButtonLink>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* Subteams — horizontal cards with color bars */}
       <section className="border-y border-ink/8 bg-paper-warm py-24 sm:py-28">
@@ -67,7 +47,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Photo bento — completely new grid */}
+      {/* Photo bento */}
       <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
         <SectionHeading eyebrow="Life at mGEM" title="From lab to Jamboree" align="center" />
         <div className="mt-14 grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[220px] md:grid-cols-4">

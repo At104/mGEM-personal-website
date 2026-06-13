@@ -48,6 +48,7 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
         sans: ["var(--font-sans)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       keyframes: {

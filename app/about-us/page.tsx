@@ -6,6 +6,7 @@ import StatStrip from "../components/StatStrip";
 import SectionHeading from "../components/SectionHeading";
 import Reveal from "../components/Reveal";
 import ButtonLink from "../components/ButtonLink";
+import DnaShowcase from "../components/DnaShowcase";
 import { missionIntro, igemIntro, subteams } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,7 @@ export default function AboutUs() {
         eyebrow="About mGEM"
         title="Student-led synthetic biology at McMaster"
         lede={missionIntro}
+        aside={<DnaShowcase className="lg:-my-4" />}
       />
       <StatStrip />
 

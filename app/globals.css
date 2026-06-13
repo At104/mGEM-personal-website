@@ -113,6 +113,26 @@
   .section-divider-dark {
     @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
   }
+
+  /* Old-site mGEM wordmark — continuous stroke via text-stroke + fill */
+  .stroke {
+    color: #f4f2ea;
+    -webkit-text-stroke: 0.035em #7a003c;
+    paint-order: stroke fill;
+  }
+
+  .reverse-italic {
+    font-style: italic;
+    transform: scaleX(-1);
+  }
+
+  .hero-mgem-wordmark {
+    line-height: 0.82;
+  }
+
+  .hero-mgem-wordmark > div + div {
+    margin-top: -0.06em;
+  }
 }
 
 .team-row.is-active .team-card {
