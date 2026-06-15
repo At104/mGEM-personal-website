@@ -11,7 +11,7 @@
 
 # vite
 /dist/
-
+.next/
 # misc
 .DS_Store
 *.pem
