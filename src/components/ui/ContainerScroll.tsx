@@ -32,7 +32,7 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
 
       const mm = gsap.matchMedia();
 
-      const setupScroll = (initialScale: number) => {
+      const setupScroll = (initialScale: number, finalScale: number) => {
         gsap.set(card, {
           rotationX: 40,
           scale: initialScale,
@@ -53,11 +53,11 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
           })
           .to(title, { y: -100, autoAlpha: 0, ease: "none", duration: 1 }, 0)
           .to(card, { rotationX: 0, ease: "none", duration: 1 }, 0)
-          .to(card, { scale: 1, ease: "none", duration: 1 }, 0);
+          .to(card, { scale: finalScale, ease: "none", duration: 1 }, 0);
       };
 
-      mm.add("(min-width: 769px)", () => setupScroll(1.05));
-      mm.add("(max-width: 768px)", () => setupScroll(0.9));
+      mm.add("(min-width: 769px)", () => setupScroll(0.88, 1.03));
+      mm.add("(max-width: 768px)", () => setupScroll(0.84, 1));
 
       return () => mm.revert();
     },
