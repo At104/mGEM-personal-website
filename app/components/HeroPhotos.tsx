@@ -10,32 +10,29 @@ export default function Storybook() {
   );
 }
 
-
-
-
 const cards = [
   {
     id: 1,
     className: "md:col-span-2",
-    thumbnail:
-    "/WetLab_TeamPhoto.jpg",
+    thumbnail: "/WetLab_TeamPhoto.jpg",
+    accent: "from-mgem-indigo to-mgem-red",
   },
   {
     id: 2,
     className: "col-span-1",
-    thumbnail:
-    "/Westdale_Workshop.jpg",
+    thumbnail: "/Westdale_Workshop.jpg",
+    accent: "from-mgem-orange to-mgem-gold",
   },
   {
     id: 3,
     className: "col-span-1",
-    thumbnail:
-    "/HP_Workshop.jpg",
+    thumbnail: "/HP_Workshop.jpg",
+    accent: "from-mgem-maroon to-mgem-red-orange",
   },
   {
     id: 4,
     className: "md:col-span-2",
-    thumbnail:
-    "/JamboreePhoto.png",
+    thumbnail: "/JamboreePhoto.png",
+    accent: "from-mgem-gold to-mgem-peach",
   },
 ];

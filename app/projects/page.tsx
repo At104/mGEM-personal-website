@@ -55,8 +55,8 @@ const Projects = () => {
     ];
 
     return (
-        <div className="max-w-7xl py-10 mx-auto max-h-full px-5">
-            <div className="text-4xl font-bold text-left mt-32">PROJECTS</div>
+        <div className="site-page max-w-7xl py-10 mx-auto max-h-full px-5">
+            <div className="site-page-hero text-left mt-32">PROJECTS</div>
             <div>
                 <Title text="Current Project" className="mb-5" />
                 <hr />
@@ -91,7 +91,7 @@ const Projects = () => {
                 </PinContainer>
                 <Title text="HP Initiatives & StoryBook" className="mb-5" />
                 <hr />
-                <p className="text-xl mt-3">Coming Soon</p>
+                <p className="text-xl mt-3 text-white font-medium site-page-body">Coming Soon</p>
                 <Title text="Past Projects" className="mb-5" />
                 <hr />
                 <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-5 gap-5">

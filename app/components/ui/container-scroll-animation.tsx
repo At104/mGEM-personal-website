@@ -5,7 +5,7 @@ export const ContainerScroll = ({
   titleComponent,
   children,
 }: {
-  titleComponent: string | React.ReactNode;
+  titleComponent?: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<any>(null);
@@ -47,8 +47,10 @@ export const ContainerScroll = ({
           perspective: "1000px",
         }}
       >
-        <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        {titleComponent ? (
+          <Header translate={translate} titleComponent={titleComponent} />
+        ) : null}
+        <Card rotate={rotate} translate={translate} scale={scale} hasTitle={!!titleComponent}>
           {children}
         </Card>
       </div>
@@ -73,11 +75,13 @@ export const Card = ({
   rotate,
   scale,
   children,
+  hasTitle = true,
 }: {
   rotate: MotionValue<number>;
   scale: MotionValue<number>;
   translate: MotionValue<number>;
   children: React.ReactNode;
+  hasTitle?: boolean;
 }) => {
   return (
     <motion.div
@@ -85,9 +89,9 @@ export const Card = ({
         rotateX: rotate,
         scale,
       }}
-      className="max-w-5xl -mt-12 mx-auto sm:h-[20rem] md:h-[28rem] lg:h-[38.5rem] w-full border-4  p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className={`max-w-5xl mx-auto sm:h-[20rem] md:h-[28rem] lg:h-[38.5rem] w-full p-[3px] home-glow-card rounded-[30px] shadow-[0_0_60px_rgba(78,87,164,0.35)] ${hasTitle ? "-mt-12" : "mt-0"}`}
     >
-      <div className=" h-full w-full  overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
+      <div className="h-full w-full overflow-hidden rounded-[27px] bg-mgem-navy md:rounded-[27px] md:p-4">
         {children}
       </div>
     </motion.div>

@@ -8,6 +8,7 @@ type Card = {
   id: number;
   className: string;
   thumbnail: string;
+  accent?: string;
 };
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
@@ -16,10 +17,18 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
-            className={cn("relative overflow-hidden bg-white rounded-xl h-full w-full")}
+            className={cn(
+              "group relative overflow-hidden rounded-xl h-full w-full p-[2px]",
+              card.accent ? `bg-gradient-to-br ${card.accent}` : "bg-mgem-indigo/50"
+            )}
             layout
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
           >
-            <BlurImage card={card} />
+            <div className="relative overflow-hidden rounded-[10px] bg-mgem-navy h-full w-full">
+              <BlurImage card={card} />
+              <div className="absolute inset-0 bg-gradient-to-t from-mgem-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
           </motion.div>
         </div>
       ))}

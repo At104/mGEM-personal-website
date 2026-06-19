@@ -38,7 +38,7 @@ const Members = () => {
             name: "Morgan Puusaari",
             about: "Co-President | Life Sciences (Year 3)",
             link: "",
-            cover: "/Photos/2026/Morgan Puusaari Preferred.jpg",
+            cover: "/Photos/2026/Morgan Puusaari Preferred.JPG",
             funFact: "Once I tripped on a banana peel"
         }
     ];
@@ -69,7 +69,7 @@ const Members = () => {
             name: "Lucie Huang",
             about: "Wet Lab Member | Life Sciences Gateway Program (Year 1)",
             link: "",
-            cover: "/Photos/2026/Lucie Huang Preferred.jpg",
+            cover: "/Photos/2026/Lucie Huang Preferred.JPG",
             funFact: "I do archery"
         },
         {
@@ -83,62 +83,61 @@ const Members = () => {
             name: "Thenuja Vipulananthan",
             about: "Wet Lab Member | Honours Biochemistry (Year 2)",
             link: "",
-            cover: "/Photos/2026/Thenuja.jpg",
+            cover: "/Photos/2026/Thenuja.JPG",
             funFact: "I love watching sunsets/sunrises!"
         }
     ];
 
     const drylab = [
         {
-            name: "Morgan Puusaari",
-            about: "Dry Lab Co-Lead | Life Sciences (Year 2)",
-            link: "www.linkedin.com/in/morgan-puusaari",
-            cover: "/Photos/Morgan 1.jpg",
-            funFact: "I like to laugh"
-        },
-        {
-            name: "Navid Farkhondehpay",
-            about: "Dry Lab Co-Lead | Honours Health Sciences (Year 2)",
+            name: "Agnes Kung",
+            about: "Dry Lab Co-Lead | Biomedical and Mechanical Engineering (Year 2)",
             link: "",
-            cover: "/Photos/Navid.jpg",
-            funFact: "I grew a pineapple"
-        },
-        {
-            name: "Nilay Goyal",
-            about: "Dry Lab Member | Software Engineering (Year 2)",
-            link: "https://www.linkedin.com/in/nilay-goyal/",
-            cover: "/Photos/nilay_igem.jpg",
-            funFact: "I don't know biology"
+            cover: "/Photos/2026/Agnes.JPG",
+            funFact: "I am a fourth degree black belt in taekwondo"
         },
         {
             name: "Andrew Lian",
-            about: "Dry Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 1)",
-            link: "www.linkedin.com/in/andrew-lian",
-            cover: "/Photos/Andrew 1.png",
-            funFact: "I've hitch hiked and lived to tell the tale"
+            about: "Dry Lab Co-Lead | Software and Biomedical Engineering (Year 2)",
+            link: "",
+            cover: "",
+            funFact: "I have perfect pitch!"
         },
         {
-            name: "Agnes Kung",
-            about: "Dry Lab Member | Integrated Biomedical Engineering and Health Sciences (Year 1)",
-            link: "www.linkedin.com/in/agnes-kung",
-            cover: "/Photos/Agnes Preferred.jpeg",
-            funFact: "I can't do a cartwheel"
+            name: "Nilay Goyal",
+            about: "Dry Lab Member | Software Engineering (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Nilay.JPG",
+            funFact: "I do not know biology"
+        },
+        {
+            name: "Jasmeh Virk",
+            about: "Dry Lab Member | iBioMed HESE (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Jasmeh.jpg",
+            funFact: "I have an EpiPen for grass..."
+        },
+        {
+            name: "Pedram Tizghadam",
+            about: "Dry Lab Member | Honours Biochemistry (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Pedram.png",
+            funFact: "I really like chicken nuggets"
         },
         {
             name: "Cynthia Duan",
-            about: "Dry Lab Member | Health Sciences (Year 2)",
+            about: "Dry Lab Member | Honours Health Sciences Program (Year 3)",
             link: "",
-            cover: "/Photos/Cynthia.jpg",
-            funFact: "I used to figure skate"
+            cover: "/Photos/2026/Cynthia.png",
+            funFact: "I figure skate in my free time!"
         },
         {
-            name: "Marco Tan",
-            about: "Dry Lab Member | Mechatronics and Biomedical Engineering (Year 3)",
-            link: "https://www.linkedin.com/in/marcotan04",
-            cover: "/Photos/Marco Tan.jpg",
-            funFact: "I'm under your floorboards"
+            name: "Kathrine Mondshain",
+            about: "Dry Lab Member | Honours Integrated Science Program, Biology Concentration (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Kathrine.png",
+            funFact: "I have a grandpa named Electron"
         }
-        
     ];
 
     const hp = [
@@ -172,104 +171,69 @@ const Members = () => {
         },
         {
             name: "Avleen Dhaliwal",
-            about: "Human Practices Sci-Comm | Honours Health Sciences (Year 3)",
+            about: "Human Practices Sci-Comm Member | Honours Health Sciences (Year 3)",
             link: "",
             cover: "/Photos/2026/Avleen temp.jpg",
             funFact: "I eat a container of greek yogurt daily"
-        },
-        {
-            name: "Kieran Wilson",
-            about: "Human Practices Entrepreneurship | Heath Sciences (Year 1)",
-            link: "",
-            cover: "/Photos/Kieran.jpg",
-            funFact: "I love basketball!"
-        },
-        {
-            name: "Michelle Giang",
-            about: "Human Practices Outreach | Honours Biochemistry (Year 3)",
-            link: "https://www.linkedin.com/in/giangmichelle/",
-            cover: "/Photos/Michelle Giang preferred.jpg",
-            funFact: "I can't live without music and play alto saxophone, piano and guitar!"
         }
     ];
 
     const outreach = [
         {
-            name: "Ashley Qian",
-            about: "Outreach and Collaborations Lead | Health Sciences (Year 2)",
-            link: "https://www.linkedin.com/in/ashley-qian-624043217/",
-            cover: "/Photos/Ashley.JPG",
-            funFact: "I can do magic"
-        },
-        {
-            name: "Ajeen Kunalan",
-            about: "Outreach and Collaborations Member | Medical and Biological Physics (Year 2)",
-            link: "www.linkedin.com/in/ajeen-kunalan",
-            cover: "/Photos/Ajeen 1.jpg",
-            funFact: "I like running"
-        },
-        {
-            name: "Chloe Van Belle",
-            about: "Outreach and Collaborations Member | Molecular Biology & Genetics (Year 3)",
-            link: "https://www.linkedin.com/in/chloe-van-belle-22160a250/",
-            cover: "/Photos/Chloe.jpg",
-            funFact: "I love Lone Star fajitas"
-        },
-        {
-            name: "Giovanni Basso",
-            about: "Outreach and Collaborations Member | Honours Biochemistry (Year 2)",
-            link: "https://ca.linkedin.com/in/giovanni-basso-680845281",
-            cover: "/Photos/Giovanni 2.jpg",
-            funFact: "I have seen two total solar eclipses."
-        },
-        {
             name: "Shreya Subramanian",
-            about: "Outreach and Collaborations Member | Life Sciences (year 1)",
-            link: "www.linkedin.com/in/shreya-subramanian-6b10292aa",
-            cover: "/Photos/Shreya Subramanian.jpg",
-            funFact: "I like Pokemon!"
+            about: "Human Practices Outreach Co-Lead | Honours Molecular Biology and Genetics Research Specialization (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Shreya Subramanian Preferred.JPG",
+            funFact: "I've gone camping in 0 degree weather!"
         },
         {
-            name: "Kathy He",
-            about: "Outreach and Collaborations Member | Honours Biochemistry (Year 2)",
+            name: "Aarush Behal",
+            about: "Human Practices Member | Life Sciences Gateway (Year 1)",
             link: "",
-            cover: "/Photos/Kathy prefered.jpg",
-            funFact: "I love grass jelly :)"
+            cover: "/Photos/2026/Aarush.png",
+            funFact: "I have a black belt in tae-kwon-do"
+        },
+        {
+            name: "Nikhitha Marulappa",
+            about: "Human Practices Member | Honours Biology (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Nikhitha.JPG",
+            funFact: "I am unfortunately a devoted Leafs fan"
         }
     ];
 
     const media = [
         {
-            name: "Chinyere Iro",
-            about: "Media Team Lead | Honours Health Sciences Program, Core (Year 2)",
-            link: "https://www.linkedin.com/in/chinyere-iro-784834289/",
-            cover: "/Photos/2026/Chichi Preferred.jpg",
-            funFact: "I enjoy dressmaking"
-        },
-        {
             name: "Sophia Chau",
             about: "Media Lead | Honours Health Sciences Program, Core (Year 2)",
             link: "",
-            cover: "/Photos/2026/Sophia Chau.jpg",
+            cover: "/Photos/2026/Sophia Chau.JPG",
             funFact: "I like my water hot "
         },
         {
+            name: "Chinyere Iro",
+            about: "Media Lead | Honours Health Sciences Program, Core (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Chichi preferred.JPG",
+            funFact: "I enjoy dressmaking"
+        },
+        {
             name: "Veronica Grignano",
-            about: "Media Team Member | Honours Health Sciences Program (Year 3)",
-            link: "www.linkedin.com/in/fiona-encarnacion",
-            cover: "/Photos/2026/veronica.jpg",
+            about: "Media Member | Honours Health Sciences Program (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Veronica.JPG",
             funFact: "I'm a member of a competitive a cappella team!"
         },
         {
             name: "Cici Liu",
-            about: "Media Team Member | Honours Health Sciences Program (Year 1)",
+            about: "Media Member | Honours Health Sciences Program (Year 1)",
             link: "",
-            cover: "/Photos/2026/Cici Liu.jpg",
+            cover: "/Photos/2026/Cici Liu.JPG",
             funFact: "I have a pet rock"
         },
         {
             name: "Chloe Jeng",
-            about: "Media Team Member | Honours Life Sciences (Year 1)",
+            about: "Media Member | Honours Life Sciences (Year 1)",
             link: "",
             cover: "/Photos/2026/Chloe Jeng.jpeg",
             funFact: "I've been to a One Direction concert !"
@@ -283,38 +247,43 @@ const Members = () => {
         },
         {
             name: "Vee Le",
-            about: "Media Team Member | Honours Biology Core (Year 2)",
+            about: "Media Member | Honours Biology Core (Year 2)",
             link: "",
-            cover: "/Photos/2026/Vee Le.jpg",
-            funFact: "I’m a very snacky person"
+            cover: "/Photos/2026/Vee Le.JPG",
+            funFact: "I'm a very snacky person"
         },
-        
     ];
 
     const finance = [
         {
-            name: "Jose Daniel Feijoo Velasco",
-            about: "Finance Lead | Honours Bachelor of Commerce (Year 3)",
-            link: "http://linkedin.com/in/jose-daniel-feijoo-velasco",
-            cover: "/Photos/Jose Daniel Feijoo.JPEG",
-            funFact: "Racket sports enthusiast"
+            name: "Pasquale Del Balso",
+            about: "Finance & Sponsorships Lead | Honours Bachelor of Health Sciences, Biomedical Discovery and Commercialization Program (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Pasquale.JPG",
+            funFact: "If I were stranded on an island and could only have one food for the rest of my life, it would be pizza."
         },
         {
-            name: "Myra Godara",
-            about: "Finance Lead | Honours Biochemistry (Year 3)",
-            link: "https://www.linkedin.com/in/myragodara/",
-            cover: "/Photos/Myra 1.JPG",
-            funFact: "I have a puppy named Mylo!"
-        }
+            name: "Renee He",
+            about: "Finance and Sponsorships Member | Biochemistry (Year 2)",
+            link: "",
+            cover: "/Photos/2026/Renee.JPG",
+            funFact: "I eat froyo for the peanuts"
+        },
+        {
+            name: "Sandra Lee",
+            about: "Finance and Sponsorships Member | Integrated Biomedical Engineering and Health Sciences (iBioMed), Chemical Engineering (Year 3)",
+            link: "",
+            cover: "/Photos/2026/Sandra.JPG",
+            funFact: "Cows are my favourite animal!"
+        },
     ];
 
     const webDev = [
-
         {
             name: "Atul Rao",
             about: "Web Development Lead | Software Engineering (Year 3)",
-            link: "https://www.linkedin.com/in/atul5rao/",
-            cover: "/Photos/2026/Atul Rao.JPG",
+            link: "",
+            cover: "/Photos/2026/Atul Rao.jpg",
             funFact: "I still like maps"
         },
         {
@@ -328,7 +297,7 @@ const Members = () => {
             name: "Kurlan Beeharry",
             about: "Web Development Member | Software Engineering Co-op (Year 3)",
             link: "",
-            cover: "/Photos/2026/Kurlan.JPG",
+            cover: "/Photos/2026/Kurlan.jpg",
             funFact: "I come from Dodo bird land."
         },
         {
@@ -358,9 +327,9 @@ const Members = () => {
                                 </div>
                             </SimpleHover>
                         ) : (
-                            <div className="space-y-5 p-4 border rounded-lg">
-                                <h1 className="text-2xl font-bold">{member.name}</h1>
-                                <p>{member.about}</p>
+                            <div className="space-y-5 p-4 border border-mgem-indigo/40 rounded-lg bg-mgem-indigo/10">
+                                <h1 className="text-2xl font-bold text-white">{member.name}</h1>
+                                <p className="text-white/90">{member.about}</p>
                                 {member.funFact && (
                                     <p className="text-sm italic text-white">Fun fact: {member.funFact}</p>
                                 )}
@@ -374,7 +343,7 @@ const Members = () => {
 
     return (
         <div className="py-20 sm:p-0 text-left px-4">
-            <div className="text-4xl font-bold mt-32">
+            <div className="site-page-hero mt-32">
                 TEAM
             </div>
             

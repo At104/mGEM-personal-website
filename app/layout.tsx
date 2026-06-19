@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={montserrat.className}>
+      <body className={`${montserrat.className} bg-mgem-navy`}>
         <Navbar/>
         {children}
         <Footer/>

@@ -8,12 +8,12 @@ interface LinkData {
 
 const WebMenu = ({ links }: { links: LinkData[] }) => {
     return (
-        <div className="hidden sm:flex md:flex text-zinc-400 gap-6 items-center shadow-md border border-zinc-300 rounded-full px-5 py-3">
+        <div className="hidden sm:flex md:flex text-mgem-peach gap-6 items-center border border-mgem-indigo/40 bg-mgem-navy/50 backdrop-blur-sm rounded-full px-5 py-3 shadow-[0_0_20px_rgba(78,87,164,0.15)]">
             {links.map(({ text, path }: LinkData, index: number) => (
                 <Link
                     key={index}
-                    href={path} // Use "href" instead of "to" for Next.js's Link
-                    className="hover:text-red-800 cursor-pointer"
+                    href={path}
+                    className="hover:text-mgem-gold transition-colors cursor-pointer text-sm font-medium"
                 >
                     {text}
                 </Link>

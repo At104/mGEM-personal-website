@@ -58,8 +58,16 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         maroon: '#7A003C',
-    
-
+        mgem: {
+          navy: '#23225C',
+          indigo: '#4E57A4',
+          maroon: '#A61D24',
+          red: '#C40000',
+          'red-orange': '#D1340B',
+          orange: '#F17523',
+          gold: '#FDB016',
+          peach: '#F2B599',
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -36,19 +36,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ links, close }) => {
 
     return (
         <div>
-            <div className="fixed inset-0 top-0 w-full h-screen backdrop-blur-sm bg-gray-500 bg-opacity-60 sm:hidden"></div>
+            <div className="fixed inset-0 top-0 w-full h-screen backdrop-blur-sm bg-mgem-navy/70 sm:hidden" onClick={close} />
             <div className="fixed inset-0 top-0 w-full p-5">
-                <div className={`w-full bg-white rounded-xl p-5 transition-all ${animation ? "scale-100" : "scale-95"}`}>
+                <div className={`w-full bg-mgem-navy border border-mgem-indigo/40 rounded-xl p-5 transition-all shadow-[0_0_30px_rgba(78,87,164,0.25)] ${animation ? "scale-100" : "scale-95"}`}>
                     <div className="flex justify-between items-center mb-5">
-                        <h1 className="text-xl font-bold font-italic">Navigation</h1>
-                        <IoCloseOutline className="w-7 h-7 hover:scale-110 transition-all cursor-pointer" onClick={close} />
+                        <h1 className="text-xl font-bold text-mgem-peach">Navigation</h1>
+                        <IoCloseOutline className="w-7 h-7 text-mgem-peach hover:text-mgem-gold hover:scale-110 transition-all cursor-pointer" onClick={close} />
                     </div>
-                    <div className="mt-5 divide-y">
+                    <div className="mt-5 divide-y divide-mgem-indigo/30">
                         {links.map(({ text, path }: LinkData, index: number) => (
                             <Link
                                 key={index}
                                 href={path}
-                                className="block py-2 text-zinc-500"
+                                className="block py-3 text-mgem-peach hover:text-mgem-gold transition-colors"
+                                onClick={close}
                             >
                                 {text}
                             </Link>
