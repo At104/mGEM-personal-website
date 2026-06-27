@@ -49,56 +49,98 @@ function ProteinShape({ className, opacity = 1 }: { className?: string; opacity?
         d="M60 12 C85 12, 98 35, 95 55 C92 78, 75 92, 60 92 C38 92, 22 72, 25 50 C28 28, 38 12, 60 12Z"
         fill="#7A003C"
         fillOpacity="0.25"
-        stroke="#7A003C"
+        stroke="#FF6B6B"
         strokeWidth="2"
       />
       {[[45, 35], [60, 28], [75, 38], [52, 55], [68, 58], [60, 72]].map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r="6" fill={["#7A003C", "#17B6C9", "#7B6EF6", "#F4B740", "#FF6B6B", "#7A003C"][i]} />
+        <circle
+          key={i}
+          cx={cx}
+          cy={cy}
+          r="6"
+          fill={["#98f898", "#17B6C9", "#7B6EF6", "#F4B740", "#FF6B6B", "#98f898"][i]}
+        />
       ))}
     </svg>
   );
 }
 
-function FlowArrow({ label, className }: { label: string; className?: string }) {
+function FlowArrowHead({ className }: { className?: string }) {
   return (
-    <div className={className}>
-      <div className="flex items-center gap-2">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/30 to-white/30" />
-        <svg width="20" height="12" viewBox="0 0 20 12" aria-hidden>
-          <path d="M0 6h14M10 1l5 5-5 5" stroke="white" strokeOpacity="0.5" strokeWidth="1.5" fill="none" />
-        </svg>
-      </div>
-      <p className="mt-1 text-center font-mono text-[9px] uppercase tracking-[0.25em] text-white/45">{label}</p>
+    <div className={`flex items-center justify-center ${className ?? ""}`}>
+      <div className="h-px w-3 bg-gradient-to-r from-transparent to-white/30 sm:w-4" />
+      <svg width="20" height="12" viewBox="0 0 20 12" className="shrink-0" aria-hidden>
+        <path d="M0 6h14M10 1l5 5-5 5" stroke="white" strokeOpacity="0.5" strokeWidth="1.5" fill="none" />
+      </svg>
+      <div className="h-px w-3 bg-gradient-to-l from-transparent to-white/30 sm:w-4" />
     </div>
+  );
+}
+
+function FlowArrowLabel({ label, className }: { label: string; className?: string }) {
+  return (
+    <p className={`mt-1 text-center font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-white/80 sm:text-xs ${className ?? ""}`}>
+      {label}
+    </p>
   );
 }
 
 /** What is iGEM copy + central dogma scroll visual (DNA → RNA → Protein). */
 export default function CentralDogma() {
   const root = useRef<HTMLElement>(null);
+  const dnaAnimation = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       if (prefersReducedMotion()) return;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: root.current,
-          start: "top top",
-          end: "+=2000",
-          scrub: 0.5,
-          pin: true,
-        },
+      const buildTimeline = (trigger: HTMLElement | null, start = "top top") => {
+        if (!trigger || !root.current) return;
+
+        gsap.set(".cd-vis-rna", { autoAlpha: 0.2, scale: 0.8 });
+        gsap.set(".cd-vis-protein", { autoAlpha: 0.2, scale: 0.8 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger,
+            start,
+            end: "+=2000",
+            scrub: 0.5,
+            pin: root.current,
+          },
+        });
+
+        tl.fromTo(".cd-flow-line", { scaleX: 0 }, { scaleX: 1, ease: "none" }, 0)
+          .to(".cd-vis-dna", { autoAlpha: 0.25, scale: 0.85 }, 0.28)
+          .to(".cd-vis-rna", { autoAlpha: 1, scale: 1, duration: 0.08, ease: "power2.out" }, 0.28)
+          .to(".cd-vis-protein", { autoAlpha: 0.2, scale: 0.8 }, 0.32)
+          .to(".cd-arrow-1, .cd-flow-transcription-label", { autoAlpha: 1 }, 0.34)
+          .to(".cd-vis-rna", { autoAlpha: 0.25, scale: 0.85, duration: 0.08, ease: "power2.in" }, 0.62)
+          .to(".cd-vis-protein", { autoAlpha: 1, scale: 1, duration: 0.08, ease: "power2.out" }, 0.66)
+          .to(".cd-arrow-2, .cd-flow-translation-label", { autoAlpha: 1 }, 0.68)
+          .to(".cd-vis-dna, .cd-vis-rna, .cd-vis-protein", { autoAlpha: 1, scale: 1, duration: 0.12, ease: "power2.out" }, 0.85);
+
+        return tl;
+      };
+
+      const scrollLockStart = () =>
+        getComputedStyle(root.current!).getPropertyValue("--cd-scroll-lock-start").trim() || "top top";
+
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1024px)", () => {
+        buildTimeline(root.current, scrollLockStart());
       });
 
-      tl.fromTo(".cd-flow-line", { scaleX: 0 }, { scaleX: 1, ease: "none" }, 0)
-        .to(".cd-vis-dna", { autoAlpha: 0.25, scale: 0.85 }, 0.28)
-        .to(".cd-vis-rna", { autoAlpha: 1, scale: 1 }, 0.32)
-        .to(".cd-vis-protein", { autoAlpha: 0.2, scale: 0.8 }, 0.32)
-        .to(".cd-arrow-1", { autoAlpha: 1 }, 0.34)
-        .to(".cd-vis-rna", { autoAlpha: 0.25, scale: 0.85 }, 0.62)
-        .to(".cd-vis-protein", { autoAlpha: 1, scale: 1 }, 0.66)
-        .to(".cd-arrow-2", { autoAlpha: 1 }, 0.68);
+      mm.add("(min-width: 640px) and (max-width: 1023px)", () => {
+        buildTimeline(dnaAnimation.current, scrollLockStart());
+      });
+
+      mm.add("(max-width: 639px)", () => {
+        buildTimeline(dnaAnimation.current, scrollLockStart());
+      });
+
+      return () => mm.revert();
     },
     { scope: root }
   );
@@ -106,7 +148,7 @@ export default function CentralDogma() {
   return (
     <section
       ref={root}
-      className="relative flex min-h-screen items-center overflow-hidden bg-maroon-deep text-white"
+      className="central-dogma-section relative flex min-h-screen items-center overflow-hidden bg-maroon-deep text-white"
       aria-label="What is iGEM and the central dogma of molecular biology"
     >
       <div className="bg-dots-dark absolute inset-0 opacity-40" />
@@ -115,18 +157,18 @@ export default function CentralDogma() {
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-6 py-12 lg:grid-cols-2 lg:gap-16">
         {/* What is iGEM — static copy */}
         <div className="max-w-xl">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.35em] text-maroon-light">
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.35em] text-coral">
             The competition
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl lg:text-5xl">What is iGEM?</h2>
-          <p className="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">{igemIntro}</p>
-          <p className="mt-4 text-sm leading-relaxed text-white/50">
+          <p className="mt-5 text-base leading-relaxed text-white/90 sm:text-lg">{igemIntro}</p>
+          <p className="mt-4 text-sm leading-relaxed text-white/90">
             Genetic information flows{" "}
             <span className="text-cyan">DNA</span>
             {" → "}
             <span className="text-amber">RNA</span>
             {" → "}
-            <span className="text-maroon-light">Protein</span>
+            <span className="text-coral">Protein</span>
             {" — scroll to see the central dogma in action."}
           </p>
           <ButtonLink href="/about-us" variant="ghost" className="mt-8 border-white/20">
@@ -134,34 +176,60 @@ export default function CentralDogma() {
           </ButtonLink>
         </div>
 
-        {/* Central dogma visual — scrubbed on scroll */}
+        {/* DNA animation — title, flow line, DNA/RNA/Protein, transcription/translation */}
         <div className="relative mx-auto w-full max-w-lg">
-          <p className="mb-6 text-center font-mono text-[10px] uppercase tracking-[0.35em] text-white/40 lg:text-left">
-            Central dogma
-          </p>
-          <div className="cd-flow-line absolute left-[12%] right-[12%] top-[calc(50%+12px)] h-0.5 origin-left -translate-y-1/2 scale-x-0 bg-gradient-to-r from-cyan via-amber to-maroon opacity-40" />
+          <div ref={dnaAnimation} className="dna-animation relative -translate-x-6 -translate-y-8 sm:-translate-x-10 sm:-translate-y-10">
+            <div className="cd-flow-line absolute left-[18%] right-[8%] top-[calc(50%+12px)] h-0.5 origin-left -translate-y-1/2 scale-x-0 bg-gradient-to-r from-cyan via-amber to-maroon opacity-40" />
 
-          <div className="relative grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2 sm:gap-4">
-            <div className="cd-vis-dna relative flex flex-col items-center">
-              <div className="absolute inset-0 rounded-3xl bg-cyan/10 blur-2xl" />
-              <MiniHelix className="relative h-36 w-20 sm:h-44 sm:w-24" />
-              <p className="relative mt-2 font-mono text-[10px] font-bold uppercase tracking-wider text-cyan">DNA</p>
-            </div>
+            <div className="relative grid grid-cols-[1fr_auto_1fr_auto_1fr] grid-rows-[auto_auto_auto] items-center gap-x-2 gap-y-0 sm:gap-x-4">
+              <p className="cd-flow-central-dogma col-start-3 col-end-4 row-start-1 mb-6 text-center font-mono text-xs font-bold uppercase tracking-[0.35em] text-white sm:text-sm">
+                Central dogma
+              </p>
 
-            <FlowArrow label="Transcription" className="cd-arrow-1 w-14 opacity-0 sm:w-20" />
+              <div className="cd-vis-dna relative col-start-1 row-start-2 flex flex-col items-center self-end">
+                <div className="absolute inset-0 rounded-3xl bg-cyan/10 blur-2xl" />
+                <div className="cd-flow-dna relative">
+                  <MiniHelix className="relative h-36 w-20 sm:h-44 sm:w-24" />
+                </div>
+              </div>
 
-            <div className="cd-vis-rna relative flex flex-col items-center opacity-20">
-              <div className="absolute inset-0 rounded-3xl bg-amber/10 blur-2xl" />
-              <RnaStrand className="relative h-16 w-24 sm:h-20 sm:w-28" />
-              <p className="relative mt-2 font-mono text-[10px] font-bold uppercase tracking-wider text-amber">RNA</p>
-            </div>
+              <div className="col-start-2 row-start-2 flex w-16 flex-col items-center self-end sm:w-24">
+                <div className="cd-flow-transcription-arrow">
+                  <FlowArrowHead className="cd-arrow-1 opacity-0" />
+                </div>
+                <FlowArrowLabel label="Transcription" className="cd-flow-transcription-label opacity-0" />
+              </div>
 
-            <FlowArrow label="Translation" className="cd-arrow-2 w-14 opacity-0 sm:w-20" />
+              <div className="cd-vis-rna relative col-start-3 row-start-2 flex scale-[0.8] flex-col items-center self-end opacity-20">
+                <div className="absolute inset-0 rounded-3xl bg-amber/10 blur-2xl" />
+                <div className="cd-flow-rna relative">
+                  <RnaStrand className="relative h-16 w-24 sm:h-20 sm:w-28" />
+                </div>
+              </div>
 
-            <div className="cd-vis-protein relative flex flex-col items-center opacity-20">
-              <div className="absolute inset-0 rounded-3xl bg-maroon/10 blur-2xl" />
-              <ProteinShape className="relative h-20 w-24 sm:h-24 sm:w-28" />
-              <p className="relative mt-2 font-mono text-[10px] font-bold uppercase tracking-wider text-maroon-light">Protein</p>
+              <div className="col-start-4 row-start-2 flex w-16 flex-col items-center self-end sm:w-24">
+                <div className="cd-flow-translation-arrow">
+                  <FlowArrowHead className="cd-arrow-2 opacity-0" />
+                </div>
+                <FlowArrowLabel label="Translation" className="cd-flow-translation-label opacity-0" />
+              </div>
+
+              <div className="cd-vis-protein relative col-start-5 row-start-2 flex scale-[0.8] flex-col items-center self-end opacity-20">
+                <div className="absolute inset-0 rounded-3xl bg-maroon/10 blur-2xl" />
+                <div className="cd-flow-protein relative">
+                  <ProteinShape className="relative h-20 w-24 sm:h-24 sm:w-28" />
+                </div>
+              </div>
+
+              <p className="cd-flow-dna-label col-start-1 row-start-3 mt-2 text-center font-mono text-xs font-bold uppercase tracking-wider text-cyan sm:text-sm">
+                DNA
+              </p>
+              <p className="cd-flow-rna-label col-start-3 row-start-3 mt-2 text-center font-mono text-xs font-bold uppercase tracking-wider text-amber sm:text-sm">
+                RNA
+              </p>
+              <p className="cd-flow-protein-label col-start-5 row-start-3 mt-2 text-center font-mono text-xs font-bold uppercase tracking-wider text-coral sm:text-sm">
+                Protein
+              </p>
             </div>
           </div>
         </div>

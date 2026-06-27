@@ -10,8 +10,8 @@ type ContainerScrollProps = {
 };
 
 /**
- * Sticky scroll hero — wordmark sits behind a tilted video card that overlaps it;
- * scrolling lifts the title and untilts the card into a flat frame.
+ * Hero wordmark + video — single viewport block in normal document flow (one page scroll).
+ * Flex + spacer mirrors origin vertical rhythm; video always sits below the title.
  */
 export function ContainerScroll({ titleComponent, children, className }: ContainerScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,7 +47,7 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
             scrollTrigger: {
               trigger: containerRef.current,
               start: "top top",
-              end: "bottom bottom",
+              end: "bottom top",
               scrub: 0.65,
             },
           })
@@ -65,30 +65,33 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
   );
 
   return (
-    <div ref={containerRef} className={cn("relative h-[130vh] sm:h-[135vh]", className)}>
-      <div
-        className="sticky top-0 h-[100vh] w-full pt-[5.5rem] sm:pt-24"
-      >
-        <div className="relative mx-auto h-full w-full max-w-6xl px-4 sm:px-6">
-          <div
-            ref={titleRef}
-            className="pointer-events-none absolute inset-x-4 top-[2%] z-[1] text-center sm:inset-x-6 md:top-[3%]"
-          >
-            {titleComponent}
-          </div>
+    <div
+      ref={containerRef}
+      className={cn(
+        "relative w-full pt-[5.5rem] sm:pt-24",
+        className
+      )}
+    >
+      <div className="relative mx-auto flex min-h-[calc(100dvh-4.25rem)] w-full max-w-6xl flex-col px-4 pb-10 sm:min-h-[calc(100dvh-6rem)] sm:px-6 sm:pb-12">
+        <div
+          ref={titleRef}
+          className="pointer-events-none z-[1] shrink-0 pt-[4%] text-center md:pt-[5%] xl:pt-[6%]"
+        >
+          {titleComponent}
+        </div>
 
-          <div className="absolute inset-x-4 top-[52%] z-[2] flex justify-center sm:inset-x-6 md:top-[54%]">
-            {/* bg-maroon + p-1 simulates a 4 px border without a CSS border property,
-                which doesn't respect border-radius through a 3D transform.
-                The inner .hero-card-inner uses clip-path (3D-transform-safe) instead
-                of overflow-hidden to clip the video to the rounded corner. */}
-            <div
-              ref={cardRef}
-              className="w-full max-w-5xl rounded-2xl bg-maroon p-1 shadow-2xl shadow-maroon/30 will-change-transform sm:rounded-3xl"
-            >
-              <div className="hero-card-inner bg-maroon-deep">
-                {children}
-              </div>
+        <div className="min-h-[1.5rem] flex-1" aria-hidden />
+
+        <div className="relative z-[2] flex shrink-0 justify-center pb-[4%] md:pb-[5%]">
+          <div
+            ref={cardRef}
+            className={cn(
+              "aspect-video h-auto w-full max-w-5xl rounded-2xl bg-maroon p-1 shadow-2xl shadow-maroon/30 will-change-transform sm:rounded-3xl",
+              "max-h-[720px]:mx-auto max-h-[720px]:w-[min(100%,calc(38svh*16/9))] max-h-[720px]:max-h-[38svh]"
+            )}
+          >
+            <div className="hero-card-inner relative h-full w-full bg-maroon-deep">
+              {children}
             </div>
           </div>
         </div>

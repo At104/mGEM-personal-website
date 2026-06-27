@@ -121,7 +121,7 @@ export default function Hero() {
   );
 
   return (
-    <section ref={sectionRef} id="home" className="overflow-hidden bg-paper">
+    <section ref={sectionRef} id="home" className="overflow-x-hidden bg-paper">
       <div className="bg-dots absolute inset-0 opacity-50" aria-hidden />
       <div className="glow left-[8%] top-[12%] h-72 w-72 bg-maroon/15" aria-hidden />
       <div className="glow right-[10%] top-[18%] h-64 w-64 bg-cyan/10" aria-hidden />
@@ -130,10 +130,9 @@ export default function Hero() {
         <HeroVideo />
       </ContainerScroll>
 
-      {/* Headline + CTAs — sits directly under the scroll hero */}
-      <div ref={subRef} className="relative mx-auto max-w-7xl px-6 pb-20 pt-4 text-center sm:pb-24">
+      <div ref={subRef} className="mx-auto max-w-7xl px-6 pb-20 pt-10 text-center sm:pb-24 sm:pt-12">
         <h1
-          className="mx-auto max-w-4xl font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+          className="mx-auto max-w-4xl font-display text-3xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
           style={{ perspective: "600px" }}
         >
           <span className="block pb-1">

@@ -175,6 +175,149 @@
   }
 }
 
+/* Central dogma scroll lock — when pin/scrub starts (ScrollTrigger `start`) */
+.central-dogma-section {
+  /* < 640px */
+  --cd-scroll-lock-start: top 25%;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .central-dogma-section {
+    /* 640px – 1023px */
+    --cd-scroll-lock-start: top 25%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .central-dogma-section {
+    /* ≥ 1024px */
+    --cd-scroll-lock-start: top top;
+  }
+}
+
+/* DNA animation — independent offsets per breakpoint (Y: negative = up; X: positive = right) */
+.dna-animation {
+  /* < 640px */
+  --cd-flow-central-dogma-x: 28px; /* Central dogma title — positive = right */
+  --cd-flow-dna-x: 0px;
+  --cd-flow-dna-label-x: 0px;
+  --cd-flow-rna-y: -48px;
+  --cd-flow-rna-x: 28px;
+  --cd-flow-rna-label-x: 28px;
+  --cd-flow-protein-y: -40px;
+  --cd-flow-protein-x: 56px;
+  --cd-flow-protein-label-x: 56px;
+  --cd-flow-transcription-arrow-y: -52px;
+  --cd-flow-transcription-arrow-x: 0px;
+  --cd-flow-transcription-label-y: -20px;
+  --cd-flow-transcription-label-x: 0px;
+  --cd-flow-translation-arrow-y: -52px;
+  --cd-flow-translation-arrow-x: 40px;
+  --cd-flow-translation-label-y: -20px;
+  --cd-flow-translation-label-x: 40px;
+}
+
+@media (min-width: 640px) {
+  .dna-animation {
+    /* ≥ 640px */
+    --cd-flow-central-dogma-x: 0px;
+    --cd-flow-dna-x: 0px;
+    --cd-flow-dna-label-x: 0px;
+    --cd-flow-rna-x: 0px;
+    --cd-flow-rna-label-x: 0px;
+    --cd-flow-rna-y: -56px;
+    --cd-flow-protein-y: -50px;
+    --cd-flow-protein-x: 0px;
+    --cd-flow-protein-label-x: 0px;
+    --cd-flow-transcription-arrow-y: -67px;
+    --cd-flow-transcription-arrow-x: 0px;
+    --cd-flow-transcription-label-y: -30px;
+    --cd-flow-transcription-label-x: 0px;
+    --cd-flow-translation-arrow-y: -67px;
+    --cd-flow-translation-arrow-x: 0px;
+    --cd-flow-translation-label-y: -30px;
+    --cd-flow-translation-label-x: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dna-animation {
+    /* ≥ 1024px */
+    --cd-flow-rna-y: -56px;
+    --cd-flow-protein-y: -50px;
+    --cd-flow-protein-x: 0px;
+    --cd-flow-protein-label-x: 0px;
+    --cd-flow-transcription-arrow-y: -67px;
+    --cd-flow-transcription-label-y: -30px;
+    --cd-flow-translation-arrow-y: -67px;
+    --cd-flow-translation-label-y: -30px;
+  }
+}
+
+.dna-animation .cd-flow-rna,
+.dna-animation .cd-flow-rna-label,
+.dna-animation .cd-flow-protein,
+.dna-animation .cd-flow-protein-label,
+.dna-animation .cd-flow-central-dogma,
+.dna-animation .cd-flow-dna,
+.dna-animation .cd-flow-dna-label,
+.dna-animation .cd-flow-transcription-arrow,
+.dna-animation .cd-flow-transcription-label,
+.dna-animation .cd-flow-translation-arrow,
+.dna-animation .cd-flow-translation-label {
+  position: relative;
+}
+
+.dna-animation .cd-flow-central-dogma {
+  left: var(--cd-flow-central-dogma-x);
+}
+
+.dna-animation .cd-flow-dna {
+  left: var(--cd-flow-dna-x);
+}
+
+.dna-animation .cd-flow-dna-label {
+  left: var(--cd-flow-dna-label-x);
+}
+
+.dna-animation .cd-flow-rna {
+  top: var(--cd-flow-rna-y);
+  left: var(--cd-flow-rna-x);
+}
+
+.dna-animation .cd-flow-rna-label {
+  left: var(--cd-flow-rna-label-x);
+}
+
+.dna-animation .cd-flow-protein {
+  top: var(--cd-flow-protein-y);
+  left: var(--cd-flow-protein-x);
+}
+
+.dna-animation .cd-flow-protein-label {
+  left: var(--cd-flow-protein-label-x);
+}
+
+.dna-animation .cd-flow-transcription-arrow {
+  top: var(--cd-flow-transcription-arrow-y);
+  left: var(--cd-flow-transcription-arrow-x);
+}
+
+.dna-animation .cd-flow-transcription-label {
+  top: var(--cd-flow-transcription-label-y);
+  left: var(--cd-flow-transcription-label-x);
+}
+
+.dna-animation .cd-flow-translation-arrow {
+  top: var(--cd-flow-translation-arrow-y);
+  left: var(--cd-flow-translation-arrow-x);
+}
+
+.dna-animation .cd-flow-translation-label {
+  top: var(--cd-flow-translation-label-y);
+  left: var(--cd-flow-translation-label-x);
+}
+
 .team-row.is-active .team-card {
   box-shadow: 0 10px 30px rgba(21, 160, 107, 0.12);
   transform: translateY(-2px);
