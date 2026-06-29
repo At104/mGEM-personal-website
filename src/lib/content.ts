@@ -1,10 +1,8 @@
-/** All site copy sourced from the original mGEM website. */
-
 export const stats = [
   { value: "Gold", label: "Medalist, 2025 Undergrad Category", accent: "text-gold-light" },
   { value: "10+", numeric: 10, suffix: "+", label: "Years Established", accent: "text-white" },
   { value: "40+", numeric: 40, suffix: "+", label: "Active Members", accent: "text-cyan" },
-  { value: "5", numeric: 5, suffix: "", label: "Interdisciplinary Subteams", accent: "text-coral" },
+  { value: "6", numeric: 6, suffix: "", label: "Interdisciplinary Subteams", accent: "text-coral" },
 ] as const;
 
 export const igemIntro =

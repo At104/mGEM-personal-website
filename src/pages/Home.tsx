@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 import StatStrip from "../components/StatStrip";
-import CentralDogma from "../components/CentralDogma";
+import WhatIsIgem from "../components/WhatIsIgem";
 import SectionHeading from "../components/SectionHeading";
 import Reveal from "../components/Reveal";
 import { subteams, showcasePhotos } from "@/lib/content";
@@ -17,7 +17,7 @@ export default function Page() {
       </Helmet>
       <Hero />
       <StatStrip />
-      <CentralDogma />
+      <WhatIsIgem />
 
       {/* Subteams — horizontal cards with color bars */}
       <section className="border-y border-ink/8 bg-paper-warm py-24 sm:py-28">
