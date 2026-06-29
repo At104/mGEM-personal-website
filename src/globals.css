@@ -237,7 +237,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 50% 35% at 90% 15%, rgba(140, 150, 160, 0.14), transparent);
+    background:
+      radial-gradient(ellipse 50% 35% at 90% 15%, rgba(120, 135, 150, 0.16), transparent),
+      radial-gradient(ellipse 45% 35% at 5% 85%, rgba(160, 175, 190, 0.09), transparent);
     pointer-events: none;
   }
   .sponsor-section-bronze::before {

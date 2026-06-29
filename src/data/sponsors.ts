@@ -74,7 +74,7 @@ export const sponsorTierMeta: Record<
       bioType: "DNA",
       bioTag: "template · double helix · insert",
       blurb: "Silver-tier backers — the structural support behind every build.",
-      section: "sponsor-section-silver bg-gradient-to-br from-[#EEF1F3] via-paper-warm to-[#E2E6EA] text-ink",
+      section: "sponsor-section-silver bg-gradient-to-br from-[#E8EDF1] via-[#F2F4F7] to-[#DDE4EA] text-ink",
       grid: "bg-dots opacity-25",
       inverted: false,
       accent: "metal-bar-silver",
@@ -87,7 +87,7 @@ export const sponsorTierMeta: Record<
       logoFrame: "metal-frame-silver",
       metalSheen: "text-[#707070]",
       linkText: "text-[#707070] group-hover:text-[#404040]",
-      headingHover: "group-hover:text-[#404040]",
+      headingHover: "group-hover:text-[#3D5A73]",
     },
   },
   Bronze: {
@@ -130,7 +130,7 @@ export const sponsorTiers: SponsorTier[] = [
       {
         name: "BMO",
         link: "https://www.bmo.com/",
-        icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/BMO_Logo.svg/320px-BMO_Logo.svg.png",
+        icon: "/BMO.png",
         description:
           "Bank of Montreal supports McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
       },
@@ -149,6 +149,7 @@ export const sponsorTiers: SponsorTier[] = [
       {
         name: "Stoked Bio",
         link: "https://stokedbio.com/",
+        icon: "/stocked.png",
         description:
           "Stoked Bio is a McMaster spin-out biotech company using AI-driven drug discovery to develop novel anti-infectives and cancer therapeutics.",
       },
