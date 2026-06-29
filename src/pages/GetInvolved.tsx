@@ -32,9 +32,11 @@ export default function GetInvolvedPage() {
                   <span className={`font-mono text-xs font-bold ${p.accent}`}>{String(i + 1).padStart(2, "0")}</span>
                   <h2 className="mt-2 font-display text-2xl font-bold">{p.title}</h2>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-soft">{p.body}</p>
-                  <ButtonLink href={p.href} external className="mt-6 self-start">
-                    {p.cta} <HiOutlineExternalLink aria-hidden />
-                  </ButtonLink>
+                  {"href" in p && p.href && (
+                    <ButtonLink href={p.href} external className="mt-6 self-start">
+                      {p.cta} <HiOutlineExternalLink aria-hidden />
+                    </ButtonLink>
+                  )}
                 </div>
               </div>
             </Reveal>
