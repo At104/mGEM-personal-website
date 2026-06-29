@@ -39,7 +39,7 @@ export default function StatStrip() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden border-y border-white/10 bg-maroon-deep py-16 text-white sm:py-20"
+      className="relative overflow-hidden border-b-[6px] border-paper bg-maroon-deep py-16 text-white sm:py-20"
     >
       <div className="bg-dots-dark absolute inset-0 opacity-50" />
       <div className="glow left-1/4 top-0 h-64 w-64 -translate-x-1/2 bg-maroon/25" />

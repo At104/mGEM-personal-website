@@ -1,15 +1,26 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { addHelixSpheres, buildHelixNodes, disposeHelixGroup } from "@/lib/dnaHelix";
+import {
+  addHelixSpheres,
+  buildHelixNodes,
+  DNA_PALETTE,
+  DNA_PALETTE_BRIGHT,
+  disposeHelixGroup,
+} from "@/lib/dnaHelix";
 
 const COUNT = 48;
+
+export type DnaSceneProps = {
+  orientation?: "vertical" | "horizontal";
+  bright?: boolean;
+};
 
 /**
  * Vanilla Three.js DNA helix — avoids @react-three/fiber's reconciler,
  * which causes ReactCurrentOwner errors with React 18 + Next.js 15.
  */
-export default function DnaScene() {
+export default function DnaScene({ orientation = "vertical", bright = false }: DnaSceneProps) {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,27 +41,40 @@ export default function DnaScene() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     mount.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
-    const key = new THREE.PointLight(0xffffff, 1.1);
+    const palette = bright ? DNA_PALETTE_BRIGHT : DNA_PALETTE;
+    const emissiveIntensity = bright ? 0.78 : 0.35;
+
+    scene.add(new THREE.AmbientLight(0xffffff, bright ? 0.72 : 0.55));
+    const key = new THREE.PointLight(0xffffff, bright ? 1.45 : 1.1);
     key.position.set(8, 6, 8);
     scene.add(key);
-    const fill = new THREE.PointLight(0x17b6c9, 0.5);
+    const fill = new THREE.PointLight(bright ? 0x7dd3fc : 0x17b6c9, bright ? 0.85 : 0.5);
     fill.position.set(-6, -4, 4);
     scene.add(fill);
 
-    const group = new THREE.Group();
-    scene.add(group);
+    const orientGroup = new THREE.Group();
+    if (orientation === "horizontal") {
+      orientGroup.rotation.z = Math.PI / 2;
+    }
+    scene.add(orientGroup);
 
-    const nodes = buildHelixNodes(COUNT, { turns: 5, height: 9 });
-    addHelixSpheres(group, nodes, 0.09);
+    const spinGroup = new THREE.Group();
+    orientGroup.add(spinGroup);
+
+    const nodes = buildHelixNodes(COUNT, {
+      turns: 5,
+      height: 9,
+      colorAt: (i, strand) => palette[(i + strand * 2) % palette.length],
+    });
+    addHelixSpheres(spinGroup, nodes, bright ? 0.1 : 0.09, emissiveIntensity);
 
     let raf = 0;
 
     const animate = () => {
       raf = requestAnimationFrame(animate);
       if (!reduceMotion) {
-        group.rotation.y += 0.012;
-        group.rotation.z = Math.sin(Date.now() * 0.00008) * 0.08;
+        spinGroup.rotation.y += 0.012;
+        spinGroup.rotation.z = Math.sin(Date.now() * 0.00008) * 0.08;
       }
       renderer.render(scene, camera);
     };
@@ -70,12 +94,12 @@ export default function DnaScene() {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", onResize);
       renderer.dispose();
-      disposeHelixGroup(group);
+      disposeHelixGroup(spinGroup);
       if (mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);
       }
     };
-  }, []);
+  }, [orientation, bright]);
 
   return <div ref={mountRef} className="h-full w-full" aria-hidden />;
 }

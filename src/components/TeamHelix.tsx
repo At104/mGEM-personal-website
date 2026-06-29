@@ -44,20 +44,47 @@ export default function TeamHelix({ data }: { data: Record<TeamGroupKey, Member[
     const el = helixAreaRef.current;
     if (!el) return;
 
-    // Wheel speed: deltaMode 1 = line-based mouse (1 click = 1 member).
-    // deltaMode 0 = pixel-based trackpad (scaled by TRACKPAD_SENSITIVITY).
-    // Tune TRACKPAD_SENSITIVITY (line ~52): higher = faster, lower = slower.
+    // Mouse wheel: one notch → exactly one member (accumulate sub-threshold deltas).
+    // Trackpad: small pixel deltas → proportional scroll.
     const TRACKPAD_SENSITIVITY = 0.0003;
-    const stepPerMember = 1 / Math.max(1, nodes.length - 1);
+    const MOUSE_WHEEL_THRESHOLD = 50;
+    const WHEEL_STEP_COOLDOWN_MS = 80;
+    let wheelAccum = 0;
+    let lastWheelStepAt = 0;
+
+    const stepByIndex = (direction: number) => {
+      if (!direction) return;
+      const now = performance.now();
+      if (now - lastWheelStepAt < WHEEL_STEP_COOLDOWN_MS) return;
+      lastWheelStepAt = now;
+      const idx = activeIndexAtProgress(nodes.length, progressRef.current);
+      const nextIdx = Math.max(0, Math.min(nodes.length - 1, idx + direction));
+      updateProgress(nodes.length <= 1 ? 0 : nextIdx / (nodes.length - 1));
+    };
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       e.stopPropagation();
-      const delta =
-        e.deltaMode === 1
-          ? Math.sign(e.deltaY) * stepPerMember   // mouse wheel: 1 click = 1 member
-          : e.deltaY * TRACKPAD_SENSITIVITY;       // trackpad: proportional
-      updateProgress(progressRef.current + delta);
+
+      // Line-based mouse wheels (Firefox) — one line per notch.
+      if (e.deltaMode === 1) {
+        wheelAccum = 0;
+        stepByIndex(Math.sign(e.deltaY));
+        return;
+      }
+
+      // Pixel mode: large deltas = mouse notch; small continuous = trackpad.
+      if (Math.abs(e.deltaY) >= MOUSE_WHEEL_THRESHOLD) {
+        wheelAccum += e.deltaY;
+        if (Math.abs(wheelAccum) < MOUSE_WHEEL_THRESHOLD) return;
+        const direction = Math.sign(wheelAccum);
+        wheelAccum = 0;
+        stepByIndex(direction);
+        return;
+      }
+
+      wheelAccum = 0;
+      updateProgress(progressRef.current + e.deltaY * TRACKPAD_SENSITIVITY);
     };
 
     let touchAnchor: { y: number; progress: number } | null = null;
@@ -198,11 +225,14 @@ function StrandProgress({
   const trackRef = useRef<HTMLDivElement>(null);
 
   const seekFromClientY = useCallback(
-    (clientY: number) => {
+    (clientY: number, mapVisualToProgress?: (visualPct: number) => number) => {
       const track = trackRef.current;
       if (!track || !onSeek) return;
       const rect = track.getBoundingClientRect();
-      onSeek(Math.max(0, Math.min(1, (clientY - rect.top) / rect.height)));
+      const visualPct = ((clientY - rect.top) / rect.height) * 100;
+      const raw =
+        mapVisualToProgress?.(visualPct) ?? visualPct / 100;
+      onSeek(Math.max(0, Math.min(1, raw)));
     },
     [onSeek]
   );
@@ -225,9 +255,9 @@ function StrandProgress({
           return acc;
         }, []);
 
-        // Piecewise-linear map: raw scroll progress → adjusted visual % so the
-        // thumb always lands exactly on the right tick.
-        const mapThumb = (raw: number): number => {
+        // Piecewise-linear map: raw scroll progress ↔ adjusted visual % so the
+        // thumb and click/drag positions stay aligned with breakpoint ticks.
+        const mapProgressToVisual = (raw: number): number => {
           const p = raw * 100;
           if (naturalPcts.length === 0) return p;
           if (p <= naturalPcts[0]) return adjPcts[0];
@@ -246,7 +276,28 @@ function StrandProgress({
           return p;
         };
 
-        const thumbPct = mapThumb(scrollProgress);
+        const mapVisualToProgress = (visualPct: number): number => {
+          const v = visualPct;
+          if (naturalPcts.length === 0) return v / 100;
+          if (v <= adjPcts[0]) return naturalPcts[0] / 100;
+          const last = naturalPcts.length - 1;
+          if (v >= adjPcts[last]) {
+            const adjSeg = 100 - adjPcts[last];
+            const rawSeg = 100 - naturalPcts[last];
+            return adjSeg > 0
+              ? (naturalPcts[last] + ((v - adjPcts[last]) / adjSeg) * rawSeg) / 100
+              : naturalPcts[last] / 100;
+          }
+          for (let i = 0; i < last; i++) {
+            if (v >= adjPcts[i] && v <= adjPcts[i + 1]) {
+              const t = (v - adjPcts[i]) / (adjPcts[i + 1] - adjPcts[i]);
+              return (naturalPcts[i] + t * (naturalPcts[i + 1] - naturalPcts[i])) / 100;
+            }
+          }
+          return v / 100;
+        };
+
+        const thumbPct = mapProgressToVisual(scrollProgress);
 
         return (
           <div className="relative">
@@ -255,11 +306,11 @@ function StrandProgress({
               className={cn("relative touch-none cursor-pointer rounded-full bg-ink/10", h)}
               onPointerDown={(e) => {
                 e.currentTarget.setPointerCapture(e.pointerId);
-                seekFromClientY(e.clientY);
+                seekFromClientY(e.clientY, mapVisualToProgress);
               }}
               onPointerMove={(e) => {
                 if (e.buttons === 0) return;
-                seekFromClientY(e.clientY);
+                seekFromClientY(e.clientY, mapVisualToProgress);
               }}
             >
               {/* Filled portion */}
@@ -290,18 +341,20 @@ function StrandProgress({
 
             {/* Labels beside the track at adjusted positions */}
             {!compact && breakpoints.map((bp, i) => (
-              <span
+              <button
                 key={`label-${bp.label}`}
-                className="pointer-events-none absolute -translate-y-1/2 font-mono text-[8px] uppercase leading-tight tracking-wider"
+                type="button"
+                className="absolute -translate-y-1/2 cursor-pointer text-left font-mono text-[8px] uppercase leading-tight tracking-wider hover:underline"
                 style={{
                   top: `${adjPcts[i]}%`,
                   left: "1rem",
                   width: "72px",
                   color: bp.color,
                 }}
+                onClick={() => onSeek?.(bp.progress)}
               >
                 {bp.label.replace(/-/g, "\u2011")}
-              </span>
+              </button>
             ))}
           </div>
         );

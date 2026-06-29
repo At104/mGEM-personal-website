@@ -130,7 +130,7 @@ export const sponsorTiers: SponsorTier[] = [
       {
         name: "BMO",
         link: "https://www.bmo.com/",
-        icon: "/BMO.png",
+        icon: "/photos/sponsors/bmo.png",
         description:
           "Bank of Montreal supports McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
       },
@@ -149,7 +149,7 @@ export const sponsorTiers: SponsorTier[] = [
       {
         name: "Stoked Bio",
         link: "https://stokedbio.com/",
-        icon: "/stocked.png",
+        icon: "/photos/sponsors/stocked.png",
         description:
           "Stoked Bio is a McMaster spin-out biotech company using AI-driven drug discovery to develop novel anti-infectives and cancer therapeutics.",
       },

@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1.2fr]">
           <div>
             <Link to="/" className="flex items-center gap-3">
-              <img src="/MGEM-Logo.png" alt="" width={48} height={32} className="h-8 w-auto" />
+              <img src="/photos/site/MGEM-Logo.png" alt="" width={48} height={32} className="h-8 w-auto" />
               <span className="font-display text-2xl font-bold">mGEM</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">
