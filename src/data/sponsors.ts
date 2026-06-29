@@ -1,92 +1,182 @@
+export type SponsorTierName = "Gold" | "Silver" | "Bronze";
+
 export type Sponsor = {
   name: string;
   link: string;
-  icon: string;
+  icon?: string;
   description: string;
 };
 
 export type SponsorTier = {
-  tier: string;
-  tagline: string;
-  badge: string;
+  tier: SponsorTierName;
   sponsors: Sponsor[];
+};
+
+export type SponsorBioTheme = {
+  bioType: string;
+  bioTag: string;
+  blurb: string;
+  section: string;
+  grid: string;
+  inverted: boolean;
+  accent: string;
+  accentSoft: string;
+  accentText: string;
+  pill: string;
+  laneLabel: string;
+  /** Metallic card surface */
+  card: string;
+  cardHover: string;
+  logoFrame: string;
+  metalSheen: string;
+  linkText: string;
+  headingHover: string;
+};
+
+export const sponsorTierMeta: Record<
+  SponsorTierName,
+  {
+    label: string;
+    subtitle: string;
+    rank: string;
+    bio: SponsorBioTheme;
+  }
+> = {
+  Gold: {
+    label: "Gold",
+    subtitle: "Our leading partners for the season",
+    rank: "1",
+    bio: {
+      bioType: "mRNA",
+      bioTag: "5′ cap · poly-A tail · ORF",
+      blurb: "Our top-tier partners — gold-standard support for the whole season.",
+      section: "sponsor-section-gold bg-gradient-to-br from-[#F7F0D8] via-paper-warm to-[#EDE4BC] text-ink",
+      grid: "bg-dots opacity-25",
+      inverted: false,
+      accent: "metal-bar-gold",
+      accentSoft: "bg-gold/20",
+      accentText: "text-gold-deep",
+      pill: "metal-pill-gold",
+      laneLabel: "transcript",
+      card: "border border-gold/30 bg-paper-warm",
+      cardHover: "hover:border-gold/50 hover:shadow-lg hover:shadow-gold/15",
+      logoFrame: "metal-frame-gold",
+      metalSheen: "text-gold-deep",
+      linkText: "text-gold-deep/70 group-hover:text-gold-deep",
+      headingHover: "group-hover:text-gold-deep",
+    },
+  },
+  Silver: {
+    label: "Silver",
+    subtitle: "Major supporters who help us build each year",
+    rank: "2",
+    bio: {
+      bioType: "DNA",
+      bioTag: "template · double helix · insert",
+      blurb: "Silver-tier backers — the structural support behind every build.",
+      section: "sponsor-section-silver bg-gradient-to-br from-[#EEF1F3] via-paper-warm to-[#E2E6EA] text-ink",
+      grid: "bg-dots opacity-25",
+      inverted: false,
+      accent: "metal-bar-silver",
+      accentSoft: "bg-[#C0C0C0]/25",
+      accentText: "text-[#5A5A5A]",
+      pill: "metal-pill-silver",
+      laneLabel: "plasmid",
+      card: "border border-[#B8B8B8]/50 bg-paper-warm",
+      cardHover: "hover:border-[#909090] hover:shadow-lg hover:shadow-black/5",
+      logoFrame: "metal-frame-silver",
+      metalSheen: "text-[#707070]",
+      linkText: "text-[#707070] group-hover:text-[#404040]",
+      headingHover: "group-hover:text-[#404040]",
+    },
+  },
+  Bronze: {
+    label: "Bronze",
+    subtitle: "Partners who kickstart our work",
+    rank: "3",
+    bio: {
+      bioType: "Promoter",
+      bioTag: "−35 box · −10 box · TSS",
+      blurb: "Bronze partners — where our expression starts, upstream of everything else.",
+      section: "sponsor-section-bronze bg-gradient-to-br from-[#F5E6D3] via-paper-warm to-[#EDD5B8] text-ink",
+      grid: "bg-dots opacity-25",
+      inverted: false,
+      accent: "metal-bar-bronze",
+      accentSoft: "bg-[#CD7F32]/15",
+      accentText: "text-[#8B5A2B]",
+      pill: "metal-pill-bronze",
+      laneLabel: "upstream",
+      card: "border border-[#CD7F32]/35 bg-paper-warm",
+      cardHover: "hover:border-[#B87333] hover:shadow-lg hover:shadow-[#CD7F32]/15",
+      logoFrame: "metal-frame-bronze",
+      metalSheen: "text-[#8B5A2B]",
+      linkText: "text-[#A0642B] group-hover:text-[#8B5A2B]",
+      headingHover: "group-hover:text-[#8B5A2B]",
+    },
+  },
 };
 
 export const sponsorTiers: SponsorTier[] = [
   {
-    tier: "mRNA Sponsors",
-    tagline: "Highest tier of support",
-    badge: "bg-amber text-ink",
+    tier: "Gold",
     sponsors: [
       {
         name: "McMaster Faculty of Health Sciences",
         link: "https://healthsci.mcmaster.ca/",
         icon: "https://live.staticflickr.com/3064/3041873734_9d16d5d3ca_b.jpg",
         description:
-          "McMaster's Faculty of Health Sciences works to cultivate crucial skills and interdisciplinary knowledge in health, wellness and illness. Paul O'Byrne is the Dean and Vice-President of the Faculty of Health Sciences. Dr. O'Byrne has authoured over 550 peer-reviewed articles as a practicing respirologist and has recently been appointed as an Officer of the Order of Canada for his global impact on the concept and treatment of asthma.",
+          "McMaster's Faculty of Health Sciences cultivates interdisciplinary knowledge in health, wellness, and illness — supporting student-led research across the university.",
+      },
+      {
+        name: "BMO",
+        link: "https://www.bmo.com/",
+        icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/BMO_Logo.svg/320px-BMO_Logo.svg.png",
+        description:
+          "Bank of Montreal supports McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
+      },
+      {
+        name: "MindFuel",
+        link: "https://mindfuel.ca/",
+        icon: "https://mindfuel.ca/wp-content/uploads/2019/02/logo-full-colour-408px.png",
+        description:
+          "MindFuel is a Canadian charity that builds STEM foundations and innovation skills in youth through hands-on programs, digital learning, and real-world problem solving.",
       },
     ],
   },
   {
-    tier: "DNA Sponsors",
-    tagline: "Major supporters of our season",
-    badge: "bg-cyan text-ink",
+    tier: "Silver",
     sponsors: [
       {
-        name: "Office of the President, McMaster University",
-        link: "https://president.mcmaster.ca/",
-        icon: "https://static.wixstatic.com/media/497ad0_ef1502ca85ba4730b6a10b887e23f705~mv2.jpg/v1/fill/w_279,h_155,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/office-of-president-logo1.jpg",
+        name: "Stoked Bio",
+        link: "https://stokedbio.com/",
         description:
-          "David Farrar is the President and Vice-Chancellor of McMaster University, having served in the role since 2019, and a faculty member of the Department of Chemistry and Chemical Biology. Dr. Farrar leads work on McMaster's strategic plan and focusses on initiatives relating to campus operations, strengthening an ecosystem of innovation and commercialization, furthering digital learning, and supporting an inclusive environment committed to Truth and Reconciliation.",
+          "Stoked Bio is a McMaster spin-out biotech company using AI-driven drug discovery to develop novel anti-infectives and cancer therapeutics.",
       },
       {
-        name: "McMaster Faculty of Engineering",
-        link: "https://www.eng.mcmaster.ca/",
-        icon: "https://www.eng.mcmaster.ca//app/uploads/2024/02/eng-mcmaster.jpg",
+        name: "Offices of the President, Provost, and Vice-President of Research",
+        link: "https://www.mcmaster.ca/",
+        icon: "https://static.wixstatic.com/media/497ad0_ef1502ca85ba4730b6a10b887e23f705~mv2.jpg/v1/fill/w_279,h_155,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/office-of-president-logo1.jpg",
         description:
-          "The Faculty of Engineering at McMaster University is renowned for its innovative approach to education and research, serving over 6,500 students across various engineering disciplines. The faculty offers comprehensive undergraduate and graduate programs in fields such as Chemical, Civil, Electrical, Mechanical, Software, and Materials Engineering. With a strong commitment to experiential learning, students benefit from hands-on opportunities through co-op programs, internships, and collaborative projects. Dr. Heather Sheardown serves as the Dean of Engineering, with expertise in biomaterials, tissue engineering, mathematical modeling of physiologic processes, and ophthalmic drug delivery.",
+          "McMaster's senior leadership — the Office of the President, Provost, and Vice-President of Research — backs our team with institutional support for student innovation.",
       },
     ],
   },
   {
-    tier: "Promoter Sponsors",
-    tagline: "Partners who kickstart our work",
-    badge: "bg-maroon text-white",
+    tier: "Bronze",
     sponsors: [
       {
         name: "Department of Biochemistry and Biomedical Sciences",
         link: "https://biochem.healthsci.mcmaster.ca/",
         icon: "https://ecampusontario.pressbooks.pub/app/uploads/sites/772/2021/07/mcm-hs-biocm_stack-col_jpg-217x300.jpg",
         description:
-          "The Department of Biochemistry and Biomedical Sciences (BBS) is one of the most research-intensive departments at McMaster University and among the best anywhere in North America. Our faculty members run internationally competitive research programs with intensity and impact. We provide health science training and education to over 600 graduate and undergraduate students.",
-      },
-      {
-        name: "McMaster Faculty of Science",
-        link: "https://science.mcmaster.ca/",
-        icon: "https://science.mcmaster.ca/app/uploads/2022/11/mcm-sci-logo.png",
-        description:
-          "The Faculty of Science is the largest faculty at McMaster Univeristy, with over 6,600 students working to explore the boundaries of science within the life sciences, the physical sciences, and the mathematical/computational sciences. Maureen MacDonald is the Dean of Science and the first woman to serve in the role.",
+          "One of McMaster's most research-intensive departments, BBS provides training and lab access to hundreds of graduate and undergraduate students.",
       },
       {
         name: "McMaster Students Union",
         link: "https://msumcmaster.ca/",
         icon: "https://msumcmaster.ca/app/themes/msu-child/images/MSU.png",
         description:
-          "The McMaster Students Union (MSU) is the largest group on campus representing approximately 27,000 undergraduate students. The MSU serves students through political representation and the enhancement of student affairs. As an MSU-ratified club, McMaster iGEM receives MSU funding, access to meeting rooms, and printing services through the MSU Underground.",
-      },
-      {
-        name: "Bachelor of Health Sciences Society",
-        link: "https://www.bhssmcmaster.org/home",
-        icon: "https://static.wixstatic.com/media/9b835e_f6cbc523732a4085ae868831d95a4c13~mv2.jpg/v1/fit/w_2500,h_1330,al_c/9b835e_f6cbc523732a4085ae868831d95a4c13~mv2.jpg",
-        description:
-          "The Bachelor of Health Sciences Society, or BHSS, is an organization representing the students of the (Honours) Bachelor of Health Sciences program at McMaster University. They serve to promote unity, collaboration, and participation within the BHSc Program, enhancing the university experience by offering educational and extracurricular opportunities to students.",
-      },
-      {
-        name: "SnapGene",
-        link: "https://www.snapgene.com/",
-        icon: "/snapgene.png",
-        description:
-          "SnapGene is the molecular biology software that is easier to use than pen and paper. Over 300,000 scientists use SnapGene to plan, visualize, and document their molecular biology procedures.",
+          "The MSU represents ~27,000 undergraduate students. As an MSU-ratified club, McMaster iGEM receives funding, meeting space, and printing services.",
       },
     ],
   },
