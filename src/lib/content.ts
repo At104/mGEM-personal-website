@@ -26,6 +26,7 @@ export const subteams = [
     bar: "bg-maroon",
     text: "text-maroon-deep",
     body: "Wet lab is a subcommittee of the iGEM team that is responsible for developing biological background for the project. This team is responsible for completing background literature reviews for the project to provide a rationale and proof of concept. The team is also responsible for developing and designing synthetic biological systems that will be designed on benchling and built/testing in the lab. During the spring and summer term the wet lab team will work in the lab to make the project into reality, generating data that will be used to validate the project design.",
+    icon: "tube.png",
   },
   {
     id: "drylab",
@@ -36,6 +37,7 @@ export const subteams = [
     bar: "bg-cyan",
     text: "text-cyan-deep",
     body: "Dry Lab is a subcommittee of the McMaster-Canada iGEM team that is responsible for developing mathematical models to analyze data collected by the Wet Lab team, creating kinetic and related models to validate the system design, and designing hardware components (i.e. the physical structure of the final system). The DL team will also utilize a variety of softwares including SimBiology, Python, and Benchling, and hardware components. Although experience in these programs is great, it is not required in order to apply. Above all, DL values members that are dedicated and eager to learn.",
+    icon: "glass.png",
   },
   {
     id: "hp",
@@ -46,6 +48,7 @@ export const subteams = [
     bar: "bg-amber",
     text: "text-amber-deep",
     body: "The Human Practices Subcommittee explores the real-world application of our project and its social, economic, and environmental implications. We actively reflect on the impact our project will have on the world and how the world — different perspectives, views, and considerations — impacts our project. As the goal of our iGEM team is to tackle global challenges by using synthetic biology to solve problems, HP strives to ensure this work is reflective, responsive, and responsible.",
+    icon: "gears.png",
   },
   {
     id: "media",
@@ -56,16 +59,29 @@ export const subteams = [
     bar: "bg-violet",
     text: "text-violet-deep",
     body: "The Media Subcommittee is composed of the creatives of the team that focuses on building iGEM's brand and creating the visuals to help communicate our project to the general public and at the iGEM jamboree competition. Our Design members are responsible for creating and managing the brand for iGEM and managing major projects/deliveries. Our social media are pivotal with increasing our outreach within our community and improve our communication with members.",
+    icon: "video.png",
   },
   {
-    id: "admin",
-    name: "Admin",
-    short: "Project management, finance, sponsorships, and web dev.",
+    id: "finance",
+    name: "Finance & Sponsorship",
+    short: "Secures the necessary funding and sponsorship.",
     image: "/Sponsorship.jpg",
     imageAlt: "Admin team members",
     bar: "bg-coral",
     text: "text-coral-deep",
-    body: "The Project Management Admin Team ensures seamless operation and coordination across all teams. The team's primary focus is on organizing and managing the workflow, creating and scheduling workshops, and overseeing task management. The Finance Team is dedicated to securing the necessary funding and sponsorships to enable our team's participation in the iGEM Jamboree in Paris. Our Web Dev members will be in charge of the development of mGEM's personal website and the team's wiki for the competition to document all of our findings in a clear and visually appealing way.",
+    body: "The Finance Subcommittee is dedicated to securing the necessary funding and sponsorships to enable our team's participation in the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, and building relationships with sponsors and donors. Our responsibilities include budget planning, financial tracking, and ensuring that our team has the resources needed to successfully complete our project. The Finance Team plays a critical role in ensuring that our team can achieve its goals by effectively managing financial resources and securing the support of key stakeholders.",
+    icon: "plane.png",
+  },
+  {
+    id: "webDev",
+    name: "Web Dev",
+    short: "Codes scientific progress into websites",
+    image: "/atul.jpg",
+    imageAlt: "Admin team members",
+    bar: "bg-coral",
+    text: "text-coral-deep",
+    body: "Our Web Dev members work towards the development of mGEM's personal website and the team's wiki for the competition to document all of our findings in a clear and visually appealing way. Aside from updating mGem’s personal wiki, their main role is to work together with the media team to plan a layout for the team’s Wiki. Throughout the project development process, they’re responsible for keeping the website updated with new designs and information. All of the other subteams’ hard work is recorded on the website for transparency. ",
+    icon: "palette.png",
   },
 ] as const;
 
