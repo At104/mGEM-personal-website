@@ -1,6 +1,7 @@
 import * as THREE from "three";
 
 export const DNA_PALETTE = ["#7A003C", "#17B6C9", "#7B6EF6", "#FF6B6B", "#F4B740"] as const;
+export const DNA_PALETTE_BRIGHT = ["#FF8FAB", "#5EEAD4", "#C4B5FD", "#FDE68A", "#FCA5A5"] as const;
 
 export type HelixNode = {
   y: number;
@@ -48,7 +49,8 @@ export function buildHelixNodes(
 export function addHelixSpheres(
   group: THREE.Group,
   nodes: HelixNode[],
-  sphereRadius = 0.09
+  sphereRadius = 0.09,
+  emissiveIntensity = 0.35
 ): THREE.Mesh[] {
   const meshes: THREE.Mesh[] = [];
   const geo = new THREE.SphereGeometry(sphereRadius, 14, 14);
@@ -61,7 +63,7 @@ export function addHelixSpheres(
       const mat = new THREE.MeshStandardMaterial({
         color,
         emissive: new THREE.Color(color),
-        emissiveIntensity: 0.35,
+        emissiveIntensity,
       });
       const mesh = new THREE.Mesh(geo, mat);
       mesh.position.set(x, y, z);

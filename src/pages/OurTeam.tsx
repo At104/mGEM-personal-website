@@ -15,12 +15,12 @@ export default function OurTeam() {
     <>
       <Helmet>
         <title>Our Team — McMaster iGEM</title>
-        <meta name="description" content="Meet the investigators, leads, and members of mGEM — one node at a time on our DNA strand." />
+        <meta name="description" content="Meet the investigators, leads, and members of mGEM — students from across McMaster faculties and subteams working together on synthetic biology." />
       </Helmet>
       <PageHeader
         eyebrow="Our team"
-        title="Every member, one strand"
-        lede="Each glowing node on the strand is one team member. Scroll down to travel the helix — every stop opens that person's profile."
+        title="Many faculties, one team"
+        lede="Our members span programs across McMaster — engineering, life sciences, health sciences, commerce, and more — working together across Wet Lab, Dry Lab, Human Practices, Media, Finance, and Web Dev to bring each year's project to life."
       />
       <TeamHelix data={membersData as MembersData} />
     </>
