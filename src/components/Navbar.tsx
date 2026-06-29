@@ -35,7 +35,7 @@ export default function Navbar() {
 
       <nav aria-label="Main" className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-3" aria-label="mGEM home">
-          <img src="/MGEM-Logo.png" alt="" width={40} height={26} className="h-7 w-auto" />
+          <img src="/photos/site/MGEM-Logo.png" alt="" width={40} height={26} className="h-7 w-auto" />
           <div className="leading-none">
             <span className="font-display text-lg font-bold tracking-tight">mGEM</span>
             <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-ink-mute">McMaster iGEM</span>

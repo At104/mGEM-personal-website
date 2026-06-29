@@ -41,7 +41,7 @@ export default function GetInvolvedPage() {
           ))}
           <Reveal delay={0.16}>
             <div className="relative min-h-[280px] overflow-hidden rounded-3xl border border-ink/8 lg:min-h-full">
-              <img src="/GeneralMembers.jpg" alt="mGEM general members" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img src="/photos/get-involved/GeneralMembers.jpg" alt="mGEM general members" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
             </div>
           </Reveal>
         </div>
