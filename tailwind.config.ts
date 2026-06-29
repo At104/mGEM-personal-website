@@ -1,110 +1,89 @@
 import type { Config } from "tailwindcss";
-
-const colors = require("tailwindcss/colors");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  prefix: "",
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        maroon: '#7A003C',
-    
+        /* Warm clean paper base + deep green-black ink */
+        paper: { DEFAULT: "#F4F2EA", warm: "#FBFAF5", dim: "#ECEAE0" },
+        ink: { DEFAULT: "#0C1B14", soft: "#3A4A42", mute: "#6B776F" },
+        /* Forest-dark for inverted sections */
+        forest: { DEFAULT: "#0B1A12", soft: "#11271B", line: "#1C3A28" },
 
+        /* Brand green (primary) */
+        leaf: {
+          DEFAULT: "#15A06B",
+          deep: "#0B7A50",
+          dark: "#075E3D",
+          soft: "#E2F4EC",
+          50: "#EDF8F2",
+          100: "#D5F0E2",
+          200: "#A9E2C5",
+          300: "#6FCDA0",
+          400: "#33B47C",
+          500: "#15A06B",
+          600: "#0B7A50",
+          700: "#0A6342",
+          800: "#094E35",
+          900: "#08402C",
+        },
+
+        /* Fluorescent-protein accent system (used consistently) */
+        cyan: { DEFAULT: "#17B6C9", soft: "#DEF6F9", deep: "#0C7E8C" },
+        amber: { DEFAULT: "#F4B740", soft: "#FEF3DA", deep: "#B97F09" },
+        gold: { DEFAULT: "#C9A227", light: "#E8C547", deep: "#9A7B0A", soft: "#FBF3D4" },
+        coral: { DEFAULT: "#FF6B6B", soft: "#FFE5E5", deep: "#D33C3C" },
+        violet: { DEFAULT: "#7B6EF6", soft: "#EAE7FE", deep: "#4E3FD1" },
+
+        /* McMaster maroon — used sparingly */
+        maroon: {
+          DEFAULT: "#7A003C",
+          soft: "#F9ECF2",
+          deep: "#5E0230",
+          light: "#9A1852",
+        },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      fontFamily: {
+        display: ["var(--font-display)", "sans-serif"],
+        sans: ["var(--font-sans)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-14px)" },
         },
-        scroll: {
-          to: {
-            transform: "translate(calc(-50% - 0.5rem))",
-          },
+        blob: {
+          "0%, 100%": { borderRadius: "42% 58% 63% 37% / 42% 45% 55% 58%" },
+          "50%": { borderRadius: "58% 42% 37% 63% / 55% 58% 42% 45%" },
+        },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "spin-slow": {
+          to: { transform: "rotate(360deg)" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        scroll:
-        "scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, normal)",
+        marquee: "marquee var(--marquee-duration, 42s) linear infinite",
+        "marquee-reverse":
+          "marquee var(--marquee-duration, 42s) linear infinite reverse",
+        float: "float 7s ease-in-out infinite",
+        blob: "blob var(--blob-duration, 12s) ease-in-out infinite",
+        "gradient-x": "gradient-x 6s ease infinite",
+        "spin-slow": "spin-slow var(--spin-duration, 40s) linear infinite",
       },
-      
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    addVariablesForColors,
-  ],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;
-
-function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
-
-  addBase({
-    ":root": newVars,
-  });
-}
