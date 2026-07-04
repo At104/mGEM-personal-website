@@ -44,7 +44,7 @@ export const sponsorTierMeta: Record<
 > = {
   Gold: {
     label: "Gold",
-    subtitle: "Our leading partners for the season",
+    subtitle: "Our leading partners this cycle",
     rank: "1",
     bio: {
       bioType: "mRNA",
@@ -68,7 +68,7 @@ export const sponsorTierMeta: Record<
   },
   Silver: {
     label: "Silver",
-    subtitle: "Major supporters who help us build each year",
+    subtitle: "Our major supporters",
     rank: "2",
     bio: {
       bioType: "DNA",
@@ -158,7 +158,7 @@ export const sponsorTiers: SponsorTier[] = [
         link: "https://www.mcmaster.ca/",
         icon: "https://static.wixstatic.com/media/497ad0_ef1502ca85ba4730b6a10b887e23f705~mv2.jpg/v1/fill/w_279,h_155,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/office-of-president-logo1.jpg",
         description:
-          "McMaster's senior leadership — the Office of the President, Provost, and Vice-President of Research — backs our team with institutional support for student innovation.",
+          "Maureen J. MacDonald is McMaster’s Provost and Vice-President (Academic). As the university’s Chief Academic and Budgetary Officer, she work closely with colleagues across campus to champion academic excellence, strengthen student supports and grow McMaster’s research impact."
       },
     ],
   },
@@ -180,5 +180,36 @@ export const sponsorTiers: SponsorTier[] = [
           "The MSU represents ~27,000 undergraduate students. As an MSU-ratified club, McMaster iGEM receives funding, meeting space, and printing services.",
       },
     ],
+  },
+];
+
+export const otherSponsors: Sponsor[] = [
+  {
+    name: "Didar Lab",
+    link: "https://didarlab.ca/",
+    icon: "/photos/sponsors/didar.JPG",
+    description:
+      "We focus on developing and commercializing technologies that will keep our population healthy by preventing the spread of pathogens and providing diagnostic tools and therapeutics that aim to improve healthcare.",
+  },
+  {
+    name: "Housseinidoust Lab",
+    link: "https://www.hosseinidoustlab.com/",
+    icon: "/photos/sponsors/hosseinidoust.jpg",
+    description:
+      "Our research harnesses bacteriophages, viruses that specifically infect bacteria, to build a new generation of sustainable antimicrobial technologies that work where antibiotics fail.",
+  },
+  {
+    name: "Bramson Lab",
+    link: "https://cdcr.mcmaster.ca/research/",
+    icon: "/photos/sponsors/cdcr.png",
+    description:
+      "The lab is focused on developing methods to direct cancer patients' immune systems to attack their tumours.",
+  },
+  {
+    name: "BioRender",
+    link: "https://www.biorender.com/",
+    icon: "/photos/sponsors/biorender.jpg",
+    description:
+      "An easy-to-use illustration tool designed to help revolutionise how science is communicated one graphic at a time.",
   },
 ];

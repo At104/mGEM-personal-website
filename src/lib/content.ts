@@ -129,6 +129,21 @@ export const projects = {
   ],
 } as const;
 
+export const hpInitatives = {
+  storybook: {
+
+  },
+  workshop: {
+
+  },
+  vector: {
+
+  },
+  wasteTrack: {
+
+  },
+} as const;
+
 export const getInvolved = {
   intro:
     "Here at mGEM, we're more than just a research team; we're a dynamic community passionate about synthetic biology! If you're interested in exploring the fascinating world of genetic engineering and interdisciplinary collaboration, this is the place for you!",
