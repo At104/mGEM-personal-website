@@ -2,34 +2,63 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project
+## Commands
 
-Marketing/portfolio single-page app for **mGEM** — McMaster University's iGEM synthetic biology team. Content-heavy, animation-heavy, no backend.
+```bash
+npm run dev       # Start Vite dev server (localhost:5173)
+npm run build     # TypeScript compile + Vite production build
+npm run preview   # Serve the production build locally
+npm run lint      # ESLint over the entire project
+```
 
-## Stack & conventions
+**Dev server:** Always assume it is already running at http://localhost:5173. Never start it. Never open the browser.
 
-- **Vite + React 19** SPA (not Next.js — see below). TypeScript throughout.
-- **React Router 7** with `BrowserRouter`. Routes are declared in [src/App.tsx](src/App.tsx); each maps to one page in [src/pages/](src/pages/). Deployment ([vercel.json](vercel.json)) rewrites all paths to `/index.html` for client-side routing.
-- **Path alias**: `@/` -> `src/` (configured in [vite.config.ts](vite.config.ts) and [tsconfig.json](tsconfig.json)). Note some files also use relative `../` imports — both work.
-- **Tailwind** with a bespoke design system in [tailwind.config.ts](tailwind.config.ts): `paper`/`ink`/`forest` neutrals, `leaf` brand green, fluorescent-protein accents (`cyan`/`amber`/`gold`/`coral`/`violet`), and McMaster `maroon` used sparingly. Use these tokens rather than raw hex. Merge classes with `cn()` from [src/lib/utils.ts](src/lib/utils.ts).
-- Fonts are loaded via `@fontsource-variable/*` in [src/main.tsx](src/main.tsx) and exposed as CSS vars / Tailwind families (`font-display`, `font-sans`, `font-montserrat`, `font-mono`).
+There are no tests in this project.
 
-### Legacy Next.js artifacts (ignore / do not follow)
+## Architecture
 
-This repo was migrated from Next.js. Stale leftovers remain: [README.md](README.md) (describes a Next.js app — inaccurate), `next-env.d.ts`, and `postcss.config.mjs`/`eslint.config.mjs` naming. `ClientOnly` and SSR-mismatch guards exist but this is a pure client SPA. Don't reintroduce Next.js APIs (`next/font`, `next/image`, app router, etc.).
+React 19 + TypeScript SPA built with Vite. React Router v7 handles client-side routing. All routes are defined in `src/App.tsx` — Navbar and Footer wrap the `<Routes>` tree.
 
-## Content is data-driven
+**Pages** (`src/pages/`): One file per route (`/`, `/about-us`, `/our-team`, `/projects`, `/sponsors`, `/get-involved`). Pages compose shared components.
 
-Copy and structured content are centralized, not hard-coded in JSX. When updating site text, edit the data source, not the page:
+**Components** (`src/components/`): Reusable UI. Notable patterns:
+- `Reveal.tsx` — scroll-triggered entrance animation wrapper (GSAP + ScrollTrigger). Use for any element that should animate in on scroll.
+- `SplitChars.tsx` — per-character text animation.
+- `DnaScene.tsx` / `DnaFlowBackground.tsx` / `TeamDnaScene.tsx` — Three.js DNA helix renders used as decorative backgrounds.
+- `ClientOnly.tsx` — renders children only after hydration (guards Three.js canvases from SSR).
 
-- [src/lib/content.ts](src/lib/content.ts) — information for nearly all pages to copy: stats, subteam descriptions, projects, testimonials, sponsorships, and blurbs.
-- [src/data/membersData.json](src/data/membersData.json) — team roster, keyed by subteam group. Consumed by [src/components/TeamHelix.tsx](src/components/TeamHelix.tsx).
-- [src/data/sponsors.ts](src/data/sponsors.ts) — sponsor description, logos, and tiers.
-- Static assets (photos, videos) live in `public/` and are referenced by absolute path (e.g. `/photos/...`, `/Videos/...`).
+**Content** (`src/lib/content.ts`): Single source of truth for all static copy — stats, subteam descriptions, project data, testimonials, social links, etc. Edit this file to change site text rather than hunting through page components.
 
-## Limits
+**Utilities**:
+- `src/lib/gsap.ts` — registers GSAP plugins once (`ScrollTrigger`, `useGSAP`) and exports a `prefersReducedMotion()` guard. Always import GSAP from here, never directly from `gsap`.
+- `src/lib/utils.ts` — exports `cn()` (clsx + tailwind-merge).
+- `src/lib/teamConfig.ts` — team member display configuration.
+- `src/lib/dnaHelix.ts` — geometry helpers for Three.js helix.
 
-Set boundaries around involvement outside given prompts: 
-- Never commit, push, pull, or use any git commands
-- Do not read, edit, or access files outside of those explicitly named in the prompt
-- Do not run "npm run dev" unprompted
+**Data** (`src/data/membersData.json`): Member roster JSON consumed by the team page.
+
+**Aliases**: `@` maps to `src/` (configured in `vite.config.ts`).
+
+## Styling
+
+Tailwind CSS v3 with a custom theme defined in `tailwind.config.ts`. Key token groups:
+- `paper` / `ink` — light-mode base (warm off-white background, dark green text)
+- `forest` — inverted/dark section backgrounds
+- `leaf` — primary brand green
+- `maroon` — McMaster maroon (used sparingly as an accent)
+- `cyan`, `amber`, `gold`, `coral`, `violet` — fluorescent-protein accent palette
+
+Fonts (all variable): `font-display` (Bricolage Grotesque), `font-sans` (Inter), `font-montserrat`, `font-mono` (JetBrains Mono).
+
+Global styles in `src/globals.css`. Custom utility classes like `.bg-dots` and `.bg-dots-dark` are defined there.
+
+## Animation conventions
+
+- Wrap scroll-reveal elements in `<Reveal>` rather than writing raw GSAP.
+- Always check `prefersReducedMotion()` before running GSAP animations (the `Reveal` component does this automatically).
+- Three.js scenes (`DnaScene`, `TeamDnaScene`) are computationally expensive — keep them wrapped in `ClientOnly` and avoid mounting them unconditionally on mobile.
+- Framer Motion is installed and preferred for component-level animations (entrance, hover, layout). Import from `framer-motion`.
+
+## Assets
+
+Static assets live in `public/`. Photo sets are organized under `public/photos/{about-us,home,headshots,projects,sponsors}/`. Videos are under `public/Videos/`. Reference them with root-relative paths (e.g., `/photos/home/WetLab_TeamPhoto.jpg`).
