@@ -8,7 +8,7 @@ import { tierMedals } from "../components/sponsors/SponsorBioDecor";
 import {
   sponsorTierMeta,
   sponsorTiers,
-  otherSponsors,
+  iridiumSponsors,
   type Sponsor,
   type SponsorTierName,
 } from "../data/sponsors";
@@ -144,7 +144,7 @@ function TierSection({ tierName }: { tierName: SponsorTierName }) {
   );
 }
 
-function OtherSponsorCard({ sponsor }: { sponsor: Sponsor }) {
+function IridiumSponsorCard({ sponsor }: { sponsor: Sponsor }) {
   const [failed, setFailed] = useState(false);
 
   return (
@@ -187,28 +187,28 @@ function OtherSponsorCard({ sponsor }: { sponsor: Sponsor }) {
   );
 }
 
-function OtherSponsorsSection() {
+function IridiumSponsorsSection() {
   return (
     <section className="border-y border-ink/8 bg-paper-warm py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.28em] text-leaf-deep">
-              For spaces &amp; mentorship
+              For space and services
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-              Other sponsors
+              Iridium sponsors
             </h2>
             <p className="mt-4 text-ink-soft">
-              Organisations that have provided us valuable environments to work and learn from
+              Organisations that have provided us continuously stable support 
             </p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {otherSponsors.map((sponsor, i) => (
+          {iridiumSponsors.map((sponsor, i) => (
             <Reveal key={sponsor.name} delay={(i % 3) * 0.08} className="h-full">
-              <OtherSponsorCard sponsor={sponsor} />
+              <IridiumSponsorCard sponsor={sponsor} />
             </Reveal>
           ))}
         </div>
@@ -238,7 +238,7 @@ export default function SponsorsPage() {
         <TierSection key={tier.tier} tierName={tier.tier} />
       ))}
 
-      <OtherSponsorsSection />
+      <IridiumSponsorsSection />
 
       <section className="bg-maroon-deep py-20 text-white">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center">

@@ -61,11 +61,7 @@ const galleryAccents = [
   { eyebrow: "text-leaf-deep", bar: "bg-leaf", dot: "bg-leaf", shadow: "hover:shadow-leaf/20" },
 ];
 
-/**
- * Full-screen modal for a community initiative — a split panel (image gallery +
- * scrolling write-up) that reuses the card's accent colour. Closes via the corner
- * button, the backdrop, or the Escape key.
- */
+//Modal popup for HP initiative info
 function InitiativeModal({ index, onClose }: { index: number; onClose: () => void }) {
   const item = communityInitiatives[index];
   const accent = galleryAccents[index % galleryAccents.length];
@@ -151,6 +147,7 @@ function InitiativeModal({ index, onClose }: { index: number; onClose: () => voi
   );
 }
 
+//HP Initiatives gallery 
 function CommunityGallery() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -162,6 +159,18 @@ function CommunityGallery() {
     const clamped = Math.max(0, Math.min(i, communityInitiatives.length - 1));
     const card = track.children[clamped] as HTMLElement | undefined;
     if (card) track.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+  };
+
+    const scrollPrev = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const children = Array.from(track.children) as HTMLElement[];
+    let target = 0;
+    for (let i = 0; i < children.length; i++) {
+      if (children[i].offsetLeft < track.scrollLeft - 1) target = i;
+      else break;
+    }
+    track.scrollTo({ left: children[target].offsetLeft, behavior: "smooth" });
   };
 
   const handleScroll = () => {
@@ -202,7 +211,7 @@ function CommunityGallery() {
             <div className="hidden shrink-0 gap-2 sm:flex">
               <button
                 type="button"
-                onClick={() => scrollToIndex(active - 1)}
+                onClick={scrollPrev}
                 disabled={active === 0}
                 aria-label="Previous initiative"
                 className="rounded-full border border-ink/15 p-3 text-ink transition hover:bg-ink/5 disabled:cursor-not-allowed disabled:opacity-30"
@@ -228,7 +237,7 @@ function CommunityGallery() {
           >
             {communityInitiatives.map((item, i) => {
               const accent = galleryAccents[i % galleryAccents.length];
-              // Design 3 — Instant photo (Polaroid)
+              // Polaroid design for cards
               return (
                 <article
                   key={item.title}
@@ -271,24 +280,6 @@ function CommunityGallery() {
                 </article>
               );
             })}
-          </div>
-
-          <div className="mt-6 flex justify-center gap-2">
-            {communityInitiatives.map((item, i) => (
-              <button
-                type="button"
-                key={item.title}
-                onClick={() => scrollToIndex(i)}
-                aria-label={`Go to ${item.eyebrow} initiative`}
-                aria-current={active === i}
-                className={cn(
-                  "h-2 rounded-full transition-all",
-                  active === i
-                    ? cn("w-6", galleryAccents[i % galleryAccents.length].dot)
-                    : "w-2 bg-ink/20 hover:bg-ink/40"
-                )}
-              />
-            ))}
           </div>
         </div>
       </section>
