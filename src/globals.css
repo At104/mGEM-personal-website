@@ -256,6 +256,39 @@
   transform: translateY(-2px);
 }
 
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .intro-drop-coin,
+  .intro-drop-coin.is-active,
+  .intro-flip-drop,
+  .intro-flip-drop.is-active,
+  .intro-flip-spin,
+  .intro-flip-spin.is-active,
+  .intro-emerge-coin,
+  .intro-emerge-coin.is-active {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .intro-emerge-ripple,
+  .intro-emerge-ripple--delay {
+    display: none;
+  }
+
+  .home-scroll-intro .intro-decor,
+  .home-scroll-intro.is-active .intro-decor {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .home-scroll-intro .intro-scroll-hint {
+    opacity: 0;
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

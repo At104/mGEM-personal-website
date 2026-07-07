@@ -6,7 +6,7 @@ import {
   DNA_PALETTE_BRIGHT,
   disposeHelixGroup,
 } from "@/lib/dnaHelix";
-import ClientOnly from "./ClientOnly";
+import ClientOnly from "@/components/ui/ClientOnly";
 
 const COUNT = 80;
 const HELIX_LENGTH = 28;

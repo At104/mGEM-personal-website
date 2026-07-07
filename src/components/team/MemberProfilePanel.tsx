@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
-import { LinkedInIcon } from "./LinkedInIcon";
+import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import type { TeamNode } from "@/lib/teamConfig";
 import type { Member } from "./MemberCard";
 

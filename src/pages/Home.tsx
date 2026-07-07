@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import Hero from "../components/Hero";
-import StatStrip from "../components/StatStrip";
-import WhatIsIgem from "../components/WhatIsIgem";
-import SectionHeading from "../components/SectionHeading";
-import Reveal from "../components/Reveal";
+import Hero from "@/components/home/Hero";
+import StatStrip from "@/components/home/StatStrip";
+import WhatIsIgem from "@/components/home/WhatIsIgem";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
 import { subteams, showcasePhotos } from "@/lib/content";
 
 export default function Page() {

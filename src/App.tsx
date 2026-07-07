@@ -1,8 +1,8 @@
 import React, { useLayoutEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ScrollTrigger } from "./lib/gsap";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import OurTeam from "./pages/OurTeam";

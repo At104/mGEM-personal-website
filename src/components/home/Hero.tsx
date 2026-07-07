@@ -2,9 +2,9 @@
 import React, { useRef, useState } from "react";
 import { HiVolumeOff, HiVolumeUp, HiPlay, HiPause } from "react-icons/hi";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
-import ButtonLink from "./ButtonLink";
-import { ContainerScroll } from "./ui/ContainerScroll";
-import { SplitChars } from "./SplitChars";
+import ButtonLink from "@/components/ui/ButtonLink";
+import { ContainerScroll } from "@/components/ui/ContainerScroll";
+import { SplitChars } from "@/components/ui/SplitChars";
 
 function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);

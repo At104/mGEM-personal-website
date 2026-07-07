@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkedInIcon } from "./LinkedInIcon";
+import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import { cn } from "@/lib/utils";
 
 export type Member = {

@@ -44,11 +44,11 @@ function PastProjectVideo({ src }: { src: string }) {
   );
 }
 import { HiArrowRight, HiOutlineExternalLink } from "react-icons/hi";
-import PageHeader from "../components/PageHeader";
-import SectionHeading from "../components/SectionHeading";
-import Reveal from "../components/Reveal";
-import VideoPlayer from "../components/VideoPlayer";
-import ButtonLink from "../components/ButtonLink";
+import PageHeader from "@/components/ui/PageHeader";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+import VideoPlayer from "@/components/ui/VideoPlayer";
+import ButtonLink from "@/components/ui/ButtonLink";
 import { projects } from "@/lib/content";
 
 export default function ProjectsPage() {
