@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import PageHeader from "../components/PageHeader";
-import SectionHeading from "../components/SectionHeading";
-import Reveal from "../components/Reveal";
-import ButtonLink from "../components/ButtonLink";
-import DnaShowcase from "../components/DnaShowcase";
+import PageHeader from "@/components/ui/PageHeader";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+import ButtonLink from "@/components/ui/ButtonLink";
+import DnaShowcase from "@/components/about/DnaShowcase";
 import { missionIntro, igemIntro, subteams } from "@/lib/content";
 import { cn } from "@/lib/utils";
 

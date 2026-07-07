@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { SiGmail, SiInstagram } from "react-icons/si";
 import { MdBiotech } from "react-icons/md";
 import { landAcknowledgment, socials } from "@/lib/content";
-import { LinkedInIcon } from "./LinkedInIcon";
+import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 
 const icons = [SiGmail, SiInstagram, LinkedInIcon, MdBiotech];
 

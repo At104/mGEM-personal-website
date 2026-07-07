@@ -1,8 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import PageHeader from "../components/PageHeader";
-import TeamHelix from "../components/TeamHelix";
-import type { Member } from "../components/MemberCard";
+import PageHeader from "@/components/ui/PageHeader";
+import TeamHelix from "@/components/team/TeamHelix";
+import type { Member } from "@/components/team/MemberCard";
 import membersData from "../data/membersData.json";
 
 type MembersData = Record<

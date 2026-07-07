@@ -1,11 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineExternalLink } from "react-icons/hi";
-import PageHeader from "../components/PageHeader";
-import SectionHeading from "../components/SectionHeading";
-import Reveal from "../components/Reveal";
-import ButtonLink from "../components/ButtonLink";
-import MailingListForm from "../components/MailingListForm";
+import PageHeader from "@/components/ui/PageHeader";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+import ButtonLink from "@/components/ui/ButtonLink";
+import MailingListForm from "@/components/get-involved/MailingListForm";
 import { getInvolved, testimonies } from "@/lib/content";
 
 const paths = [

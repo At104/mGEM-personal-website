@@ -2,8 +2,8 @@
 import React, { useRef } from "react";
 import { HiArrowRight } from "react-icons/hi";
 import { igemIntro } from "@/lib/content";
-import ButtonLink from "./ButtonLink";
-import DnaFlowBackground from "./DnaFlowBackground";
+import ButtonLink from "@/components/ui/ButtonLink";
+import DnaFlowBackground from "@/components/home/DnaFlowBackground";
 
 /** What is iGEM — intro copy with full-width DNA helix background. */
 export default function WhatIsIgem() {
