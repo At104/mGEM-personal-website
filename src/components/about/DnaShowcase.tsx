@@ -1,6 +1,6 @@
 
-import ClientOnly from "./ClientOnly";
-import DnaScene, { type DnaSceneProps } from "./DnaScene";
+import ClientOnly from "@/components/ui/ClientOnly";
+import DnaScene, { type DnaSceneProps } from "@/components/about/DnaScene";
 
 const fallback = (
   <div className="h-full min-h-[280px] w-full animate-pulse rounded-3xl bg-maroon/10 sm:min-h-[360px]" aria-hidden />

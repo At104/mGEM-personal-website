@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineMail, HiArrowRight } from "react-icons/hi";
-import PageHeader from "../components/PageHeader";
-import Reveal from "../components/Reveal";
-import ButtonLink from "../components/ButtonLink";
-import { tierMedals } from "../components/sponsors/SponsorBioDecor";
+import PageHeader from "@/components/ui/PageHeader";
+import Reveal from "@/components/ui/Reveal";
+import ButtonLink from "@/components/ui/ButtonLink";
+import { tierMedals } from "@/components/sponsors/SponsorBioDecor";
 import {
   sponsorTierMeta,
   sponsorTiers,

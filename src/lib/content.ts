@@ -1,10 +1,8 @@
-/** All site copy sourced from the original mGEM website. */
-
 export const stats = [
   { value: "Gold", label: "Medalist, 2025 Undergrad Category", accent: "text-gold-light" },
   { value: "10+", numeric: 10, suffix: "+", label: "Years Established", accent: "text-white" },
   { value: "40+", numeric: 40, suffix: "+", label: "Active Members", accent: "text-cyan" },
-  { value: "5", numeric: 5, suffix: "", label: "Interdisciplinary Subteams", accent: "text-coral" },
+  { value: "6", numeric: 6, suffix: "", label: "Interdisciplinary Subteams", accent: "text-coral" },
 ] as const;
 
 export const igemIntro =
@@ -76,8 +74,8 @@ export const subteams = [
     id: "webDev",
     name: "Web Dev",
     short: "Codes scientific progress into websites",
-    image: "/photos/about-us/black_screen.png",
-    imageAlt: "Web Dev team photo coming soon",
+    image: "/photos/about-us/webdev.jpg",
+    imageAlt: "Web Dev lead",
     bar: "bg-coral",
     text: "text-coral-deep",
     body: "Our Web Dev members work towards the development of mGEM's personal website and the team's wiki for the competition to document all of our findings in a clear and visually appealing way. Aside from updating mGem’s personal wiki, their main role is to work together with the media team to plan a layout for the team’s Wiki. Throughout the project development process, they’re responsible for keeping the website updated with new designs and information. All of the other subteams’ hard work is recorded on the website for transparency. ",
@@ -136,9 +134,7 @@ export const getInvolved = {
     "Here at mGEM, we're more than just a research team; we're a dynamic community passionate about synthetic biology! If you're interested in exploring the fascinating world of genetic engineering and interdisciplinary collaboration, this is the place for you!",
   joinTeam: {
     title: "Join the Team",
-    body: "We are now hiring for the upcoming cycle! This is an exciting opportunity for individuals eager to join our team and actively participate in groundbreaking research throughout the school year. Whether you're interested in Wet Lab, Dry Lab, Human Practices, Media, or Admin, we have positions available across all our subcommittees. It's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
-    href: "https://drive.google.com/file/d/1S3qan9FuQdgtXN7NrH80ScHk6ooqanGW/view",
-    cta: "Learn more",
+    body: "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, the applications for next year's cycle typically open around December. Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
   },
   generalMember: {
     title: "Become a General Member",
@@ -181,8 +177,8 @@ export const sponsorsPitch = {
 export const showcasePhotos = [
   { src: "/photos/home/WetLab_TeamPhoto.jpg", alt: "Wet Lab team photo in the lab", span: "md:col-span-2 md:row-span-2" },
   { src: "/photos/home/Westdale_Workshop.jpg", alt: "Outreach workshop at Westdale", span: "" },
-  { src: "/photos/home/HP_Workshop.jpg", alt: "Human Practices workshop", span: "" },
-  { src: "/photos/home/JamboreePhoto.png", alt: "mGEM at the iGEM Grand Jamboree", span: "md:col-span-2" },
+  { src: "/photos/home/team5.jpg", alt: "Team members", span: "" },
+  { src: "/photos/home/JamboreePhoto.png", alt: "mGEM at the iGEM Grand Jamboree", span: "md:col-span-2" }
 ] as const;
 
 export const socials = [

@@ -1,11 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineExternalLink } from "react-icons/hi";
-import PageHeader from "../components/PageHeader";
-import SectionHeading from "../components/SectionHeading";
-import Reveal from "../components/Reveal";
-import ButtonLink from "../components/ButtonLink";
-import MailingListForm from "../components/MailingListForm";
+import PageHeader from "@/components/ui/PageHeader";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+import ButtonLink from "@/components/ui/ButtonLink";
+import MailingListForm from "@/components/get-involved/MailingListForm";
 import { getInvolved, testimonies } from "@/lib/content";
 
 const paths = [
@@ -32,9 +32,11 @@ export default function GetInvolvedPage() {
                   <span className={`font-mono text-xs font-bold ${p.accent}`}>{String(i + 1).padStart(2, "0")}</span>
                   <h2 className="mt-2 font-display text-2xl font-bold">{p.title}</h2>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-soft">{p.body}</p>
-                  <ButtonLink href={p.href} external className="mt-6 self-start">
-                    {p.cta} <HiOutlineExternalLink aria-hidden />
-                  </ButtonLink>
+                  {"href" in p && p.href && (
+                    <ButtonLink href={p.href} external className="mt-6 self-start">
+                      {p.cta} <HiOutlineExternalLink aria-hidden />
+                    </ButtonLink>
+                  )}
                 </div>
               </div>
             </Reveal>

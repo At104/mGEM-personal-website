@@ -1,4 +1,4 @@
-import type { Member } from "@/components/MemberCard";
+import type { Member } from "@/components/team/MemberCard";
 
 export type TeamGroupKey =
   | "PI"
