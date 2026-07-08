@@ -6,10 +6,18 @@ export const stats = [
 ] as const;
 
 export const igemIntro =
-  "iGEM is a highly accomplished international synthetic biology competition aimed primarily at undergraduates, with the involvement of students, professors, and various stakeholders. Interdisciplinary teams specializing in Wet Lab, Dry Lab, and Human Practices collaborate to create novel synthetic biology oriented projects that can be applied in the real world!";
+  "iGEM is a highly accomplished international \
+  synthetic biology competition aimed primarily at undergraduates, \
+  with the involvement of students, professors, and various stakeholders. \
+  Interdisciplinary teams specializing in Wet Lab, Dry Lab, and Human Practices \
+  collaborate to create novel synthetic biology oriented projects that can be applied in the real world!";
 
 export const missionIntro =
-  "mGEM is McMaster University's award-winning synthetic biology research and design team. Each year, with the involvement of students, professors, stakeholders, and the surrounding community, we design and build a synthetic biology project to tackle real-world problems.";
+  "mGEM is McMaster University's award-winning synthetic \
+  biology research and design team. \
+  Each year, with the involvement of students, professors, stakeholders, and the surrounding community, \
+  biology research and design team. Each year, with the involvement of students, professors, stakeholders, \
+  and the surrounding community, we design and build a synthetic biology project to tackle real-world problems.";
 
 export const heroTagline =
   "We are an interdisciplinary team of students working to create synthetic biology solutions to big problems.";
@@ -86,7 +94,7 @@ export const subteams = [
 export const projects = {
   current: {
     year: "2025",
-    title: "2025 Project",
+    title: "REACT - Renal Ease-of-use Assessment for Clinical Transplants",
     wiki: "https://2025.igem.wiki/mcmaster-canada/",
     video: "/Videos/React Promo Vid.mp4",
   },
@@ -134,7 +142,7 @@ export const getInvolved = {
     "Here at mGEM, we're more than just a research team; we're a dynamic community passionate about synthetic biology! If you're interested in exploring the fascinating world of genetic engineering and interdisciplinary collaboration, this is the place for you!",
   joinTeam: {
     title: "Join the Team",
-    body: "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, the applications for next year's cycle typically open around December. Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
+    body: "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, the applications for next year's cycle will open after jamboree. Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
   },
   generalMember: {
     title: "Become a General Member",

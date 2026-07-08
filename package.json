@@ -15,6 +15,7 @@
     "@fontsource-variable/montserrat": "latest",
     "@gsap/react": "^2.1.2",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.42.2",
     "gsap": "^3.15.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
