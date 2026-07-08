@@ -8,6 +8,7 @@ import ButtonLink from "@/components/ui/ButtonLink";
 import MailingListForm from "@/components/get-involved/MailingListForm";
 import { getInvolved, testimonies } from "@/lib/content";
 
+// 2 entries only — the 3rd grid column is always the hardcoded photo card below the map.
 const paths = [
   { ...getInvolved.joinTeam, bar: "bg-leaf", accent: "text-leaf-deep" },
   { ...getInvolved.generalMember, bar: "bg-cyan", accent: "text-cyan-deep" },

@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { stats } from "@/lib/content";
@@ -17,6 +16,7 @@ export default function StatStrip() {
         ease: "power3.out",
         scrollTrigger: { trigger: ref.current, start: "top 82%", once: true },
       });
+      // GSAP reads data-target (end value) and data-suffix (e.g. "+") off each .stat-num span to drive the counter.
       gsap.utils.toArray<HTMLElement>(".stat-num").forEach((el) => {
         const target = Number(el.dataset.target);
         const suffix = el.dataset.suffix ?? "";

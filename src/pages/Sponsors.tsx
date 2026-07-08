@@ -194,13 +194,13 @@ function IridiumSponsorsSection() {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.28em] text-leaf-deep">
-              For space and services
+              For Space and Services
             </p>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-              Iridium sponsors
+              Iridium Sponsors
             </h2>
             <p className="mt-4 text-ink-soft">
-              Organisations that have provided us continuously stable support 
+              Organizations that have continuously provided us with space and services
             </p>
           </div>
         </Reveal>

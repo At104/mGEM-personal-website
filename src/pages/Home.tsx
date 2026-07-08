@@ -19,7 +19,6 @@ export default function Page() {
       <StatStrip />
       <WhatIsIgem />
 
-      {/* Subteams — horizontal cards with color bars */}
       <section className="border-y border-ink/8 bg-paper-warm py-24 sm:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
@@ -68,7 +67,6 @@ export default function Page() {
           ))}
         </div>
       </section>
-
     </>
   );
 }

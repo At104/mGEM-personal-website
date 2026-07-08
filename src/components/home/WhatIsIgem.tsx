@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { HiArrowRight } from "react-icons/hi";
 import { igemIntro } from "@/lib/content";
