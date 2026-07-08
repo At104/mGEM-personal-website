@@ -17,7 +17,7 @@ The official website for McMaster University's iGEM team. Built with React 19, T
 
 ```bash
 npm run dev      # Dev server at localhost:5173
-npm run build    # TypeScript check + production build
+npm run build    # Production build
 npm run preview  # Serve the production build locally
 npm run lint     # ESLint
 ```
