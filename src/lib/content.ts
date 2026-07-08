@@ -127,6 +127,8 @@ export const projects = {
   ],
 } as const;
 
+
+
 export const getInvolved = {
   intro:
     "Here at mGEM, we're more than just a research team; we're a dynamic community passionate about synthetic biology! If you're interested in exploring the fascinating world of genetic engineering and interdisciplinary collaboration, this is the place for you!",
@@ -188,3 +190,64 @@ export const socials = [
 
 export const landAcknowledgment =
   "McMaster iGEM recognizes and acknowledges that it is located on the traditional territories of the Mississauga and Haudenosaunee nations, and within the lands protected by the \"Dish with One Spoon\" wampum agreement.";
+
+export const communityInitiatives = [
+  {
+    eyebrow: "A 3-part animated series and storybook",
+    title: "The Inquirer's Quest",
+    image: "/photos/projects/inquirer1.JPG",
+    images: [
+      "/photos/projects/inquirer1.JPG",
+      "/photos/projects/inquirer2.JPG",
+      "/photos/projects/inquirer3.JPG",
+    ],
+    description:
+      "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, and between research and the people it is meant to serve. What began as data and stakeholder insights became landscapes, characters, and metaphors that carried meaning in ways numbers alone could not. Our protagonist, the Inquirer, represents a chimera of all three of our research subteams. However, the Inquirer is not alone in their journey. From exploring their community to the inner world of the body, they’re joined by a diverse cast of characters, just like the internal journal of our team being rooted in collaboration. Just as important as the science itself was the process of giving it form, through illustration and animation that invited audiences to not only learn but to feel the story unfolding. What this project ultimately demonstrates is that science is not complete when the experiment ends or the prototype is built. In that sense, The Inquirer's Quest is not just our story but is an invitation to see science as a journey that belongs to everyone. This project was a quiet yet impactful return to our purpose, reminding us that good science is not only what we build but how we listen."
+  },
+  {
+    eyebrow: "Inspiring high school students",
+    title: "Shad Canada Workshop",
+    image: "/photos/projects/shad1.JPG",
+    images: [
+      "/photos/projects/shad2.JPG",
+      "/photos/projects/shad3.JPG",
+      "/photos/projects/shad4.JPG",
+    ],
+    description:
+      "Last year, the McMaster iGEM team ran a workshop in partnership with SHAD McMaster, a month-long live-in program hosted at universities across Canada for groups of about 60 students from across Canada. In this workshop, students were introduced to 3 different aspects of iGEM and synthetic biology through hands-on activities that promoted curiosity and a passion for science. The students participated in a pipetting and plate streaking workshop with our wet lab team; an ethics debate room with our human practices team; and a tutorial and digital escape room with our dry lab team.By creating an opportunity for students to explore synthetic biology in an interactive and activity-based model, we allowed students to explore their interest in science and foster a space to ask questions and learn. At the end of the workshop all participants were given access to an anonymous feedback form where they could share their opinions and experience during the workshop. By allowing the students to share how they felt during the workshop and actively encouraging constructive feedback on how our team could improve, we fostered two-way dialogue in which our team learned from our participants just as much as they learned from us."
+  },
+  {
+    eyebrow: "Officially publishing at iGEM",
+    title: "Vector Review Article",
+    image: "/photos/projects/vector1.JPG",
+    images: [
+      "/photos/projects/vector1.JPG",
+      "/photos/projects/vector2.JPG",
+    ],
+    description:
+      "In 2025, our team had the opportunity to contribute to Vector, an unofficial iGEM proceedings journal hosted by Maastricht University. Vector is a unique platform created by and for iGEM teams, featuring original research, literature reviews, conceptual articles, and interviews. Additionally, we were ranked as one of the Top 3 submissions, a testament to our scientific, creative and innovative contributions to Vector. Our submission that year was a review on acute graft rejection, the medical challenge at the center of our 2025 iGEM project. In our review, we explained how current diagnostic methods such as biopsies, serum creatinine testing, and donor-derived cell-free DNA assays fall short because they are invasive, costly, slow, or difficult to access. We chose this topic because it highlights both an urgent medical need and the broader question of who benefits from scientific progress. By situating these scientific tools within the lived realities of patients and clinicians, we wanted to show that improving diagnostics is not just a technical challenge, but also a matter of accessibility and fairness in healthcare. Publishing in Vector was an important step in making our voices, as students, part of a wider scientific and social conversation. "
+  },
+  {
+    eyebrow: "Integrating sustainability with efficiency",
+    title: "Waste Tracking ",
+    image: "/photos/projects/waste1.JPG",
+    images: [
+      "/photos/projects/waste1.JPG",
+      "/photos/projects/waste2.JPG",
+      "/photos/projects/waste3.JPG",
+    ],
+    description:
+      "The UN Environmental Programme ranks plastic pollution as one of the top 10 global environmental challenges, and lab research is one of its many significant contributors. In light of this issue, MGEM's wet lab team undertook a unique waste tracking initiative. During August of 2025, they tracked all the waste generated in the lab, and used the resulting data, along with their own reflections, to create a comprehensive guide designed to help future iGEM teams reduce waste generated by their own lab process. Ultimately, waste tracking data is underestimated due to various assumptions made in the tracking process, and inevitable human error. Despite this, tracking lab waste is essential for increasing the transparency of lab practices that are often hidden to the public. Reporting these numbers is an essential starting point for initiating large-scale efforts to reduce lab waste. After completing the project, we found that actively tracking waste not only reduced overall material use but encouraged us to prioritize environmental considerations during protocol design. This shift in mindset made waste reduction an integral part of our routine, rather than an afterthought. The integration of waste-tracking with lab protocols would not only improve efficiency but also further align our scientific practice with the broader goal of creating more sustainable and responsible research methods."
+  },
+  {
+    eyebrow: "Skills farming for 6 weeks",
+    title: "Health Innovation Bootcamp (HIB)",
+    image: "/photos/projects/hib1.JPG",
+    images: [
+      "/photos/projects/hib1.JPG",
+      "/photos/projects/hib2.JPG",
+    ],
+    description:
+      "Hosted by The Clinic, McMaster’s health innovation hub, this bootcamp was designed to provide young innovators with the building blocks of entrepreneurship. Each of the six individual sessions focused on distilling specific concepts through means of immersive, project-focused education. Our entrepreneurship team’s experiences in the HIB informed the creation of our business plan in several ways: our pitch deck was modelled after the structure presented in week 4 of HIB; the need statement framework and problem validation skills taught in week 1 solidified our project direction; and following HIB’s conclusion, the entrepreneurship team hosted workshop focused on delivering the most important tools  to the rest of the mGEM team. Beyond the research, interacting with clinicians and other stakeholders throughout this process highlighted the importance of the patient experience, inspiring us to create an MVP with instructions to simulate what the patients would actually receive. We sought to spread the nuanced understanding of creating a health innovation our team was left with to the McMaster undergraduate community. We shared these learning lessons with undergraduate students across various fields at McMaster University through our Health Entrepreneurship Workshop."
+  },
+] as const;

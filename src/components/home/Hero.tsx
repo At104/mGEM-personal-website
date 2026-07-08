@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from "react";
 import { HiVolumeOff, HiVolumeUp, HiPlay, HiPause } from "react-icons/hi";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
@@ -55,6 +54,8 @@ function HeroVideo() {
 const mgemSize =
   "font-bold text-7xl md:text-9xl lg:text-9xl xl:text-[14rem]";
 
+// Three stacked copies of "mGEM": maroon italic / stroke+mirrored / maroon italic.
+// The middle row uses .stroke (outlined text) and .reverse-italic (scaleX(-1)) to create a reflected shadow.
 function MgemWordmark() {
   return (
     <div
@@ -130,7 +131,6 @@ export default function Hero() {
         <HeroVideo />
       </ContainerScroll>
 
-      {/* Headline + CTAs — sits directly under the scroll hero */}
       <div ref={subRef} className="relative mx-auto max-w-7xl px-6 pb-20 pt-4 text-center sm:pb-24">
         <h1
           className="mx-auto max-w-4xl font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"

@@ -8,6 +8,7 @@ import { tierMedals } from "@/components/sponsors/SponsorBioDecor";
 import {
   sponsorTierMeta,
   sponsorTiers,
+  iridiumSponsors,
   type Sponsor,
   type SponsorTierName,
 } from "../data/sponsors";
@@ -143,6 +144,79 @@ function TierSection({ tierName }: { tierName: SponsorTierName }) {
   );
 }
 
+function IridiumSponsorCard({ sponsor }: { sponsor: Sponsor }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <a
+      href={sponsor.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink/8 bg-paper transition hover:shadow-lg hover:shadow-leaf/10"
+    >
+      <span className="block h-1.5 bg-leaf" aria-hidden />
+      <div className="flex flex-1 flex-col p-6 sm:p-7">
+        <div className="flex items-center gap-4">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-ink/8 bg-white p-2.5">
+            {!sponsor.icon || failed ? (
+              <span className="font-mono text-xl font-bold text-leaf-deep">
+                {sponsor.name.charAt(0)}
+              </span>
+            ) : (
+              <img
+                src={sponsor.icon}
+                alt={`${sponsor.name} logo`}
+                className="max-h-full max-w-full object-contain transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                onError={() => setFailed(true)}
+              />
+            )}
+          </div>
+          <h3 className="font-display text-lg font-bold leading-snug text-ink transition-colors group-hover:text-leaf-deep sm:text-xl">
+            {sponsor.name}
+          </h3>
+        </div>
+        <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-soft">
+          {sponsor.description}
+        </p>
+        <p className="mt-5 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-leaf-deep/70 group-hover:text-leaf-deep">
+          Visit site <HiArrowRight className="h-3.5 w-3.5" />
+        </p>
+      </div>
+    </a>
+  );
+}
+
+function IridiumSponsorsSection() {
+  return (
+    <section className="border-y border-ink/8 bg-paper-warm py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.28em] text-leaf-deep">
+              For Space and Services
+            </p>
+            <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+              Iridium Sponsors
+            </h2>
+            <p className="mt-4 text-ink-soft">
+              Organizations that have continuously provided us with space and services
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {iridiumSponsors.map((sponsor, i) => (
+            <Reveal key={sponsor.name} delay={(i % 3) * 0.08} className="h-full">
+              <IridiumSponsorCard sponsor={sponsor} />
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function SponsorsPage() {
   return (
     <>
@@ -163,6 +237,8 @@ export default function SponsorsPage() {
       {sponsorTiers.map((tier) => (
         <TierSection key={tier.tier} tierName={tier.tier} />
       ))}
+
+      <IridiumSponsorsSection />
 
       <section className="bg-maroon-deep py-20 text-white">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center">

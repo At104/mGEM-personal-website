@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import PageHeader from "@/components/ui/PageHeader";
 import TeamHelix from "@/components/team/TeamHelix";
@@ -22,6 +21,7 @@ export default function OurTeam() {
         title="Many faculties, one team"
         lede="Our members span programs across McMaster — engineering, life sciences, health sciences, commerce, and more — working together across Wet Lab, Dry Lab, Human Practices, Media, Finance, and Web Dev to bring each year's project to life."
       />
+      {/* JSON imports have no inferred type — cast required so TS knows each key maps to Member[]. */}
       <TeamHelix data={membersData as MembersData} />
     </>
   );
