@@ -39,7 +39,7 @@ function HeroVideo({ ready }: { ready: boolean }) {
         className="mx-auto aspect-video h-full w-full object-cover object-center"
         src="/Videos/what_is_igemf.mp4"
         loop
-        muted
+        muted={muted}
         playsInline
         preload="auto"
         aria-label="What is iGEM — McMaster iGEM"
@@ -125,10 +125,10 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const subRef = useRef<HTMLDivElement>(null);
 
-  // Delay video autoplay until the wordmark animation finishes (~1.75 s total)
+  // Delay video autoplay until the last row animation begins (~1 s into the sequence)
   const [videoReady, setVideoReady] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setVideoReady(true), 900);
+  useEffect(() => { 
+    const t = setTimeout(() => setVideoReady(true), 1000);
     return () => clearTimeout(t);
   }, []);
 
