@@ -1,5 +1,4 @@
-
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { HiVolumeOff, HiVolumeUp, HiPlay, HiPause } from "react-icons/hi";
 import { cn } from "@/lib/utils";
 

@@ -214,16 +214,16 @@ export default function ProjectsPage() {
     <>
       <Helmet>
         <title>Projects — McMaster iGEM</title>
-        <meta name="description" content="Explore mGEM's current and past iGEM competition projects." />
+        <meta name="description" content="Explore McMaster iGEM's current and past competition projects." />
       </Helmet>
       <PageHeader
         eyebrow="Projects"
-        title="Building biology, season after season"
-        lede="Each year mGEM designs and builds a new synthetic biology project for the international iGEM competition."
+        title="Building Biology, Season After Season"
+        lede="Each year McMaster iGEM designs and builds a new synthetic biology project for the international iGEM competition."
       />
 
-      <section className="mx-auto max-w-7xl px-6 pb-20">
-        <SectionHeading eyebrow="Current" title={`${current.year} season`} />
+      <section className="mx-auto max-w-7xl px-6 pb-20 pt-20">
+        <SectionHeading eyebrow="Latest project" title={`${current.year} Season`} />
         <Reveal delay={0.1} className="mt-10">
           <div className="overflow-hidden rounded-3xl border border-ink/8 bg-paper-warm shadow-xl">
             <VideoPlayer src={current.video} />

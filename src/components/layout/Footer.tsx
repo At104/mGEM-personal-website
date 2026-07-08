@@ -13,8 +13,8 @@ export default function Footer() {
       <div className="h-0.5 w-full bg-gradient-to-r from-maroon-deep via-maroon to-maroon-light" />
       <div className="section-divider border-b border-ink/8" aria-hidden />
 
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1.2fr]">
+      <div className="mx-auto max-w-7xl px-6 py-10">
+        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr_1.2fr]">
           <div>
             <Link to="/" className="flex items-center gap-3">
               <img src="/photos/site/MGEM-Logo.png" alt="" width={48} height={32} className="h-8 w-auto" />
@@ -23,7 +23,7 @@ export default function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">
               McMaster University&apos;s synthetic biology research and design team, competing annually in the international iGEM competition.
             </p>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-4 flex gap-3">
               {socials.map((s, i) => {
                 const Icon = icons[i];
                 return (
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/8 pt-8 text-xs text-ink-mute sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-ink/8 pt-5 text-xs text-ink-mute sm:flex-row">
           <p>© {new Date().getFullYear()} mGEM — McMaster iGEM</p>
           <a href="mailto:igemmcmaster@gmail.com" className="hover:text-ink">
             igemmcmaster@gmail.com

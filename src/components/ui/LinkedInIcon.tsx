@@ -1,9 +1,7 @@
-import React from "react";
 import { cn } from "@/lib/utils";
 
 type IconProps = { className?: string };
 
-/** LinkedIn mark — react-icons removed brand icons in v5.6. */
 export function LinkedInIcon({ className }: IconProps) {
   return (
     <svg

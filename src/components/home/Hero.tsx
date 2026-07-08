@@ -1,14 +1,20 @@
-import React, { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { HiVolumeOff, HiVolumeUp, HiPlay, HiPause } from "react-icons/hi";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import ButtonLink from "@/components/ui/ButtonLink";
 import { ContainerScroll } from "@/components/ui/ContainerScroll";
 import { SplitChars } from "@/components/ui/SplitChars";
 
-function HeroVideo() {
+function HeroVideo({ ready }: { ready: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(true);
+
+  // Start playback only after the wordmark animation completes (~1.8 s)
+  useEffect(() => {
+    if (ready) videoRef.current?.play().then(() => setPaused(false)).catch(() => {});
+  }, [ready]);
 
   const toggleMute = () => {
     const v = videoRef.current;
@@ -32,11 +38,10 @@ function HeroVideo() {
         ref={videoRef}
         className="mx-auto aspect-video h-full w-full object-cover object-center"
         src="/Videos/what_is_igemf.mp4"
-        autoPlay
         loop
-        muted
+        muted={muted}
         playsInline
-        preload="metadata"
+        preload="auto"
         aria-label="What is iGEM — McMaster iGEM"
       />
       <div className="absolute bottom-3 right-3 flex items-center gap-2 sm:bottom-4 sm:right-4">
@@ -51,22 +56,67 @@ function HeroVideo() {
   );
 }
 
-const mgemSize =
-  "font-bold text-7xl md:text-9xl lg:text-9xl xl:text-[14rem]";
+const mgemSize = "font-bold text-7xl md:text-9xl lg:text-9xl xl:text-[14rem]";
 
-// Three stacked copies of "mGEM": maroon italic / stroke+mirrored / maroon italic.
-// The middle row uses .stroke (outlined text) and .reverse-italic (scaleX(-1)) to create a reflected shadow.
+
+// Three stacked "mGEM" rows that flipravel on load.
+//
+// Row 1: drops from above the viewport (y: -120) while simultaneously
+// flipping in from behind (rotateX: -90 → 0). The combination reads as
+// the text tumbling down out of the top of the screen.
+//
+// Rows 2 and 3: start at rotateX ±180 (folded flat on the row above),
+// quick-fade to opacity 1 so you briefly see each row sitting on the
+// previous one, then the full rotation peels it down into its slot.
 function MgemWordmark() {
+  const reduced = useReducedMotion();
+  const ease = [0.25, 0.46, 0.45, 0.94] as const;
+
   return (
     <div
       className="hero-mgem-wordmark font-montserrat select-none text-center"
+      style={{ perspective: "600px" }}
       aria-label="mGEM"
     >
-      <div className={`italic leading-none text-maroon ${mgemSize}`}>mGEM</div>
-      <div className={`stroke reverse-italic inline-block leading-none ${mgemSize}`}>
+      <motion.div
+        className={`italic leading-none text-maroon ${mgemSize}`}
+        style={{ transformOrigin: "top center" }}
+        initial={reduced ? false : { y: -100, rotateX: -90, opacity: 0 }}
+        animate={{ y: 0, rotateX: 0, opacity: 1 }}
+        transition={{
+          y:       { type: "spring", stiffness: 220, damping: 24, mass: 0.9 },
+          rotateX: { duration: 0.75, ease },
+          opacity: { duration: 0.15, ease: "linear" },
+        }}
+      >
         mGEM
-      </div>
-      <div className={`italic leading-none text-maroon ${mgemSize}`}>mGEM</div>
+      </motion.div>
+
+      <motion.div
+        className={`stroke italic leading-none ${mgemSize}`}
+        style={{ transformOrigin: "top center", scaleX: 1 }}
+        initial={reduced ? false : { rotateX: -180, opacity: 0 }}
+        animate={{ rotateX: 0, opacity: 1 }}
+        transition={{
+          rotateX: { duration: 0.85, ease, delay: 0.45 },
+          opacity:  { duration: 0.18, ease: "linear", delay: 0.45 },
+        }}
+      >
+        mGEM
+      </motion.div>
+
+      <motion.div
+        className={`italic leading-none text-maroon ${mgemSize}`}
+        style={{ transformOrigin: "top center" }}
+        initial={reduced ? false : { rotateX: 180, opacity: 0 }}
+        animate={{ rotateX: 0, opacity: 1 }}
+        transition={{
+          rotateX: { duration: 0.85, ease, delay: 0.9 },
+          opacity:  { duration: 0.18, ease: "linear", delay: 0.9 },
+        }}
+      >
+        mGEM
+      </motion.div>
     </div>
   );
 }
@@ -75,17 +125,16 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const subRef = useRef<HTMLDivElement>(null);
 
+  // Delay video autoplay until the last row animation begins (~1 s into the sequence)
+  const [videoReady, setVideoReady] = useState(false);
+  useEffect(() => { 
+    const t = setTimeout(() => setVideoReady(true), 1000);
+    return () => clearTimeout(t);
+  }, []);
+
   useGSAP(
     () => {
       if (prefersReducedMotion()) return;
-
-      gsap.from(".hero-mgem-wordmark > div", {
-        autoAlpha: 0,
-        y: 40,
-        duration: 0.85,
-        ease: "power3.out",
-        stagger: 0.12,
-      });
 
       const chars = subRef.current?.querySelectorAll("[data-hero-char]");
       if (chars?.length) {
@@ -128,7 +177,7 @@ export default function Hero() {
       <div className="glow right-[10%] top-[18%] h-64 w-64 bg-cyan/10" aria-hidden />
 
       <ContainerScroll titleComponent={<MgemWordmark />}>
-        <HeroVideo />
+        <HeroVideo ready={videoReady} />
       </ContainerScroll>
 
       <div ref={subRef} className="relative mx-auto max-w-7xl px-6 pb-20 pt-4 text-center sm:pb-24">
