@@ -111,7 +111,7 @@ export const subteams = [
     body:
       "Our Web Dev members work towards the development of mGEM's personal website and the team's wiki for the competition " +
       "to document all of our findings in a clear and visually appealing way. " +
-      "Aside from updating mGem's personal wiki, their main role is to work together with the media team to plan a layout for the team's Wiki. " +
+      "Aside from updating mGEM's personal wiki, their main role is to work together with the media team to plan a layout for the team's Wiki. " +
       "Throughout the project development process, they're responsible for keeping the website updated with new designs and information. " +
       "All of the other subteams' hard work is recorded on the website for transparency.",
     icon: "/photos/about-us/palette.png",
