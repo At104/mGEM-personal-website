@@ -9,11 +9,11 @@ import { SplitChars } from "@/components/ui/SplitChars";
 function HeroVideo({ ready }: { ready: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(true);
 
   // Start playback only after the wordmark animation completes (~1.8 s)
   useEffect(() => {
-    if (ready) videoRef.current?.play().catch(() => {});
+    if (ready) videoRef.current?.play().then(() => setPaused(false)).catch(() => {});
   }, [ready]);
 
   const toggleMute = () => {
