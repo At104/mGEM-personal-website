@@ -103,7 +103,7 @@ export const subteams = [
   {
     id: "webDev",
     name: "Web Dev",
-    short: "Codes scientific progress into websites",
+    short: "Codes scientific progress into websites.",
     image: "/photos/about-us/webdev.jpg",
     imageAlt: "Web Dev lead",
     bar: "bg-coral",
@@ -225,14 +225,14 @@ export const sponsorsPitch = {
   thanks:
     "Thank you to all our sponsors that make mcmaster iGEM possible!",
   cta: "Interested in sponsorship or collaboration opportunities? Learn more about our sponsorship package by emailing us.",
-  email: "igemmcmaster@gmail.com",
+  email: "igem@mcmaster.ca",
 } as const;
 
 export const showcasePhotos = [
-  { src: "/photos/home/WetLab_TeamPhoto.jpg", alt: "Wet Lab team photo in the lab", span: "md:col-span-2 md:row-span-2" },
-  { src: "/photos/home/Westdale_Workshop.jpg", alt: "Outreach workshop at Westdale", span: "" },
-  { src: "/photos/home/team5.jpg", alt: "Team members", span: "" },
-  { src: "/photos/home/JamboreePhoto.png", alt: "mGEM at the iGEM Grand Jamboree", span: "md:col-span-2" }
+  { src: "/photos/home/2025jamboree.png", alt: "mGEM at the 2025 iGEM Jamboree", span: "md:col-span-2 md:row-span-2" },
+  { src: "/photos/home/teamstatue.jpg", alt: "Team photo at the statue", span: "" },
+  { src: "/photos/home/2025booth.jpg", alt: "mGEM at the 2026 booth", span: "" },
+  { src: "/photos/home/social.jpeg", alt: "mGEM social event", span: "md:col-span-2" }
 ] as const;
 
 export const socials = [
