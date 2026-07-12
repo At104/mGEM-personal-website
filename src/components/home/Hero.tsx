@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { HiVolumeOff, HiVolumeUp, HiPlay, HiPause } from "react-icons/hi";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import ButtonLink from "@/components/ui/ButtonLink";
@@ -59,64 +58,84 @@ function HeroVideo({ ready }: { ready: boolean }) {
 const mgemSize = "font-bold text-7xl md:text-9xl lg:text-9xl xl:text-[14rem]";
 
 
-// Three stacked "mGEM" rows that flipravel on load.
+// Three stacked "mGEM" rows that reveal on load.
 //
-// Row 1: drops from above the viewport (y: -120) while simultaneously
-// flipping in from behind (rotateX: -90 → 0). The combination reads as
-// the text tumbling down out of the top of the screen.
-//
-// Rows 2 and 3: start at rotateX ±180 (folded flat on the row above),
-// quick-fade to opacity 1 so you briefly see each row sitting on the
-// previous one, then the full rotation peels it down into its slot.
+// The middle (inverse/stroke) row slides in first. Once it settles, the
+// solid maroon rows above and below split off from its position and glide
+// out to their resting slots — reading as one wordmark duplicating and
+// separating into its final three-row stack.
+const ROW2_SLIDE_DURATION = 1.05;
+const ROW2_SPLIT_OVERLAP = 0.4;
+const SPLIT_DURATION = 1.1;
+
+// Total time from mount until the wordmark finishes settling — used to
+// delay the hero card's fade-in until the text animation is done.
+export const MGEM_INTRO_DURATION = ROW2_SLIDE_DURATION - ROW2_SPLIT_OVERLAP + SPLIT_DURATION;
+
 function MgemWordmark() {
-  const reduced = useReducedMotion();
-  const ease = [0.25, 0.46, 0.45, 0.94] as const;
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row2Ref = useRef<HTMLDivElement>(null);
+  const row3Ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (prefersReducedMotion()) return;
+
+      const row1 = row1Ref.current;
+      const row2 = row2Ref.current;
+      const row3 = row3Ref.current;
+      if (!row1 || !row2 || !row3) return;
+
+      const row1Top = row1.getBoundingClientRect().top;
+      const row2Top = row2.getBoundingClientRect().top;
+      const row3Top = row3.getBoundingClientRect().top;
+
+      // Park the solid rows on top of the inverse row so they can "split"
+      // outward from a shared origin once it slides in.
+      gsap.set(row1, { y: row2Top - row1Top, opacity: 0 });
+      gsap.set(row3, { y: row2Top - row3Top, opacity: 0 });
+      gsap.set(row2, { x: -220, opacity: 0, filter: "blur(6px)" });
+
+      gsap
+        .timeline()
+        .to(row2, {
+          x: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: ROW2_SLIDE_DURATION,
+          ease: "power3.out",
+        })
+        .to(
+          [row1, row3],
+          {
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: SPLIT_DURATION,
+            ease: "power4.out",
+          },
+          `-=${ROW2_SPLIT_OVERLAP}`
+        );
+    },
+    { scope: wrapRef }
+  );
 
   return (
     <div
+      ref={wrapRef}
       className="hero-mgem-wordmark font-montserrat select-none text-center"
-      style={{ perspective: "600px" }}
       aria-label="mGEM"
     >
-      <motion.div
-        className={`italic leading-none text-maroon ${mgemSize}`}
-        style={{ transformOrigin: "top center" }}
-        initial={reduced ? false : { y: -100, rotateX: -90, opacity: 0 }}
-        animate={{ y: 0, rotateX: 0, opacity: 1 }}
-        transition={{
-          y:       { type: "spring", stiffness: 220, damping: 24, mass: 0.9 },
-          rotateX: { duration: 0.75, ease },
-          opacity: { duration: 0.15, ease: "linear" },
-        }}
-      >
+      <div ref={row1Ref} className={`italic leading-none text-maroon ${mgemSize}`}>
         mGEM
-      </motion.div>
-
-      <motion.div
-        className={`stroke italic leading-none ${mgemSize}`}
-        style={{ transformOrigin: "top center", scaleX: 1 }}
-        initial={reduced ? false : { rotateX: -180, opacity: 0 }}
-        animate={{ rotateX: 0, opacity: 1 }}
-        transition={{
-          rotateX: { duration: 0.85, ease, delay: 0.45 },
-          opacity:  { duration: 0.18, ease: "linear", delay: 0.45 },
-        }}
-      >
+      </div>
+      <div ref={row2Ref} className={`stroke italic leading-none ${mgemSize}`}>
         mGEM
-      </motion.div>
-
-      <motion.div
-        className={`italic leading-none text-maroon ${mgemSize}`}
-        style={{ transformOrigin: "top center" }}
-        initial={reduced ? false : { rotateX: 180, opacity: 0 }}
-        animate={{ rotateX: 0, opacity: 1 }}
-        transition={{
-          rotateX: { duration: 0.85, ease, delay: 0.9 },
-          opacity:  { duration: 0.18, ease: "linear", delay: 0.9 },
-        }}
-      >
+      </div>
+      <div ref={row3Ref} className={`italic leading-none text-maroon ${mgemSize}`}>
         mGEM
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -125,10 +144,10 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const subRef = useRef<HTMLDivElement>(null);
 
-  // Delay video autoplay until the last row animation begins (~1 s into the sequence)
+  // Delay video autoplay until the card fades in, right after the wordmark settles
   const [videoReady, setVideoReady] = useState(false);
-  useEffect(() => { 
-    const t = setTimeout(() => setVideoReady(true), 1000);
+  useEffect(() => {
+    const t = setTimeout(() => setVideoReady(true), MGEM_INTRO_DURATION * 1000);
     return () => clearTimeout(t);
   }, []);
 
@@ -176,7 +195,7 @@ export default function Hero() {
       <div className="glow left-[8%] top-[12%] h-72 w-72 bg-maroon/15" aria-hidden />
       <div className="glow right-[10%] top-[18%] h-64 w-64 bg-cyan/10" aria-hidden />
 
-      <ContainerScroll titleComponent={<MgemWordmark />}>
+      <ContainerScroll titleComponent={<MgemWordmark />} revealDelay={MGEM_INTRO_DURATION}>
         <HeroVideo ready={videoReady} />
       </ContainerScroll>
 
