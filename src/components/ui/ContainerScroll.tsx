@@ -9,23 +9,20 @@ type ContainerScrollProps = {
 };
 
 /**
- * Sticky scroll hero — wordmark sits behind a tilted video card that overlaps it;
- * scrolling lifts the title and untilts the card into a flat frame.
+ * Hero stage — wordmark above video in normal document flow (no sticky overlap).
+ * Scroll tilts/scales the video card; the headline below stays in the page flow.
  */
 export function ContainerScroll({ titleComponent, children, className }: ContainerScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const card = cardRef.current;
-      const title = titleRef.current;
-      if (!card || !title) return;
+      if (!card) return;
 
       if (prefersReducedMotion()) {
         gsap.set(card, { clearProps: "transform,opacity" });
-        gsap.set(title, { clearProps: "transform,opacity" });
         return;
       }
 
@@ -39,18 +36,16 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
           transformOrigin: "50% 50%",
           force3D: true,
         });
-        gsap.set(title, { y: 0, autoAlpha: 1 });
 
         gsap
           .timeline({
             scrollTrigger: {
               trigger: containerRef.current,
               start: "top top",
-              end: "bottom bottom",
+              end: "bottom top",
               scrub: 0.65,
             },
           })
-          .to(title, { y: -100, autoAlpha: 0, ease: "none", duration: 1 }, 0)
           .to(card, { rotationX: 0, ease: "none", duration: 1 }, 0)
           .to(card, { scale: finalScale, ease: "none", duration: 1 }, 0);
       };
@@ -64,31 +59,33 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
   );
 
   return (
-    <div ref={containerRef} className={cn("relative h-[130vh] sm:h-[135vh]", className)}>
-      <div
-        className="sticky top-0 h-[100vh] w-full pt-[5.5rem] sm:pt-24"
-      >
-        <div className="relative mx-auto h-full w-full max-w-6xl px-4 sm:px-6">
-          <div
-            ref={titleRef}
-            className="pointer-events-none absolute inset-x-4 top-[2%] z-[1] text-center sm:inset-x-6 md:top-[3%]"
-          >
-            {titleComponent}
-          </div>
+    <div
+      ref={containerRef}
+      className={cn(
+        "relative flex min-h-[calc(100dvh-4.25rem)] flex-col pt-[5.5rem] sm:pt-24",
+        className
+      )}
+    >
+      <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 sm:px-6">
+        {/* Wordmark — document flow, above video */}
+        <div className="shrink-0 pt-[4%] text-center md:pt-[5%] xl:pt-[6%]">
+          {titleComponent}
+        </div>
 
-          <div className="absolute inset-x-4 top-[52%] z-[2] flex justify-center sm:inset-x-6 md:top-[54%]">
-            {/* bg-maroon + p-1 simulates a 4 px border without a CSS border property,
-                which doesn't respect border-radius through a 3D transform.
-                The inner .hero-card-inner uses clip-path (3D-transform-safe) instead
-                of overflow-hidden to clip the video to the rounded corner. */}
-            <div
-              ref={cardRef}
-              className="w-full max-w-5xl rounded-2xl bg-maroon p-1 shadow-2xl shadow-maroon/30 will-change-transform sm:rounded-3xl"
-            >
-              <div className="hero-card-inner bg-maroon-deep">
-                {children}
-              </div>
-            </div>
+        {/* Flexible spacer keeps video lower on tall screens */}
+        <div className="min-h-4 flex-1 sm:min-h-6" aria-hidden />
+
+        {/* Video card — always below wordmark, never overlays the headline */}
+        <div className="mx-auto w-full max-w-5xl shrink-0 pb-6 sm:pb-8 md:pb-10">
+          {/* bg-maroon + p-1 simulates a 4 px border without a CSS border property,
+              which doesn't respect border-radius through a 3D transform.
+              The inner .hero-card-inner uses clip-path (3D-transform-safe) instead
+              of overflow-hidden to clip the video to the rounded corner. */}
+          <div
+            ref={cardRef}
+            className="w-full rounded-2xl bg-maroon p-1 shadow-2xl shadow-maroon/30 will-change-transform sm:rounded-3xl"
+          >
+            <div className="hero-card-inner bg-maroon-deep">{children}</div>
           </div>
         </div>
       </div>

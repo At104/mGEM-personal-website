@@ -24,7 +24,7 @@ export const subteams = [
     id: "wetlab",
     name: "Wet Lab",
     short: "Designs, builds, and tests biological systems in the lab.",
-    image: "/photos/about-us/WLgroup.PNG",
+    image: "/Photos/about-us/WLgroup.PNG",
     imageAlt: "Wet Lab group photo",
     bar: "bg-maroon",
     text: "text-maroon-deep",
@@ -34,13 +34,13 @@ export const subteams = [
       "The team is also responsible for developing and designing synthetic biological systems that will be designed on benchling and built/testing in the lab. " +
       "During the spring and summer term the wet lab team will work in the lab to make the project into reality, " +
       "generating data that will be used to validate the project design.",
-    icon: "/photos/about-us/tube.png",
+    icon: "/Photos/about-us/tube.png",
   },
   {
     id: "drylab",
     name: "Dry Lab",
     short: "Models systems mathematically and builds project hardware.",
-    image: "/photos/about-us/DL.jpg",
+    image: "/Photos/about-us/DL.jpg",
     imageAlt: "Dry Lab members",
     bar: "bg-cyan",
     text: "text-cyan-deep",
@@ -51,13 +51,13 @@ export const subteams = [
       "The DL team will also utilize a variety of softwares including SimBiology, Python, and Benchling, and hardware components. " +
       "Although experience in these programs is great, it is not required in order to apply. " +
       "Above all, DL values members that are dedicated and eager to learn.",
-    icon: "/photos/about-us/glass.png",
+    icon: "/Photos/about-us/glass.png",
   },
   {
     id: "hp",
     name: "Human Practices",
     short: "Explores real-world impact and ethical implications.",
-    image: "/photos/about-us/HP1.jpg",
+    image: "/Photos/about-us/HP1.jpg",
     imageAlt: "Human Practices members",
     bar: "bg-amber",
     text: "text-amber-deep",
@@ -66,13 +66,13 @@ export const subteams = [
       "We actively reflect on the impact our project will have on the world and how the world — different perspectives, views, and considerations — impacts our project. " +
       "As the goal of our iGEM team is to tackle global challenges by using synthetic biology to solve problems, " +
       "HP strives to ensure this work is reflective, responsive, and responsible.",
-    icon: "/photos/about-us/gears.png",
+    icon: "/Photos/about-us/gears.png",
   },
   {
     id: "media",
     name: "Media",
     short: "Builds our brand and communicates science visually.",
-    image: "/photos/about-us/Media.jpg",
+    image: "/Photos/about-us/Media.jpg",
     imageAlt: "Media team members",
     bar: "bg-violet",
     text: "text-violet-deep",
@@ -81,13 +81,13 @@ export const subteams = [
       "creating the visuals to help communicate our project to the general public and at the iGEM jamboree competition. " +
       "Our Design members are responsible for creating and managing the brand for iGEM and managing major projects/deliveries. " +
       "Our social media are pivotal with increasing our outreach within our community and improve our communication with members.",
-    icon: "/photos/about-us/video.png",
+    icon: "/Photos/about-us/video.png",
   },
   {
     id: "finance",
     name: "Finance & Sponsorship",
     short: "Secures the necessary funding and sponsorship.",
-    image: "/photos/about-us/Sponsorship.jpg",
+    image: "/Photos/about-us/Sponsorship.jpg",
     imageAlt: "Admin team members",
     bar: "bg-coral",
     text: "text-coral-deep",
@@ -98,13 +98,13 @@ export const subteams = [
       "and ensuring that our team has the resources needed to successfully complete our project. " +
       "The Finance Team plays a critical role in ensuring that our team can achieve its goals by effectively managing " +
       "financial resources and securing the support of key stakeholders.",
-    icon: "/photos/about-us/plane.png",
+    icon: "/Photos/about-us/plane.png",
   },
   {
     id: "webDev",
     name: "Web Dev",
     short: "Codes scientific progress into websites",
-    image: "/photos/about-us/webdev.jpg",
+    image: "/Photos/about-us/webdev.jpg",
     imageAlt: "Web Dev lead",
     bar: "bg-coral",
     text: "text-coral-deep",
@@ -114,7 +114,7 @@ export const subteams = [
       "Aside from updating mGEM's personal wiki, their main role is to work together with the media team to plan a layout for the team's Wiki. " +
       "Throughout the project development process, they're responsible for keeping the website updated with new designs and information. " +
       "All of the other subteams' hard work is recorded on the website for transparency.",
-    icon: "/photos/about-us/palette.png",
+    icon: "/Photos/about-us/palette.png",
   },
 ] as const;
 
@@ -141,7 +141,7 @@ export const projects = {
         "Development of an ingestible biosensor for the in vivo characterization of gut metabolites related to " +
         "major depressive disorder through a CRISPR mediated reporting system.",
       href: "https://2023.igem.wiki/mcmaster-canada/",
-      image: "/photos/projects/2023.png",
+      image: "/Photos/projects/2023.png",
     },
     {
       year: "2022",
@@ -149,7 +149,7 @@ export const projects = {
       description:
         "Development of a colorimetric bacterial diagnostic for the characterization of gut metabolite markers for Major Depressive disorder.",
       href: "https://2022.igem.wiki/mcmaster-canada/",
-      image: "/photos/projects/2022.png",
+      image: "/Photos/projects/2022.png",
     },
     {
       year: "2023",
@@ -157,7 +157,7 @@ export const projects = {
       description:
         "Peer-reviewed HYPOTHESIS AND THEORY article published in Frontiers Systems Biology detailing the 2023 BacTrack project.",
       href: "https://www.frontiersin.org/articles/10.3389/fsysb.2023.1274184/full",
-      image: "/photos/projects/publicationThumbnail.png",
+      image: "/Photos/projects/publicationThumbnail.png",
       badge: "Peer-reviewed",
     },
   ],
@@ -229,10 +229,10 @@ export const sponsorsPitch = {
 } as const;
 
 export const showcasePhotos = [
-  { src: "/photos/home/WetLab_TeamPhoto.jpg", alt: "Wet Lab team photo in the lab", span: "md:col-span-2 md:row-span-2" },
-  { src: "/photos/home/Westdale_Workshop.jpg", alt: "Outreach workshop at Westdale", span: "" },
-  { src: "/photos/home/team5.jpg", alt: "Team members", span: "" },
-  { src: "/photos/home/JamboreePhoto.png", alt: "mGEM at the iGEM Grand Jamboree", span: "md:col-span-2" }
+  { src: "/Photos/home/WetLab_TeamPhoto.jpg", alt: "Wet Lab team photo in the lab", span: "md:col-span-2 md:row-span-2" },
+  { src: "/Photos/home/Westdale_Workshop.jpg", alt: "Outreach workshop at Westdale", span: "" },
+  { src: "/Photos/home/team5.jpg", alt: "Team members", span: "" },
+  { src: "/Photos/home/JamboreePhoto.png", alt: "mGEM at the iGEM Grand Jamboree", span: "md:col-span-2" }
 ] as const;
 
 export const socials = [
@@ -250,11 +250,11 @@ export const communityInitiatives = [
   {
     eyebrow: "A 3-part animated series and storybook",
     title: "The Inquirer's Quest",
-    image: "/photos/projects/inquirer1.JPG",
+    image: "/Photos/projects/inquirer1.JPG",
     images: [
-      "/photos/projects/inquirer1.JPG",
-      "/photos/projects/inquirer2.JPG",
-      "/photos/projects/inquirer3.JPG",
+      "/Photos/projects/inquirer1.JPG",
+      "/Photos/projects/inquirer2.JPG",
+      "/Photos/projects/inquirer3.JPG",
     ],
     description:
       "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, " +
@@ -272,11 +272,11 @@ export const communityInitiatives = [
   {
     eyebrow: "Inspiring high school students",
     title: "Shad Canada Workshop",
-    image: "/photos/projects/shad1.JPG",
+    image: "/Photos/projects/shad1.JPG",
     images: [
-      "/photos/projects/shad2.JPG",
-      "/photos/projects/shad3.JPG",
-      "/photos/projects/shad4.JPG",
+      "/Photos/projects/shad2.JPG",
+      "/Photos/projects/shad3.JPG",
+      "/Photos/projects/shad4.JPG",
     ],
     description:
       "Last year, the McMaster iGEM team ran a workshop in partnership with SHAD McMaster, " +
@@ -294,10 +294,10 @@ export const communityInitiatives = [
   {
     eyebrow: "Officially publishing at iGEM",
     title: "Vector Review Article",
-    image: "/photos/projects/vector1.JPG",
+    image: "/Photos/projects/vector1.JPG",
     images: [
-      "/photos/projects/vector1.JPG",
-      "/photos/projects/vector2.JPG",
+      "/Photos/projects/vector1.JPG",
+      "/Photos/projects/vector2.JPG",
     ],
     description:
       "In 2025, our team had the opportunity to contribute to Vector, an unofficial iGEM proceedings journal hosted by Maastricht University. " +
@@ -314,11 +314,11 @@ export const communityInitiatives = [
   {
     eyebrow: "Integrating sustainability with efficiency",
     title: "Waste Tracking ",
-    image: "/photos/projects/waste1.JPG",
+    image: "/Photos/projects/waste1.JPG",
     images: [
-      "/photos/projects/waste1.JPG",
-      "/photos/projects/waste2.JPG",
-      "/photos/projects/waste3.JPG",
+      "/Photos/projects/waste1.JPG",
+      "/Photos/projects/waste2.JPG",
+      "/Photos/projects/waste3.JPG",
     ],
     description:
       "The UN Environmental Programme ranks plastic pollution as one of the top 10 global environmental challenges, " +
@@ -338,10 +338,10 @@ export const communityInitiatives = [
   {
     eyebrow: "Skills farming for 6 weeks",
     title: "Health Innovation Bootcamp (HIB)",
-    image: "/photos/projects/hib1.JPG",
+    image: "/Photos/projects/hib1.JPG",
     images: [
-      "/photos/projects/hib1.JPG",
-      "/photos/projects/hib2.JPG",
+      "/Photos/projects/hib1.JPG",
+      "/Photos/projects/hib2.JPG",
     ],
     description:
       "Hosted by The Clinic, McMaster's health innovation hub, this bootcamp was designed to provide young innovators with the building blocks of entrepreneurship. " +

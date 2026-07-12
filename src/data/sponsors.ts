@@ -130,7 +130,7 @@ export const sponsorTiers: SponsorTier[] = [
       {
         name: "BMO",
         link: "https://www.bmo.com/",
-        icon: "/photos/sponsors/bmo.png",
+        icon: "/Photos/sponsors/bmo.png",
         description:
           "Bank of Montreal supports McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
       },
@@ -149,7 +149,7 @@ export const sponsorTiers: SponsorTier[] = [
       {
         name: "Stoked Bio",
         link: "https://stokedbio.com/",
-        icon: "/photos/sponsors/stocked.png",
+        icon: "/Photos/sponsors/stocked.png",
         description:
           "Stoked Bio is a McMaster spin-out biotech company using AI-driven drug discovery to develop novel anti-infectives and cancer therapeutics.",
       },
@@ -187,42 +187,42 @@ export const iridiumSponsors: Sponsor[] = [
   {
     name: "Didar Lab",
     link: "https://didarlab.ca/",
-    icon: "/photos/sponsors/didar.JPG",
+    icon: "/Photos/sponsors/didar.JPG",
     description:
       "They focus on developing and commercializing technologies that will keep our population healthy by preventing the spread of pathogens and providing diagnostic tools and therapeutics that aim to improve healthcare.",
   },
   {
     name: "Twist Bioscience",
     link: "https://www.twistbioscience.com/",
-    icon: "/photos/sponsors/twist.png",
+    icon: "/Photos/sponsors/twist.png",
     description:
       "A public biotechnology company that manufactures synthetic DNA and DNA products. Their DNA-based tools enable researchers across a variety of scientific disciplines to achieve groundbreaking discoveries."
   },
   {
     name: "Bramson Lab",
     link: "https://cdcr.mcmaster.ca/research/",
-    icon: "/photos/sponsors/cdcr.png",
+    icon: "/Photos/sponsors/cdcr.png",
     description:
       "As part of CDCR (Center for Cancer Research), the lab is focused on developing methods to direct cancer patients' immune systems to attack their tumours.",
   },
   {
     name: "Housseinidoust Lab",
     link: "https://www.hosseinidoustlab.com/",
-    icon: "/photos/sponsors/hosseinidoust.jpg",
+    icon: "/Photos/sponsors/hosseinidoust.jpg",
     description:
       "Their research harnesses bacteriophages, viruses that specifically infect bacteria, to build a new generation of sustainable antimicrobial technologies that work where antibiotics fail.",
   },
   {
     name: "Integrated DNA Technologies (IDT)",
     link: "https://www.idtdna.com/page",
-    icon: "/photos/sponsors/idt.png",
+    icon: "/Photos/sponsors/idt.png",
     description:
       "Integrated DNA Technologies (IDT) is a global leader in supplying custom nucleic acids. They provide high-quality DNA, RNA, and oligos for biotechnology, clincal diagnostics, and pharmaceutical development.."
   },
   {
     name: "GenScript",
     link: "https://www.genscript.com/",
-    icon: "/photos/sponsors/genscript.svg",
+    icon: "/Photos/sponsors/genscript.svg",
     description:
       "GenScript Biotech Corporation accelerates innovation in biotech and healthcare by providing researchers and companies with services needed to develop ground breaking treatments and products."
   },
