@@ -19,7 +19,7 @@
   }
 
   ::selection {
-    @apply bg-leaf text-white;
+    @apply bg-maroon-light text-white;
   }
 
   /* Global maroon scrollbar */

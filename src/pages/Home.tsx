@@ -27,7 +27,7 @@ export default function Page() {
           <SectionHeading
             eyebrow="How we work"
             title="One team, many disciplines"
-            description="Every project is built by subteams working in parallel — from the bench to the browser."
+            description="Synthetic biology is more than benchwork — every innovation relies on specialized subteams working in parallel."
             align="center"
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

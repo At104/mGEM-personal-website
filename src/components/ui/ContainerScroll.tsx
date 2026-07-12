@@ -34,7 +34,7 @@ export function ContainerScroll({ titleComponent, children, className, revealDel
       gsap.set(card, { opacity: 0 });
       gsap.to(card, {
         opacity: 1,
-        duration: 0.8,
+        duration: 0.65,
         ease: "power2.out",
         delay: revealDelay,
       });

@@ -197,9 +197,10 @@ export default function Hero() {
 
       <ContainerScroll titleComponent={<MgemWordmark />} revealDelay={MGEM_INTRO_DURATION}>
         <HeroVideo ready={videoReady} />
+
       </ContainerScroll>
 
-      <div ref={subRef} className="relative mx-auto max-w-7xl px-6 pb-20 pt-4 text-center sm:pb-24">
+      <div ref={subRef} className="relative z-[3] mx-auto max-w-7xl bg-paper px-6 pb-20 pt-6 text-center sm:pb-24">
         <h1
           className="mx-auto max-w-4xl font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
           style={{ perspective: "600px" }}
