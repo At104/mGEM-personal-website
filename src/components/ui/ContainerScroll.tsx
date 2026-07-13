@@ -6,13 +6,15 @@ type ContainerScrollProps = {
   titleComponent: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  /** Seconds to wait before fading in the card — lets the title animation finish first. */
+  revealDelay?: number;
 };
 
 /**
  * Sticky scroll hero — wordmark sits behind a tilted video card that overlaps it;
  * scrolling lifts the title and untilts the card into a flat frame.
  */
-export function ContainerScroll({ titleComponent, children, className }: ContainerScrollProps) {
+export function ContainerScroll({ titleComponent, children, className, revealDelay = 0 }: ContainerScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -28,6 +30,14 @@ export function ContainerScroll({ titleComponent, children, className }: Contain
         gsap.set(title, { clearProps: "transform,opacity" });
         return;
       }
+
+      gsap.set(card, { opacity: 0 });
+      gsap.to(card, {
+        opacity: 1,
+        duration: 0.65,
+        ease: "power2.out",
+        delay: revealDelay,
+      });
 
       const mm = gsap.matchMedia();
 
