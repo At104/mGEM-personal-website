@@ -66,8 +66,8 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-ink/8 pt-5 text-xs text-ink-mute sm:flex-row">
           <p>© {new Date().getFullYear()} mGEM — McMaster iGEM</p>
-          <a href="mailto:igemmcmaster@gmail.com" className="hover:text-ink">
-            igemmcmaster@gmail.com
+          <a href="mailto:igem@mcmaster.ca" className="hover:text-ink">
+            igem@mcmaster.ca
           </a>
         </div>
       </div>

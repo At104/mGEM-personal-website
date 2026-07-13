@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Hero from "@/components/home/Hero";
@@ -6,9 +6,12 @@ import StatStrip from "@/components/home/StatStrip";
 import WhatIsIgem from "@/components/home/WhatIsIgem";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
+import Lightbox from "@/components/ui/Lightbox";
 import { subteams, showcasePhotos } from "@/lib/content";
 
 export default function Page() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <>
       <Helmet>
@@ -24,7 +27,7 @@ export default function Page() {
           <SectionHeading
             eyebrow="How we work"
             title="One team, many disciplines"
-            description="Every project is built by subteams working in parallel — from the bench to the browser."
+            description="Synthetic biology is more than benchwork — every innovation relies on specialized subteams working in parallel."
             align="center"
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -55,18 +58,31 @@ export default function Page() {
         <div className="mt-14 grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[220px] md:grid-cols-4">
           {showcasePhotos.map((p, i) => (
             <Reveal key={p.src} delay={i * 0.06} className={p.span}>
-              <div className="group relative h-full min-h-[180px] overflow-hidden rounded-3xl border border-ink/8">
+              <button
+                type="button"
+                onClick={() => setOpenIndex(i)}
+                aria-label={`View full size: ${p.alt}`}
+                className="group relative block h-full min-h-[180px] w-full overflow-hidden rounded-3xl border border-ink/8"
+              >
                 <img
                   src={p.src}
                   alt={p.alt}
                   className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-              </div>
+              </button>
             </Reveal>
           ))}
         </div>
       </section>
+
+      {openIndex !== null && (
+        <Lightbox
+          images={showcasePhotos}
+          initialIndex={openIndex}
+          onClose={() => setOpenIndex(null)}
+        />
+      )}
     </>
   );
 }

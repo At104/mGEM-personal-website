@@ -125,21 +125,21 @@ export const sponsorTiers: SponsorTier[] = [
         link: "https://healthsci.mcmaster.ca/",
         icon: "https://live.staticflickr.com/3064/3041873734_9d16d5d3ca_b.jpg",
         description:
-          "McMaster's Faculty of Health Sciences cultivates interdisciplinary knowledge in health, wellness, and illness — supporting student-led research across the university.",
+          "McMaster's Faculty of Health Sciences fosters interdisciplinary research in health, wellness, and illness across the university.",
       },
       {
         name: "BMO",
         link: "https://www.bmo.com/",
         icon: "/photos/sponsors/bmo.png",
         description:
-          "Bank of Montreal supports McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
+          "Bank of Montreal backs McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
       },
       {
         name: "MindFuel",
         link: "https://mindfuel.ca/",
         icon: "https://mindfuel.ca/wp-content/uploads/2019/02/logo-full-colour-408px.png",
         description:
-          "MindFuel is a Canadian charity that builds STEM foundations and innovation skills in youth through hands-on programs, digital learning, and real-world problem solving.",
+          "MindFuel is a Canadian charity building STEM foundations in youth through hands-on programs and real-world problem solving.",
       },
     ],
   },
@@ -151,14 +151,14 @@ export const sponsorTiers: SponsorTier[] = [
         link: "https://stokedbio.com/",
         icon: "/photos/sponsors/stocked.png",
         description:
-          "Stoked Bio is a McMaster spin-out biotech company using AI-driven drug discovery to develop novel anti-infectives and cancer therapeutics.",
+          "Stoked Bio is a McMaster spin-out using AI-driven drug discovery to develop novel anti-infectives and cancer therapeutics.",
       },
       {
         name: "Offices of the President, Provost, and Vice-President of Research",
         link: "https://www.mcmaster.ca/",
         icon: "https://static.wixstatic.com/media/497ad0_ef1502ca85ba4730b6a10b887e23f705~mv2.jpg/v1/fill/w_279,h_155,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/office-of-president-logo1.jpg",
         description:
-          "Maureen J. MacDonald is McMaster’s Provost and Vice-President (Academic). As the university’s Chief Academic and Budgetary Officer, she work closely with colleagues across campus to champion academic excellence, strengthen student supports and grow McMaster’s research impact."
+          "Maureen MacDonald, McMaster's Provost and VP Academic, champions academic excellence and student support across campus."
       },
     ],
   },
@@ -170,14 +170,14 @@ export const sponsorTiers: SponsorTier[] = [
         link: "https://biochem.healthsci.mcmaster.ca/",
         icon: "https://ecampusontario.pressbooks.pub/app/uploads/sites/772/2021/07/mcm-hs-biocm_stack-col_jpg-217x300.jpg",
         description:
-          "One of McMaster's most research-intensive departments, BBS provides training and lab access to hundreds of graduate and undergraduate students.",
+          "One of McMaster's most research-intensive departments, BBS trains hundreds of graduate and undergraduate students each year.",
       },
       {
         name: "McMaster Students Union",
         link: "https://msumcmaster.ca/",
         icon: "https://msumcmaster.ca/app/themes/msu-child/images/MSU.png",
         description:
-          "The MSU represents ~27,000 undergraduate students. As an MSU-ratified club, McMaster iGEM receives funding, meeting space, and printing services.",
+          "The MSU represents ~27,000 undergrads. As a ratified club, McMaster iGEM receives funding, meeting space, and printing services.",
       },
     ],
   },
@@ -189,41 +189,41 @@ export const iridiumSponsors: Sponsor[] = [
     link: "https://didarlab.ca/",
     icon: "/photos/sponsors/didar.JPG",
     description:
-      "They focus on developing and commercializing technologies that will keep our population healthy by preventing the spread of pathogens and providing diagnostic tools and therapeutics that aim to improve healthcare.",
+      "They develop and commercialize technologies that keep populations healthy by preventing pathogen spread and providing diagnostics and therapeutics.",
   },
   {
     name: "Twist Bioscience",
     link: "https://www.twistbioscience.com/",
     icon: "/photos/sponsors/twist.png",
     description:
-      "A public biotechnology company that manufactures synthetic DNA and DNA products. Their DNA-based tools enable researchers across a variety of scientific disciplines to achieve groundbreaking discoveries."
+      "A public biotechnology company manufacturing synthetic DNA. Their DNA-based tools help researchers across disciplines make groundbreaking discoveries."
   },
   {
     name: "Bramson Lab",
     link: "https://cdcr.mcmaster.ca/research/",
     icon: "/photos/sponsors/cdcr.png",
     description:
-      "As part of CDCR (Center for Cancer Research), the lab is focused on developing methods to direct cancer patients' immune systems to attack their tumours.",
+      "Part of CDCR (Centre for Cancer Research), the lab develops methods to direct cancer patients' immune systems to attack their tumours.",
   },
   {
     name: "Housseinidoust Lab",
     link: "https://www.hosseinidoustlab.com/",
     icon: "/photos/sponsors/hosseinidoust.jpg",
     description:
-      "Their research harnesses bacteriophages, viruses that specifically infect bacteria, to build a new generation of sustainable antimicrobial technologies that work where antibiotics fail.",
+      "Their research harnesses bacteriophages, viruses that infect bacteria, to build sustainable antimicrobial technologies where antibiotics fail.",
   },
   {
     name: "Integrated DNA Technologies (IDT)",
     link: "https://www.idtdna.com/page",
     icon: "/photos/sponsors/idt.png",
     description:
-      "Integrated DNA Technologies (IDT) is a global leader in supplying custom nucleic acids. They provide high-quality DNA, RNA, and oligos for biotechnology, clincal diagnostics, and pharmaceutical development.."
+      "IDT is a global leader in custom nucleic acids, supplying high-quality DNA, RNA, and oligos for biotech, diagnostics, and pharma development."
   },
   {
     name: "GenScript",
     link: "https://www.genscript.com/",
     icon: "/photos/sponsors/genscript.svg",
     description:
-      "GenScript Biotech Corporation accelerates innovation in biotech and healthcare by providing researchers and companies with services needed to develop ground breaking treatments and products."
+      "GenScript Biotech accelerates biotech and healthcare innovation, providing services researchers need to develop groundbreaking treatments."
   },
 ];
