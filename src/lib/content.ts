@@ -179,12 +179,6 @@ export const getInvolved = {
       "Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, " +
       "it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
   },
-  generalMember: {
-    title: "Become a General Member",
-    body: "Become a part of our community by signing up as a general member. As a member, you'll gain access to exclusive events and workshops designed to expand your knowledge in synthetic biology.",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSeEqk94TJqT3pwhfdj_DpPMoS82sSp50KKR6h1vKAQfy7g8Ig/viewform",
-    cta: "General recruitment",
-  },
   mailingListBlurb:
     "Subscribe to iGEM McMaster Mailing List to get the latest updates on workshops, opportunities, and all the exciting things we are working on.",
 } as const;
