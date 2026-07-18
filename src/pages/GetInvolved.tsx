@@ -42,8 +42,8 @@ export default function GetInvolvedPage() {
           ))}
 
           <Reveal delay={0.08}>
-            <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/8 bg-paper-warm">
-              <span className="block h-1.5 bg-cyan" />
+            <div className="flex h-full flex-col overflow-visible rounded-3xl border border-ink/8 bg-paper-warm">
+              <span className="block h-1.5 rounded-t-3xl bg-cyan" />
               <div className="px-8 pb-4 pt-8">
                 <span className="font-mono text-xs font-bold text-cyan-deep">02</span>
                 <h2 className="mt-2 font-display text-2xl font-bold">Follow our Instagram</h2>
@@ -55,10 +55,18 @@ export default function GetInvolvedPage() {
                 loading="lazy"
                 allow="encrypted-media; clipboard-write"
               />
-              <div className="flex justify-center p-8 pt-4">
-                <ButtonLink href={INSTAGRAM_URL} external>
-                  View on Instagram <HiOutlineExternalLink aria-hidden />
-                </ButtonLink>
+              <div className="flex justify-center px-8 pb-8 pt-4">
+                <div className="group relative">
+                  <ButtonLink href={INSTAGRAM_URL} external>
+                    View on Instagram <HiOutlineExternalLink aria-hidden />
+                  </ButtonLink>
+                  <span
+                    role="tooltip"
+                    className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 w-56 -translate-x-1/2 rounded-xl border border-ink/8 bg-paper px-3 py-2 text-center text-xs leading-relaxed text-ink-soft opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100"
+                  >
+                    Follow us for the latest events and updates!
+                  </span>
+                </div>
               </div>
             </div>
           </Reveal>
