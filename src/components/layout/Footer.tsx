@@ -45,8 +45,8 @@ export default function Footer() {
           <nav aria-label="Footer">
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-maroon">Pages</p>
             <ul className="mt-4 space-y-2 text-sm text-ink-soft">
-              {["About Us", "Our Team", "Projects", "Sponsors", "Get Involved"].map((label, i) => {
-                const hrefs = ["/about-us", "/our-team", "/projects", "/sponsors", "/get-involved"];
+              {["About Us", "Our Team", "Projects", "Sponsors", "News", "Get Involved"].map((label, i) => {
+                const hrefs = ["/about-us", "/our-team", "/projects", "/sponsors", "/news", "/get-involved"];
                 return (
                   <li key={label}>
                     <Link to={hrefs[i]} className="transition hover:text-ink">
