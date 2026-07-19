@@ -175,6 +175,9 @@
   }
 
   /* Sponsor tier — metallic surfaces */
+  .metal-bar-platinum {
+    background: linear-gradient(90deg, #2a96a8, #e0f7fa, #5bc8d8, #ffffff, #2a96a8);
+  }
   .metal-bar-gold {
     background: linear-gradient(90deg, #9a7b0a, #e8c547, #c9a227, #f4e08a, #9a7b0a);
   }
@@ -185,6 +188,13 @@
     background: linear-gradient(90deg, #8b5a2b, #e8a55b, #cd7f32, #e8c496, #8b5a2b);
   }
 
+  .metal-pill-platinum {
+    @apply font-mono text-[10px] font-bold uppercase tracking-wider;
+    color: #0e5c6e;
+    background: linear-gradient(135deg, #ffffff, #5bc8d8 50%, #d5f3f7);
+    border: 1px solid #2a96a8;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  }
   .metal-pill-gold {
     @apply font-mono text-[10px] font-bold uppercase tracking-wider;
     color: #5c4a08;
@@ -207,6 +217,12 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
   }
 
+  .metal-frame-platinum {
+    background: linear-gradient(145deg, #cdeef4 0%, #5bc8d8 40%, #2a96a8 100%);
+    box-shadow:
+      inset 0 2px 4px rgba(255, 255, 255, 0.5),
+      0 2px 8px rgba(42, 150, 168, 0.28);
+  }
   .metal-frame-gold {
     background: linear-gradient(145deg, #f4e08a 0%, #c9a227 35%, #9a7b0a 100%);
     box-shadow:
@@ -214,9 +230,9 @@
       0 2px 8px rgba(201, 162, 39, 0.35);
   }
   .metal-frame-silver {
-    background: linear-gradient(145deg, #f8f8f8 0%, #c0c0c0 40%, #909090 100%);
+    background: linear-gradient(145deg, #dcdcdc 0%, #c0c0c0 40%, #909090 100%);
     box-shadow:
-      inset 0 2px 4px rgba(255, 255, 255, 0.8),
+      inset 0 2px 4px rgba(255, 255, 255, 0.5),
       0 2px 8px rgba(0, 0, 0, 0.12);
   }
   .metal-frame-bronze {
@@ -226,6 +242,15 @@
       0 2px 8px rgba(205, 127, 50, 0.3);
   }
 
+  .sponsor-section-platinum::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 35% at 90% 12%, rgba(42, 150, 168, 0.20), transparent),
+      radial-gradient(ellipse 45% 35% at 8% 88%, rgba(91, 200, 216, 0.16), transparent);
+    pointer-events: none;
+  }
   .sponsor-section-gold::before {
     content: "";
     position: absolute;
