@@ -127,7 +127,7 @@ function TierSection({ tierName }: { tierName: SponsorTierName }) {
             </p>
 
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-              {label} sponsor
+              {label} Sponsor
             </h2>
           </div>
         </Reveal>
