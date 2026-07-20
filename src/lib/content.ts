@@ -175,12 +175,12 @@ export const getInvolved = {
     body:
       "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. " +
       "If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, " +
-      "the applications for next year's cycle will open after jamboree. " +
+      "the applications for next year's cycle will open in the fall term. " +
       "Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, " +
-      "it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
+      "it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact. " + "To stay the most updated on when our team applications open, follow us on Instagram @igemmcmaster.",
   },
   mailingListBlurb:
-    "Subscribe to iGEM McMaster Mailing List to get the latest updates on workshops, opportunities, and all the exciting things we are working on.",
+  "Subscribe to our mailing list to get the latest updates on workshops, opportunities, and all the exciting things we are working on!",
 } as const;
 
 export const testimonies = [

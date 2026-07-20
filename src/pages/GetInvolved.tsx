@@ -35,7 +35,23 @@ export default function GetInvolvedPage() {
                   <h2 className="mt-2 font-display text-2xl font-bold">{p.title}</h2>
                 </div>
                 <div className="flex flex-1 flex-col px-8 pb-8">
-                  <p className="flex-1 text-sm leading-relaxed text-ink-soft">{p.body}</p>
+                  <p className="flex-1 text-sm leading-relaxed text-ink-soft">
+                    {p.body.split("@igemmcmaster").map((part, idx, parts) => (
+                      <React.Fragment key={idx}>
+                        {part}
+                        {idx < parts.length - 1 && (
+                          <a
+                            href={INSTAGRAM_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-ink-soft underline underline-offset-2 transition hover:text-maroon"
+                          >
+                            @igemmcmaster
+                          </a>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </p>
                 </div>
               </div>
             </Reveal>
