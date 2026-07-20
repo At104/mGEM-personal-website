@@ -171,22 +171,16 @@ export const getInvolved = {
     "If you're interested in exploring the fascinating world of genetic engineering and interdisciplinary collaboration, " +
     "this is the place for you!",
   joinTeam: {
-    title: "Join the Team",
+    title: "Join The Team",
     body:
       "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. " +
       "If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, " +
-      "the applications for next year's cycle will open after jamboree. " +
+      "the applications for next year's cycle will open in the fall term. " +
       "Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, " +
-      "it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact.",
-  },
-  generalMember: {
-    title: "Become a General Member",
-    body: "Become a part of our community by signing up as a general member. As a member, you'll gain access to exclusive events and workshops designed to expand your knowledge in synthetic biology.",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLSeEqk94TJqT3pwhfdj_DpPMoS82sSp50KKR6h1vKAQfy7g8Ig/viewform",
-    cta: "General recruitment",
+      "it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact. " + "To stay the most updated on when our team applications open, follow us on Instagram @igemmcmaster.",
   },
   mailingListBlurb:
-    "Subscribe to iGEM McMaster Mailing List to get the latest updates on workshops, opportunities, and all the exciting things we are working on.",
+  "Subscribe to our mailing list to get the latest updates on workshops, opportunities, and all the exciting things we are working on!",
 } as const;
 
 export const testimonies = [
@@ -224,7 +218,7 @@ export const testimonies = [
 export const sponsorsPitch = {
   thanks:
     "Thank you to all our sponsors that make mcmaster iGEM possible!",
-  cta: "Interested in sponsorship or collaboration opportunities? Learn more about our sponsorship package by emailing us.",
+  cta: "Interested in sponsorship or collaboration opportunities? Learn more about our sponsorship package by getting in touch with us.",
   email: "igem@mcmaster.ca",
 } as const;
 

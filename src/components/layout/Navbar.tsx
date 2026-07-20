@@ -8,6 +8,7 @@ const links = [
   { label: "Team", href: "/our-team" },
   { label: "Projects", href: "/projects" },
   { label: "Sponsors", href: "/sponsors" },
+  { label: "News", href: "/news" },
 ];
 
 export default function Navbar() {
