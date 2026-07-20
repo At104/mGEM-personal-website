@@ -171,7 +171,7 @@ export const getInvolved = {
     "If you're interested in exploring the fascinating world of genetic engineering and interdisciplinary collaboration, " +
     "this is the place for you!",
   joinTeam: {
-    title: "Join the Team",
+    title: "Join The Team",
     body:
       "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. " +
       "If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, " +
@@ -218,7 +218,7 @@ export const testimonies = [
 export const sponsorsPitch = {
   thanks:
     "Thank you to all our sponsors that make mcmaster iGEM possible!",
-  cta: "Interested in sponsorship or collaboration opportunities? Learn more about our sponsorship package by emailing us.",
+  cta: "Interested in sponsorship or collaboration opportunities? Learn more about our sponsorship package by getting in touch with us.",
   email: "igem@mcmaster.ca",
 } as const;
 

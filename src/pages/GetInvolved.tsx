@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import PageHeader from "@/components/ui/PageHeader";
@@ -6,14 +5,16 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import ButtonLink from "@/components/ui/ButtonLink";
 import MailingListForm from "@/components/get-involved/MailingListForm";
-import { getInvolved, testimonies } from "@/lib/content";
+import { getInvolved, testimonies, socials } from "@/lib/content";
 
+const INSTAGRAM_URL = socials.find(s => s.label === "Instagram")!.link;
 const INSTAGRAM_EMBED = "https://www.instagram.com/igemmcmaster/embed";
-const INSTAGRAM_URL = "https://www.instagram.com/igemmcmaster/";
 
 const paths = [
   { ...getInvolved.joinTeam, bar: "bg-leaf", accent: "text-leaf-deep" },
 ];
+
+const TESTIMONY_COLORS = ["text-leaf", "text-cyan", "text-amber"] as const;
 
 export default function GetInvolvedPage() {
   return (
@@ -22,7 +23,7 @@ export default function GetInvolvedPage() {
         <title>Get Involved — McMaster iGEM</title>
         <meta name="description" content="Join mGEM — apply to a subteam and follow us on Instagram." />
       </Helmet>
-      <PageHeader eyebrow="Get involved" title="Join the mGEM community" lede={getInvolved.intro} />
+      <PageHeader eyebrow="Get Involved" title="Join the McMaster iGEM Community" lede={getInvolved.intro} />
 
       <section className="mx-auto max-w-7xl px-6 pb-20">
         <div className="grid gap-6 lg:grid-cols-3">
@@ -37,10 +38,11 @@ export default function GetInvolvedPage() {
                 <div className="flex flex-1 flex-col px-8 pb-8">
                   <p className="flex-1 text-sm leading-relaxed text-ink-soft">
                     {p.body.split("@igemmcmaster").map((part, idx, parts) => (
-                      <React.Fragment key={idx}>
+                      <>
                         {part}
                         {idx < parts.length - 1 && (
                           <a
+                            key={idx}
                             href={INSTAGRAM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -49,7 +51,7 @@ export default function GetInvolvedPage() {
                             @igemmcmaster
                           </a>
                         )}
-                      </React.Fragment>
+                      </>
                     ))}
                   </p>
                 </div>
@@ -61,8 +63,8 @@ export default function GetInvolvedPage() {
             <div className="flex h-full flex-col overflow-visible rounded-3xl border border-ink/8 bg-paper-warm">
               <span className="block h-1.5 rounded-t-3xl bg-cyan" />
               <div className="px-8 pb-4 pt-8">
-                <span className="font-mono text-xs font-bold text-cyan-deep">02</span>
-                <h2 className="mt-2 font-display text-2xl font-bold">Follow our Instagram</h2>
+                <span className="font-mono text-xs font-bold text-cyan-deep">{String(paths.length + 1).padStart(2, "0")}</span>
+                <h2 className="mt-2 font-display text-2xl font-bold">Follow Our Instagram</h2>
               </div>
               <iframe
                 src={INSTAGRAM_EMBED}
@@ -102,12 +104,12 @@ export default function GetInvolvedPage() {
 
       <section className="border-y border-ink/8 bg-paper-warm py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading eyebrow="Testimonies" title="What members say" align="center" />
+          <SectionHeading eyebrow="Testimonies" title="What Members Say" align="center" />
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {testimonies.map((t, i) => (
               <Reveal key={t.name} delay={i * 0.08}>
                 <figure className="flex h-full flex-col rounded-3xl border border-ink/8 bg-paper p-8">
-                  <span className={`font-display text-4xl leading-none ${["text-leaf", "text-cyan", "text-amber"][i]}`} aria-hidden>
+                  <span className={`font-display text-4xl leading-none ${TESTIMONY_COLORS[i]}`} aria-hidden>
                     &ldquo;
                   </span>
                   <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{t.quote}</blockquote>

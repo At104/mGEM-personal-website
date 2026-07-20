@@ -200,7 +200,7 @@ function IridiumSponsorsSection() {
               Iridium Sponsors
             </h2>
             <p className="mt-4 text-ink-soft">
-              Organizations that have continuously provided us with space and services
+              Organizations that have Continuously Provided Us with Resources and Support.
             </p>
           </div>
         </Reveal>
@@ -244,11 +244,11 @@ export default function SponsorsPage() {
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center">
           <div className="max-w-xl">
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/60">Partner with us</p>
-            <h2 className="mt-3 font-display text-3xl font-bold">Sponsorship & collaboration</h2>
+            <h2 className="mt-3 font-display text-3xl font-bold">Sponsorship & Collaboration</h2>
             <p className="mt-3 text-white/70">{sponsorsPitch.cta}</p>
           </div>
           <ButtonLink href={`mailto:${sponsorsPitch.email}`} variant="ghost" external>
-            <HiOutlineMail aria-hidden /> Email us
+            <HiOutlineMail aria-hidden /> Email Us
           </ButtonLink>
         </div>
       </section>
