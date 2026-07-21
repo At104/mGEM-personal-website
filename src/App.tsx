@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import OurTeam from "./pages/OurTeam";
 import Projects from "./pages/Projects";
 import Sponsors from "./pages/Sponsors";
+import News from "./pages/News";
 import GetInvolved from "./pages/GetInvolved";
 
 function ScrollToTop() {
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/news" element={<News />} />
           <Route path="/get-involved" element={<GetInvolved />} />
         </Routes>
       </main>

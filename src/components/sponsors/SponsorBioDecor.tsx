@@ -58,83 +58,124 @@ function MedalBase({
   );
 }
 
+function MedalNumeral({ n, metalId, rim }: { n: number; metalId: string; rim: string }) {
+  const textProps = {
+    x: 0,
+    y: 13,
+    textAnchor: "middle" as const,
+    fontFamily: "var(--font-display, Georgia, serif)",
+    fontWeight: 800,
+    fontSize: "38",
+  };
+
+  return (
+    <g transform="translate(60 90)">
+      {/* recessed shadow, offset down-right */}
+      <text {...textProps} x={1.4} y={14.4} fill="black" fillOpacity="0.3">
+        {n}
+      </text>
+      {/* raised highlight, offset up-left */}
+      <text {...textProps} x={-1} y={11.6} fill="white" fillOpacity="0.55">
+        {n}
+      </text>
+      {/* metallic body, same material as the medal face */}
+      <text
+        {...textProps}
+        fill={`url(#${metalId}-face)`}
+        stroke={rim}
+        strokeOpacity="0.5"
+        strokeWidth="0.75"
+      >
+        {n}
+      </text>
+    </g>
+  );
+}
+
+function MedalAtom({ rim }: { rim: string }) {
+  return (
+    <g transform="translate(60 88)">
+      <ellipse rx="24" ry="10" fill="none" stroke={rim} strokeOpacity="0.75" strokeWidth="1.8" />
+      <ellipse rx="24" ry="10" fill="none" stroke={rim} strokeOpacity="0.75" strokeWidth="1.8" transform="rotate(60)" />
+      <ellipse rx="24" ry="10" fill="none" stroke="white" strokeOpacity="0.6" strokeWidth="1.8" transform="rotate(120)" />
+      <circle r="6" fill={rim} />
+      <circle r="6" fill="none" stroke="white" strokeOpacity="0.5" strokeWidth="1" />
+      <circle cx="24" cy="0" r="2.4" fill="white" fillOpacity="0.9" />
+    </g>
+  );
+}
+
+export function PlatinumMedal({ className, size }: MedalProps) {
+  const rim = "#2A96A8";
+  return (
+    <MedalBase
+      className={className}
+      size={size}
+      metalId="platinum-medal"
+      ribbonA="#0E5C6E"
+      ribbonB="#063845"
+      rim={rim}
+      face="#5BC8D8"
+      shine="#E0F7FA"
+    >
+      <MedalAtom rim={rim} />
+    </MedalBase>
+  );
+}
+
 export function GoldMedal({ className, size }: MedalProps) {
+  const rim = "#9A7B0A";
+  const ribbonB = "#5E0230";
   return (
     <MedalBase
       className={className}
       size={size}
       metalId="gold-medal"
       ribbonA="#7A003C"
-      ribbonB="#5E0230"
-      rim="#9A7B0A"
+      ribbonB={ribbonB}
+      rim={rim}
       face="#C9A227"
       shine="#F4E08A"
     >
-      <text
-        x="60"
-        y="96"
-        textAnchor="middle"
-        fill="#5C4A08"
-        fontSize="28"
-        fontWeight="bold"
-        fontFamily="var(--font-display, Georgia, serif)"
-      >
-        1
-      </text>
+      <MedalNumeral n={1} metalId="gold-medal" rim={rim} />
     </MedalBase>
   );
 }
 
 export function SilverMedal({ className, size }: MedalProps) {
+  const rim = "#888888";
+  const ribbonB = "#0C1B14";
   return (
     <MedalBase
       className={className}
       size={size}
       metalId="silver-medal"
       ribbonA="#3A4A42"
-      ribbonB="#0C1B14"
-      rim="#888888"
+      ribbonB={ribbonB}
+      rim={rim}
       face="#C8C8C8"
       shine="#F5F5F5"
     >
-      <text
-        x="60"
-        y="96"
-        textAnchor="middle"
-        fill="#555555"
-        fontSize="28"
-        fontWeight="bold"
-        fontFamily="var(--font-display, Georgia, serif)"
-      >
-        2
-      </text>
+      <MedalNumeral n={2} metalId="silver-medal" rim={rim} />
     </MedalBase>
   );
 }
 
 export function BronzeMedal({ className, size }: MedalProps) {
+  const rim = "#8B5A2B";
+  const ribbonB = "#5C3310";
   return (
     <MedalBase
       className={className}
       size={size}
       metalId="bronze-medal"
       ribbonA="#8B4513"
-      ribbonB="#5C3310"
-      rim="#8B5A2B"
+      ribbonB={ribbonB}
+      rim={rim}
       face="#CD7F32"
       shine="#E8A55B"
     >
-      <text
-        x="60"
-        y="96"
-        textAnchor="middle"
-        fill="#5C3310"
-        fontSize="28"
-        fontWeight="bold"
-        fontFamily="var(--font-display, Georgia, serif)"
-      >
-        3
-      </text>
+      <MedalNumeral n={3} metalId="bronze-medal" rim={rim} />
     </MedalBase>
   );
 }
@@ -228,6 +269,7 @@ export function PlasmidRing({ className }: { className?: string }) {
 }
 
 export const tierMedals = {
+  Platinum: PlatinumMedal,
   Gold: GoldMedal,
   Silver: SilverMedal,
   Bronze: BronzeMedal,

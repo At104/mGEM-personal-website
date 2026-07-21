@@ -1,4 +1,4 @@
-export type SponsorTierName = "Gold" | "Silver" | "Bronze";
+export type SponsorTierName = "Platinum" | "Gold" | "Silver" | "Bronze";
 
 export type Sponsor = {
   name: string;
@@ -42,6 +42,30 @@ export const sponsorTierMeta: Record<
     bio: SponsorBioTheme;
   }
 > = {
+  Platinum: {
+    label: "Platinum",
+    subtitle: "Our most distinguished partners",
+    rank: "0",
+    bio: {
+      bioType: "CRISPR",
+      bioTag: "guide RNA · Cas9 · PAM",
+      blurb: "Platinum partners — the precision behind our most ambitious edits.",
+      section: "sponsor-section-platinum bg-gradient-to-br from-[#DCF4F8] via-[#EEFBFD] to-[#C4EAF0] text-ink",
+      grid: "bg-dots opacity-25",
+      inverted: false,
+      accent: "metal-bar-platinum",
+      accentSoft: "bg-[#8DDCE6]/40",
+      accentText: "text-[#146B7D]",
+      pill: "metal-pill-platinum",
+      laneLabel: "genome",
+      card: "border border-[#2A96A8]/40 bg-paper-warm",
+      cardHover: "hover:border-[#1F8FA3] hover:shadow-lg hover:shadow-[#5BC8D8]/25",
+      logoFrame: "metal-frame-platinum",
+      metalSheen: "text-[#178295]",
+      linkText: "text-[#178295] group-hover:text-[#0E5C6E]",
+      headingHover: "group-hover:text-[#0E5C6E]",
+    },
+  },
   Gold: {
     label: "Gold",
     subtitle: "Our leading partners this cycle",
@@ -118,6 +142,18 @@ export const sponsorTierMeta: Record<
 
 export const sponsorTiers: SponsorTier[] = [
   {
+    tier: "Platinum",
+    sponsors: [
+      {
+        name: "BMO",
+        link: "https://www.bmo.com/",
+        icon: "/photos/sponsors/bmo.png",
+        description:
+          "Bank of Montreal backs McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
+      },
+    ],
+  },
+  {
     tier: "Gold",
     sponsors: [
       {
@@ -126,13 +162,6 @@ export const sponsorTiers: SponsorTier[] = [
         icon: "https://live.staticflickr.com/3064/3041873734_9d16d5d3ca_b.jpg",
         description:
           "McMaster's Faculty of Health Sciences fosters interdisciplinary research in health, wellness, and illness across the university.",
-      },
-      {
-        name: "BMO",
-        link: "https://www.bmo.com/",
-        icon: "/photos/sponsors/bmo.png",
-        description:
-          "Bank of Montreal backs McMaster iGEM as a major partner, helping our team pursue ambitious synthetic biology research and outreach.",
       },
       {
         name: "MindFuel",
