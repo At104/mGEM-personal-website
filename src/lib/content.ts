@@ -29,11 +29,11 @@ export const subteams = [
     bar: "bg-maroon",
     text: "text-maroon-deep",
     body:
-      "Wet lab is a subcommittee of the iGEM team that is responsible for developing biological background for the project. " +
-      "This team is responsible for completing background literature reviews for the project to provide a rationale and proof of concept. " +
-      "The team is also responsible for developing and designing synthetic biological systems that will be designed on benchling and built/testing in the lab. " +
-      "During the spring and summer term the wet lab team will work in the lab to make the project into reality, " +
-      "generating data that will be used to validate the project design.",
+      "Wet Lab develops the biological background for the project in collaboration with the other research subteams " +
+      "by completing literature reviews to provide a rationale and proof of concept." + 
+      "The team is also responsible for developing and designing synthetic biological systems" +
+      "that will be designed on Benchling and tested in the lab. During the spring and summer, the wet lab team works in the lab " +
+      "to make the project into reality, generating data that will be used to validate the project design. ",
     icon: "/photos/about-us/tube.png",
   },
   {
@@ -45,27 +45,26 @@ export const subteams = [
     bar: "bg-cyan",
     text: "text-cyan-deep",
     body:
-      "Dry Lab is a subcommittee of the McMaster-Canada iGEM team that is responsible for developing mathematical models " +
-      "to analyze data collected by the Wet Lab team, creating kinetic and related models to validate the system design, " +
-      "and designing hardware components (i.e. the physical structure of the final system). " +
-      "The DL team will also utilize a variety of softwares including SimBiology, Python, and Benchling, and hardware components. " +
-      "Although experience in these programs is great, it is not required in order to apply. " +
-      "Above all, DL values members that are dedicated and eager to learn.",
+      "Dry Lab develops computational, physical, or mathematical models to validate the system design, " +
+      "create hardware components related to the project, or analyze data collected by the Wet Lab team. " +
+      "Using a variety of methods and software such as machine learning, molecular dynamics, " +
+      "SimBiology, Python, and CAD, Dry Lab reinforces the project design and supports efficient workflows for Wet Lab members working at the bench. ",
     icon: "/photos/about-us/glass.png",
   },
   {
     id: "hp",
     name: "Human Practices",
     short: "Explores real-world impact and ethical implications.",
-    image: "/photos/about-us/HP1.jpg",
+    image: "/photos/about-us/HP.jpeg",
     imageAlt: "Human Practices members",
     bar: "bg-amber",
     text: "text-amber-deep",
     body:
-      "The Human Practices Subcommittee explores the real-world application of our project and its social, economic, and environmental implications. " +
-      "We actively reflect on the impact our project will have on the world and how the world — different perspectives, views, and considerations — impacts our project. " +
+      "Human Practices explores the real-world application of our project and its social, economic, and environmental implications. " +
+      "This requires active reflection on the impact our project will have on the world and how the world — " +
+      "different perspectives, views, and considerations — impacts our project. " +
       "As the goal of our iGEM team is to tackle global challenges by using synthetic biology to solve problems, " +
-      "HP strives to ensure this work is reflective, responsive, and responsible.",
+      "Human Practices strives to ensure this work is reflective, responsive, and responsible. ", 
     icon: "/photos/about-us/gears.png",
   },
   {
@@ -77,10 +76,11 @@ export const subteams = [
     bar: "bg-violet",
     text: "text-violet-deep",
     body:
-      "The Media Subcommittee is composed of the creatives of the team that focuses on building iGEM's brand and " +
-      "creating the visuals to help communicate our project to the general public and at the iGEM jamboree competition. " +
-      "Our Design members are responsible for creating and managing the brand for iGEM and managing major projects/deliveries. " +
-      "Our social media are pivotal with increasing our outreach within our community and improve our communication with members.",
+      "The Media team is composed of creatives that focus on building iGEM's brand and creating the visuals " +
+      "to help communicate our project to the general public and at the iGEM Jamboree competition. " +
+      "Media is responsible for creating and managing mGEM’s brand and managing major deliverables for the iGEM competition. " +
+      "Media uphold’s mGEM social media presence through Instagram (@igemmcmaster), " +
+      "increasing outreach within the community and improving communication with general members. ", 
     icon: "/photos/about-us/video.png",
   },
   {
@@ -89,14 +89,14 @@ export const subteams = [
     short: "Secures the necessary funding and sponsorship.",
     image: "/photos/about-us/Sponsorship.jpg",
     imageAlt: "Admin team members",
-    bar: "bg-coral",
-    text: "text-coral-deep",
+    bar: "bg-leaf",
+    text: "text-leaf-deep",
     body:
-      "The Finance Subcommittee is dedicated to securing the necessary funding and sponsorships to enable our team's participation " +
+      "The Finance & Sponsorships team is dedicated to securing the necessary funding and sponsorships to enable our team's participation " +
       "in the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, " +
       "and building relationships with sponsors and donors. Our responsibilities include budget planning, financial tracking, " +
       "and ensuring that our team has the resources needed to successfully complete our project. " +
-      "The Finance Team plays a critical role in ensuring that our team can achieve its goals by effectively managing " +
+      "Finance & Sponsorships play a critical role in ensuring that our team can achieve its goals by effectively managing " +
       "financial resources and securing the support of key stakeholders.",
     icon: "/photos/about-us/plane.png",
   },
@@ -253,12 +253,11 @@ export const communityInitiatives = [
     description:
       "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, " +
       "and between research and the people it is meant to serve. " +
-      "What began as data and stakeholder insights became landscapes, characters, and metaphors that carried meaning in ways numbers alone could not. " +
+      "By shaping our work into two formats, video modules and a storybook, we invited our audience to follow the same journey we experienced: " +
+      "learning from diverse voices, confroting challenges, and imagining new ways to think about science. " +
       "Our protagonist, the Inquirer, represents a chimera of all three of our research subteams. " +
-      "However, the Inquirer is not alone in their journey. From exploring their community to the inner world of the body, " +
-      "they're joined by a diverse cast of characters, just like the internal journal of our team being rooted in collaboration. " +
-      "Just as important as the science itself was the process of giving it form, through illustration and animation that invited audiences " +
-      "to not only learn but to feel the story unfolding. " +
+      "From exploring their community to the inner world of the body, " +
+      "they're joined by a diverse cast of characters, just like the internal journey of our team being rooted in collaboration. " +
       "What this project ultimately demonstrates is that science is not complete when the experiment ends or the prototype is built. " +
       "In that sense, The Inquirer's Quest is not just our story but is an invitation to see science as a journey that belongs to everyone. " +
       "This project was a quiet yet impactful return to our purpose, reminding us that good science is not only what we build but how we listen.",
@@ -273,15 +272,15 @@ export const communityInitiatives = [
       "/photos/projects/shad4.JPG",
     ],
     description:
-      "Last year, the McMaster iGEM team ran a workshop in partnership with SHAD McMaster, " +
-      "a month-long live-in program hosted at universities across Canada for groups of about 60 students from across Canada. " +
+      "Every year, the McMaster iGEM team runs a workshop in partnership with SHAD McMaster, " +
+      "a month-long live-in program hosted at universities across Canada for students across Canada. " +
       "In this workshop, students were introduced to 3 different aspects of iGEM and synthetic biology through hands-on activities " +
       "that promoted curiosity and a passion for science. " +
-      "The students participated in a pipetting and plate streaking workshop with our wet lab team; " +
+      "Last year, the high school students at McMaster participated in a pipetting and plate streaking workshop with our wet lab team; " +
       "an ethics debate room with our human practices team; and a tutorial and digital escape room with our dry lab team. " +
       "By creating an opportunity for students to explore synthetic biology in an interactive and activity-based model, " +
       "we allowed students to explore their interest in science and foster a space to ask questions and learn. " +
-      "At the end of the workshop all participants were given access to an anonymous feedback form where they could share their opinions and experience. " +
+      "At the end of the workshop, all participants were given access to an anonymous feedback form where they could share their opinions and experience. " +
       "By allowing the students to share how they felt during the workshop and actively encouraging constructive feedback on how our team could improve, " +
       "we fostered two-way dialogue in which our team learned from our participants just as much as they learned from us.",
   },
