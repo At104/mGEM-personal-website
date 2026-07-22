@@ -34,7 +34,7 @@ export const subteams = [
       "The team is also responsible for developing and designing synthetic biological systems that will be designed on benchling and built/testing in the lab. " +
       "During the spring and summer term the wet lab team will work in the lab to make the project into reality, " +
       "generating data that will be used to validate the project design.",
-    icon: "/photos/about-us/tube.png",
+      icon: "/photos/about-us/tubes.png",
   },
   {
     id: "drylab",
@@ -81,7 +81,7 @@ export const subteams = [
       "creating the visuals to help communicate our project to the general public and at the iGEM jamboree competition. " +
       "Our Design members are responsible for creating and managing the brand for iGEM and managing major projects/deliveries. " +
       "Our social media are pivotal with increasing our outreach within our community and improve our communication with members.",
-    icon: "/photos/about-us/video.png",
+    icon: "/photos/about-us/clap.png",
   },
   {
     id: "finance",
@@ -89,8 +89,8 @@ export const subteams = [
     short: "Secures the necessary funding and sponsorship.",
     image: "/photos/about-us/Sponsorship.jpg",
     imageAlt: "Admin team members",
-    bar: "bg-coral",
-    text: "text-coral-deep",
+    bar: "bg-leaf",
+    text: "text-coral-leaf",
     body:
       "The Finance Subcommittee is dedicated to securing the necessary funding and sponsorships to enable our team's participation " +
       "in the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, " +
