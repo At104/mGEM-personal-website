@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
-import ButtonLink from "@/components/ui/ButtonLink";
 import DnaShowcase from "@/components/about/DnaShowcase";
 import { missionIntro, igemIntro, subteams } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -30,7 +29,7 @@ function SubteamShowcase() {
               </div>
               <div className={cn("relative z-10", flip ? "lg:order-1 lg:-mr-12" : "lg:order-2 lg:-ml-12")}>
                 <div className="relative overflow-hidden rounded-3xl border border-ink/8 bg-paper p-6 shadow-xl sm:p-8">
-                  <span className="pointer-events-none absolute -right-1 -top-2 font-display text-7xl font-black text-ink/[0.06] sm:text-8xl">
+                  <span className="pointer-events-none absolute right-3 top-3 font-display text-7xl font-black text-ink/[0.06] sm:text-8xl">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="relative flex items-center gap-4">
@@ -74,13 +73,6 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="py-20 text-center">
-        <SectionHeading align="center" eyebrow="Join us" title="Meet the people behind the science" />
-        <Reveal delay={0.1} className="mt-8 flex flex-wrap justify-center gap-4">
-          <ButtonLink href="/our-team">Our team</ButtonLink>
-          <ButtonLink href="/get-involved" variant="outline">Get involved</ButtonLink>
-        </Reveal>
-      </section>
     </>
   );
 }
