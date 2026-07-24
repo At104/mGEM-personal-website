@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { SiGmail, SiInstagram } from "react-icons/si";
 import { MdBiotech } from "react-icons/md";

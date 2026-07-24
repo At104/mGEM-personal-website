@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 /** Subtle vertical parallax on scroll — great for photos and decorative blobs. */
@@ -7,7 +7,7 @@ export default function Parallax({
   className,
   speed = 0.35,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   speed?: number;
 }) {

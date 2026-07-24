@@ -23,31 +23,3 @@ export function SplitChars({ text, brand = false, className = "" }: SplitCharsPr
     </span>
   );
 }
-
-type SplitWordsProps = {
-  text: string;
-  accentWords?: string[];
-  className?: string;
-};
-
-/** Per-word spans — matches the old mGEM site tagline reveal. */
-export function SplitWords({ text, accentWords = [], className = "" }: SplitWordsProps) {
-  const words = text.split(" ");
-  return (
-    <span className={cn("inline", className)}>
-      {words.map((word, i) => (
-        <span key={i} className="mr-[0.28em] inline-block overflow-hidden align-bottom">
-          <span
-            data-hero-word
-            className={cn(
-              "inline-block",
-            accentWords.includes(word.replace(/[.,!?]/g, "")) && "text-gradient"
-            )}
-          >
-            {word}
-          </span>
-        </span>
-      ))}
-    </span>
-  );
-}

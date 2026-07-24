@@ -9,7 +9,7 @@
       "funFact": ""
     }
   ],
-  "advisors": [
+  "advisor": [
     {
       "name": "Dr. Jonathan Bramson",
       "role": "",
@@ -31,9 +31,9 @@
     {
       "name": "Morgan Puusaari",
       "role": "",
-      "about": "Honours Biochemistry (Year 3)",
+      "about": "Honours Life Science (Year 3)",
       "link": "https://www.linkedin.com/in/morgan-puusaari",
-      "cover": "/photos/headshots/Morgan Puusaari.JPG",
+      "cover": "/photos/headshots/Morgan.JPEG",
       "funFact": "Once I tripped on a banana peel"
     }
   ],
@@ -111,14 +111,6 @@
       "link": "https://www.linkedin.com/in/nilay-goyal/",
       "cover": "/photos/headshots/Nilay.jpg",
       "funFact": "I don't know biology"
-    },
-    {
-      "name": "Brandon Yoo",
-      "role": "Member",
-      "about": "Chemical & Biomedical Engineering (Year 2)",
-      "link": "https://www.linkedin.com/in/brandonwsyoo/",
-      "cover": "/photos/headshots/Brandon.JPG",
-      "funFact": "I'm a dancer"
     },
     {
       "name": "Kathrine Mondshain",
@@ -332,7 +324,7 @@
       "about": "Honours Bachelor of Health Sciences, Biomedical Discovery and Commercialization (Year 3)",
       "link": "https://www.linkedin.com/in/pasquale-del-balso-02642a301/",
       "cover": "/photos/headshots/Pasquale.jpg",
-      "funFact": "I am learning Russian!"
+      "funFact": "I am learning my fourth language!"
     },
     {
       "name": "Sandra Lee",
@@ -398,7 +390,7 @@
       "about": "Honours Health Sciences Program (Year 1)",
       "link": "https://www.linkedin.com/in/emma-liu-a8ba13281/",
       "cover": "/photos/headshots/Emma.jpg",
-      "funFact": "My favourite lazy dessert to make is mango coconut sticky rice with ice cream!"
+      "funFact": "I love making mango coconut sticky rice!"
     }
   ]
 }

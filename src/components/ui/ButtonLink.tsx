@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type ButtonLinkProps = {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
   variant?: "primary" | "outline" | "ghost";
   external?: boolean;
   className?: string;

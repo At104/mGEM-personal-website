@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { Helmet } from "react-helmet-async";
 import { HiArrowRight, HiOutlineExternalLink, HiVolumeOff, HiVolumeUp, HiPlay, HiPause, HiX } from "react-icons/hi";
 import PageHeader from "@/components/ui/PageHeader";
@@ -27,7 +27,7 @@ function PastProjectVideo({ src }: { src: string }) {
 
   const btnCls = "rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition hover:bg-black/70";
 
-  const togglePlay = (e: React.MouseEvent) => {
+  const togglePlay = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     const v = videoRef.current;
@@ -36,7 +36,7 @@ function PastProjectVideo({ src }: { src: string }) {
     setPaused(!paused);
   };
 
-  const toggleMute = (e: React.MouseEvent) => {
+  const toggleMute = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     const v = videoRef.current;
@@ -146,7 +146,7 @@ function CommunityGallery() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Connecting with the community"
-            title="Human Practices Initatives"
+            title="Human Practices Initiatives"
             description="From running workshops to releasing storybooks, here's where our team makes an impact outside the lab."
           />
           <div

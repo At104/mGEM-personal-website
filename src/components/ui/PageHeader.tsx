@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 export default function PageHeader({
@@ -10,7 +10,7 @@ export default function PageHeader({
   eyebrow: string;
   title: string;
   lede?: string;
-  aside?: React.ReactNode;
+  aside?: ReactNode;
 }) {
   const ref = useRef<HTMLElement>(null);
 

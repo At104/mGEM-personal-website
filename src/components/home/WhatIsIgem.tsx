@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { HiArrowRight } from "react-icons/hi";
 import { igemIntro } from "@/lib/content";
 import ButtonLink from "@/components/ui/ButtonLink";

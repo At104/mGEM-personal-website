@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ScrollTrigger } from "./lib/gsap";
 import Navbar from "@/components/layout/Navbar";

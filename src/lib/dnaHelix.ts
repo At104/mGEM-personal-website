@@ -180,22 +180,6 @@ export function setMemberHighlight(
   });
 }
 
-export function setNodeHighlight(
-  meshes: THREE.Mesh[],
-  nodeIndex: number,
-  active: boolean,
-  dimOthers = true
-) {
-  const pairStart = nodeIndex * 2;
-  meshes.forEach((mesh, i) => {
-    const mat = mesh.material as THREE.MeshStandardMaterial;
-    const isPair = i === pairStart || i === pairStart + 1;
-    const scale = isPair && active ? 1.85 : 1;
-    const emissive = isPair && active ? 0.75 : dimOthers && !isPair ? 0.12 : 0.35;
-    mesh.scale.setScalar(scale);
-    mat.emissiveIntensity = emissive;
-  });
-}
 
 export function disposeHelixGroup(group: THREE.Group) {
   const disposedGeo = new Set<string>();

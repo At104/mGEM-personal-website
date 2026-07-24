@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import type { TeamNode } from "@/lib/teamConfig";
-import type { Member } from "./MemberCard";
+
 
 const gradients = [
   "from-leaf to-cyan",
@@ -124,4 +124,3 @@ function MemberProfilePanel({
 }
 
 export { MemberProfilePanel };
-export type { Member };

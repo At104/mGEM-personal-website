@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 
 type RevealProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
   from?: "up" | "left" | "right" | "scale";

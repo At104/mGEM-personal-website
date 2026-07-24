@@ -1,4 +1,3 @@
-import React from "react";
 import { LinkedInIcon } from "@/components/ui/LinkedInIcon";
 import { cn } from "@/lib/utils";
 

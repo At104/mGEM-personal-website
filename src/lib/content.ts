@@ -16,8 +16,6 @@ export const missionIntro =
   "Each year, with the involvement of students, professors, stakeholders, and the surrounding community, " +
   "we design and build a synthetic biology project to tackle real-world problems.";
 
-export const heroTagline =
-  "We are an interdisciplinary team of students working to create synthetic biology solutions to big problems.";
 
 export const subteams = [
   {
@@ -29,12 +27,12 @@ export const subteams = [
     bar: "bg-maroon",
     text: "text-maroon-deep",
     body:
-      "Wet lab is a subcommittee of the iGEM team that is responsible for developing biological background for the project. " +
-      "This team is responsible for completing background literature reviews for the project to provide a rationale and proof of concept. " +
-      "The team is also responsible for developing and designing synthetic biological systems that will be designed on benchling and built/testing in the lab. " +
-      "During the spring and summer term the wet lab team will work in the lab to make the project into reality, " +
-      "generating data that will be used to validate the project design.",
-      icon: "/photos/about-us/tubes.png",
+      "Wet Lab develops the biological background for the project in collaboration with the other research subteams " +
+      "by completing literature reviews to provide a rationale and proof of concept. " + 
+      "The team is also responsible for developing and designing synthetic biological systems" +
+      "that will be designed on Benchling and tested in the lab. During the spring and summer, the wet lab team works in the lab " +
+      "to make the project into reality, generating data that will be used to validate the project design. ",
+    icon: "/photos/about-us/tubes.png",
   },
   {
     id: "drylab",
@@ -45,27 +43,26 @@ export const subteams = [
     bar: "bg-cyan",
     text: "text-cyan-deep",
     body:
-      "Dry Lab is a subcommittee of the McMaster-Canada iGEM team that is responsible for developing mathematical models " +
-      "to analyze data collected by the Wet Lab team, creating kinetic and related models to validate the system design, " +
-      "and designing hardware components (i.e. the physical structure of the final system). " +
-      "The DL team will also utilize a variety of softwares including SimBiology, Python, and Benchling, and hardware components. " +
-      "Although experience in these programs is great, it is not required in order to apply. " +
-      "Above all, DL values members that are dedicated and eager to learn.",
+      "Dry Lab develops computational, physical, or mathematical models to validate the system design, " +
+      "create hardware components related to the project, or analyze data collected by the Wet Lab team. " +
+      "Using a variety of methods and software such as machine learning, molecular dynamics, " +
+      "SimBiology, Python, and CAD, Dry Lab reinforces the project design and supports efficient workflows for Wet Lab members working at the bench. ",
     icon: "/photos/about-us/glass.png",
   },
   {
     id: "hp",
     name: "Human Practices",
     short: "Explores real-world impact and ethical implications.",
-    image: "/photos/about-us/HP1.jpg",
+    image: "/photos/about-us/HP.jpeg",
     imageAlt: "Human Practices members",
     bar: "bg-amber",
     text: "text-amber-deep",
     body:
-      "The Human Practices Subcommittee explores the real-world application of our project and its social, economic, and environmental implications. " +
-      "We actively reflect on the impact our project will have on the world and how the world — different perspectives, views, and considerations — impacts our project. " +
+      "Human Practices explores the real-world application of our project and its social, economic, and environmental implications. " +
+      "This requires active reflection on the impact our project will have on the world and how the world — " +
+      "different perspectives, views, and considerations — impacts our project. " +
       "As the goal of our iGEM team is to tackle global challenges by using synthetic biology to solve problems, " +
-      "HP strives to ensure this work is reflective, responsive, and responsible.",
+      "Human Practices strives to ensure this work is reflective, responsive, and responsible. ", 
     icon: "/photos/about-us/gears.png",
   },
   {
@@ -77,11 +74,12 @@ export const subteams = [
     bar: "bg-violet",
     text: "text-violet-deep",
     body:
-      "The Media Subcommittee is composed of the creatives of the team that focuses on building iGEM's brand and " +
-      "creating the visuals to help communicate our project to the general public and at the iGEM jamboree competition. " +
-      "Our Design members are responsible for creating and managing the brand for iGEM and managing major projects/deliveries. " +
-      "Our social media are pivotal with increasing our outreach within our community and improve our communication with members.",
-    icon: "/photos/about-us/clap.png",
+      "The Media team is composed of creatives that focus on building iGEM's brand and creating the visuals " +
+      "to help communicate our project to the general public and at the iGEM Jamboree competition. " +
+      "Media is responsible for creating and managing mGEM’s brand and managing major deliverables for the iGEM competition. " +
+      "Media uphold’s mGEM social media presence through Instagram (@igemmcmaster), " +
+      "increasing outreach within the community and improving communication with general members. ", 
+    icon: "/photos/about-us/video.png",
   },
   {
     id: "finance",
@@ -90,13 +88,13 @@ export const subteams = [
     image: "/photos/about-us/Sponsorship.jpg",
     imageAlt: "Admin team members",
     bar: "bg-leaf",
-    text: "text-coral-leaf",
+    text: "text-leaf-deep",
     body:
-      "The Finance Subcommittee is dedicated to securing the necessary funding and sponsorships to enable our team's participation " +
+      "The Finance & Sponsorships team is dedicated to securing the necessary funding and sponsorships to enable our team's participation " +
       "in the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, " +
       "and building relationships with sponsors and donors. Our responsibilities include budget planning, financial tracking, " +
       "and ensuring that our team has the resources needed to successfully complete our project. " +
-      "The Finance Team plays a critical role in ensuring that our team can achieve its goals by effectively managing " +
+      "Finance & Sponsorships play a critical role in ensuring that our team can achieve its goals by effectively managing " +
       "financial resources and securing the support of key stakeholders.",
     icon: "/photos/about-us/plane.png",
   },
@@ -225,7 +223,7 @@ export const sponsorsPitch = {
 export const showcasePhotos = [
   { src: "/photos/home/2025jamboree.png", alt: "mGEM at the 2025 iGEM Jamboree", span: "md:col-span-2 md:row-span-2" },
   { src: "/photos/home/teamstatue.jpg", alt: "Team photo at the statue", span: "" },
-  { src: "/photos/home/2025booth.jpg", alt: "mGEM at the 2026 booth", span: "" },
+  { src: "/photos/home/2025booth.jpg", alt: "mGEM at the 2025 iGEM Jamboree booth", span: "" },
   { src: "/photos/home/social.jpeg", alt: "mGEM social event", span: "md:col-span-2" }
 ] as const;
 
@@ -254,7 +252,7 @@ export const communityInitiatives = [
       "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, " +
       "and between research and the people it is meant to serve. " +
       "By shaping our work into two formats, video modules and a storybook, we invited our audience to follow the same journey we experienced: " +
-      "learning from diverse voices, confroting challenges, and imagining new ways to think about science. " +
+      "learning from diverse voices, confronting challenges, and imagining new ways to think about science. " +
       "Our protagonist, the Inquirer, represents a chimera of all three of our research subteams. " +
       "From exploring their community to the inner world of the body, " +
       "they're joined by a diverse cast of characters, just like the internal journey of our team being rooted in collaboration. " +
