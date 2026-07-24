@@ -34,7 +34,7 @@ export const subteams = [
       "The team is also responsible for developing and designing synthetic biological systems that will be designed on benchling and built/testing in the lab. " +
       "During the spring and summer term the wet lab team will work in the lab to make the project into reality, " +
       "generating data that will be used to validate the project design.",
-    icon: "/photos/about-us/tube.png",
+      icon: "/photos/about-us/tubes.png",
   },
   {
     id: "drylab",
@@ -81,7 +81,7 @@ export const subteams = [
       "creating the visuals to help communicate our project to the general public and at the iGEM jamboree competition. " +
       "Our Design members are responsible for creating and managing the brand for iGEM and managing major projects/deliveries. " +
       "Our social media are pivotal with increasing our outreach within our community and improve our communication with members.",
-    icon: "/photos/about-us/video.png",
+    icon: "/photos/about-us/clap.png",
   },
   {
     id: "finance",
@@ -89,8 +89,8 @@ export const subteams = [
     short: "Secures the necessary funding and sponsorship.",
     image: "/photos/about-us/Sponsorship.jpg",
     imageAlt: "Admin team members",
-    bar: "bg-coral",
-    text: "text-coral-deep",
+    bar: "bg-leaf",
+    text: "text-coral-leaf",
     body:
       "The Finance Subcommittee is dedicated to securing the necessary funding and sponsorships to enable our team's participation " +
       "in the iGEM Jamboree in Paris. This team focuses on identifying potential funding sources, developing sponsorship proposals, " +
@@ -253,12 +253,11 @@ export const communityInitiatives = [
     description:
       "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, " +
       "and between research and the people it is meant to serve. " +
-      "What began as data and stakeholder insights became landscapes, characters, and metaphors that carried meaning in ways numbers alone could not. " +
+      "By shaping our work into two formats, video modules and a storybook, we invited our audience to follow the same journey we experienced: " +
+      "learning from diverse voices, confroting challenges, and imagining new ways to think about science. " +
       "Our protagonist, the Inquirer, represents a chimera of all three of our research subteams. " +
-      "However, the Inquirer is not alone in their journey. From exploring their community to the inner world of the body, " +
-      "they're joined by a diverse cast of characters, just like the internal journal of our team being rooted in collaboration. " +
-      "Just as important as the science itself was the process of giving it form, through illustration and animation that invited audiences " +
-      "to not only learn but to feel the story unfolding. " +
+      "From exploring their community to the inner world of the body, " +
+      "they're joined by a diverse cast of characters, just like the internal journey of our team being rooted in collaboration. " +
       "What this project ultimately demonstrates is that science is not complete when the experiment ends or the prototype is built. " +
       "In that sense, The Inquirer's Quest is not just our story but is an invitation to see science as a journey that belongs to everyone. " +
       "This project was a quiet yet impactful return to our purpose, reminding us that good science is not only what we build but how we listen.",
@@ -273,15 +272,15 @@ export const communityInitiatives = [
       "/photos/projects/shad4.JPG",
     ],
     description:
-      "Last year, the McMaster iGEM team ran a workshop in partnership with SHAD McMaster, " +
-      "a month-long live-in program hosted at universities across Canada for groups of about 60 students from across Canada. " +
+      "Every year, the McMaster iGEM team runs a workshop in partnership with SHAD McMaster, " +
+      "a month-long live-in program hosted at universities across Canada for students across Canada. " +
       "In this workshop, students were introduced to 3 different aspects of iGEM and synthetic biology through hands-on activities " +
       "that promoted curiosity and a passion for science. " +
-      "The students participated in a pipetting and plate streaking workshop with our wet lab team; " +
+      "Last year, the high school students at McMaster participated in a pipetting and plate streaking workshop with our wet lab team; " +
       "an ethics debate room with our human practices team; and a tutorial and digital escape room with our dry lab team. " +
       "By creating an opportunity for students to explore synthetic biology in an interactive and activity-based model, " +
       "we allowed students to explore their interest in science and foster a space to ask questions and learn. " +
-      "At the end of the workshop all participants were given access to an anonymous feedback form where they could share their opinions and experience. " +
+      "At the end of the workshop, all participants were given access to an anonymous feedback form where they could share their opinions and experience. " +
       "By allowing the students to share how they felt during the workshop and actively encouraging constructive feedback on how our team could improve, " +
       "we fostered two-way dialogue in which our team learned from our participants just as much as they learned from us.",
   },
