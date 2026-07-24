@@ -11,7 +11,7 @@ export type TeamGroupKey =
   | "finance"
   | "webDev";
 
-export const TEAM_GROUPS: {
+const TEAM_GROUPS: {
   key: TeamGroupKey;
   label: string;
   eyebrow: string;
@@ -46,10 +46,10 @@ export type TeamNode = {
   isFirstInGroup: boolean;
 };
 
-export const ROW_HEIGHT = 220;
-export const GROUP_GAP = 88;
-export const HELIX_CENTER = 40;
-export const HELIX_AMP = 24;
+const ROW_HEIGHT = 220;
+const GROUP_GAP = 88;
+const HELIX_CENTER = 40;
+const HELIX_AMP = 24;
 
 export function buildTeamNodes(data: Record<TeamGroupKey, Member[]>): TeamNode[] {
   const nodes: TeamNode[] = [];
@@ -84,7 +84,3 @@ export function buildTeamNodes(data: Record<TeamGroupKey, Member[]>): TeamNode[]
   return nodes;
 }
 
-export function helixHeight(nodes: TeamNode[]) {
-  if (!nodes.length) return 400;
-  return nodes[nodes.length - 1].y + ROW_HEIGHT;
-}

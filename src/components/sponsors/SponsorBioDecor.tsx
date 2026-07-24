@@ -1,6 +1,6 @@
 /** Bio + medal decorations for the sponsors page. */
 
-import React from "react";
+import type { ReactNode } from "react";
 
 type MedalProps = { className?: string; size?: "sm" | "lg" };
 
@@ -21,7 +21,7 @@ function MedalBase({
   rim: string;
   face: string;
   shine: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }) {
   const dim = size === "lg" ? 120 : 56;
 

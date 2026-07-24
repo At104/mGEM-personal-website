@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import PageHeader from "@/components/ui/PageHeader";
@@ -38,11 +39,10 @@ export default function GetInvolvedPage() {
                 <div className="flex flex-1 flex-col px-8 pb-8">
                   <p className="flex-1 text-sm leading-relaxed text-ink-soft">
                     {p.body.split("@igemmcmaster").map((part, idx, parts) => (
-                      <>
+                      <Fragment key={idx}>
                         {part}
                         {idx < parts.length - 1 && (
                           <a
-                            key={idx}
                             href={INSTAGRAM_URL}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function GetInvolvedPage() {
                             @igemmcmaster
                           </a>
                         )}
-                      </>
+                      </Fragment>
                     ))}
                   </p>
                 </div>

@@ -16,8 +16,6 @@ export const missionIntro =
   "Each year, with the involvement of students, professors, stakeholders, and the surrounding community, " +
   "we design and build a synthetic biology project to tackle real-world problems.";
 
-export const heroTagline =
-  "We are an interdisciplinary team of students working to create synthetic biology solutions to big problems.";
 
 export const subteams = [
   {
@@ -30,11 +28,11 @@ export const subteams = [
     text: "text-maroon-deep",
     body:
       "Wet Lab develops the biological background for the project in collaboration with the other research subteams " +
-      "by completing literature reviews to provide a rationale and proof of concept." + 
+      "by completing literature reviews to provide a rationale and proof of concept. " + 
       "The team is also responsible for developing and designing synthetic biological systems" +
       "that will be designed on Benchling and tested in the lab. During the spring and summer, the wet lab team works in the lab " +
       "to make the project into reality, generating data that will be used to validate the project design. ",
-    icon: "/photos/about-us/tube.png",
+    icon: "/photos/about-us/tubes.png",
   },
   {
     id: "drylab",
@@ -225,7 +223,7 @@ export const sponsorsPitch = {
 export const showcasePhotos = [
   { src: "/photos/home/2025jamboree.png", alt: "mGEM at the 2025 iGEM Jamboree", span: "md:col-span-2 md:row-span-2" },
   { src: "/photos/home/teamstatue.jpg", alt: "Team photo at the statue", span: "" },
-  { src: "/photos/home/2025booth.jpg", alt: "mGEM at the 2026 booth", span: "" },
+  { src: "/photos/home/2025booth.jpg", alt: "mGEM at the 2025 iGEM Jamboree booth", span: "" },
   { src: "/photos/home/social.jpeg", alt: "mGEM social event", span: "md:col-span-2" }
 ] as const;
 
@@ -254,12 +252,8 @@ export const communityInitiatives = [
       "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, " +
       "and between research and the people it is meant to serve. " +
       "By shaping our work into two formats, video modules and a storybook, we invited our audience to follow the same journey we experienced: " +
-      "learning from diverse voices, confroting challenges, and imagining new ways to think about science. " +
-      "By shaping our work into two formats, video modules and a storybook, we invited our audience to follow the same journey we experienced: " +
-      "learning from diverse voices, confroting challenges, and imagining new ways to think about science. " +
+      "learning from diverse voices, confronting challenges, and imagining new ways to think about science. " +
       "Our protagonist, the Inquirer, represents a chimera of all three of our research subteams. " +
-      "From exploring their community to the inner world of the body, " +
-      "they're joined by a diverse cast of characters, just like the internal journey of our team being rooted in collaboration. " +
       "From exploring their community to the inner world of the body, " +
       "they're joined by a diverse cast of characters, just like the internal journey of our team being rooted in collaboration. " +
       "What this project ultimately demonstrates is that science is not complete when the experiment ends or the prototype is built. " +
@@ -278,16 +272,12 @@ export const communityInitiatives = [
     description:
       "Every year, the McMaster iGEM team runs a workshop in partnership with SHAD McMaster, " +
       "a month-long live-in program hosted at universities across Canada for students across Canada. " +
-      "Every year, the McMaster iGEM team runs a workshop in partnership with SHAD McMaster, " +
-      "a month-long live-in program hosted at universities across Canada for students across Canada. " +
       "In this workshop, students were introduced to 3 different aspects of iGEM and synthetic biology through hands-on activities " +
       "that promoted curiosity and a passion for science. " +
-      "Last year, the high school students at McMaster participated in a pipetting and plate streaking workshop with our wet lab team; " +
       "Last year, the high school students at McMaster participated in a pipetting and plate streaking workshop with our wet lab team; " +
       "an ethics debate room with our human practices team; and a tutorial and digital escape room with our dry lab team. " +
       "By creating an opportunity for students to explore synthetic biology in an interactive and activity-based model, " +
       "we allowed students to explore their interest in science and foster a space to ask questions and learn. " +
-      "At the end of the workshop, all participants were given access to an anonymous feedback form where they could share their opinions and experience. " +
       "At the end of the workshop, all participants were given access to an anonymous feedback form where they could share their opinions and experience. " +
       "By allowing the students to share how they felt during the workshop and actively encouraging constructive feedback on how our team could improve, " +
       "we fostered two-way dialogue in which our team learned from our participants just as much as they learned from us.",

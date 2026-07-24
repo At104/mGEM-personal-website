@@ -1,10 +1,10 @@
-import React from "react";
+import { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import DnaShowcase from "@/components/about/DnaShowcase";
-import { missionIntro, igemIntro, subteams } from "@/lib/content";
+import { missionIntro, subteams } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 function SubteamShowcase() {
@@ -13,7 +13,7 @@ function SubteamShowcase() {
       {subteams.map((t, i) => {
         const flip = i % 2 === 1;
         return (
-          <React.Fragment key={t.id}>
+          <Fragment key={t.id}>
             <div className="relative z-10">
             <Reveal from={flip ? "right" : "left"}>
             <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-0">
@@ -45,7 +45,7 @@ function SubteamShowcase() {
             </div>
             </Reveal>
             </div>
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </div>

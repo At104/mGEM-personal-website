@@ -13,7 +13,7 @@ export default function VideoPlayer({
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = useState(true);
 
   const toggleMute = () => {
     const v = videoRef.current;
@@ -26,8 +26,7 @@ export default function VideoPlayer({
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (paused) { v.play().catch(() => {}); } else { v.pause(); }
-    setPaused(!paused);
+    if (paused) { v.play().then(() => setPaused(false)).catch(() => {}); } else { v.pause(); setPaused(true); }
   };
 
   const btnCls = "rounded-full bg-black/45 p-2.5 text-white backdrop-blur transition hover:bg-black/65";
@@ -49,6 +48,8 @@ export default function VideoPlayer({
           playsInline
           preload="metadata"
           poster={poster}
+          onPlay={() => setPaused(false)}
+          onPause={() => setPaused(true)}
         >
           <source src={src} type="video/mp4" />
         </video>

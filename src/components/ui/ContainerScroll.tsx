@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
 type ContainerScrollProps = {
-  titleComponent: React.ReactNode;
-  children: React.ReactNode;
+  titleComponent: ReactNode;
+  children: ReactNode;
   className?: string;
   /** Seconds to wait before fading in the card — lets the title animation finish first. */
   revealDelay?: number;

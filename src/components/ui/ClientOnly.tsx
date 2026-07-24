@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from "react";
+import { useSyncExternalStore, type ReactNode } from "react";
 
 const subscribe = () => () => {};
 
@@ -11,8 +11,8 @@ export default function ClientOnly({
   children,
   fallback = null,
 }: {
-  children: React.ReactNode;
-  fallback?: React.ReactNode;
+  children: ReactNode;
+  fallback?: ReactNode;
 }) {
   const mounted = useMounted();
   if (!mounted) return fallback;
