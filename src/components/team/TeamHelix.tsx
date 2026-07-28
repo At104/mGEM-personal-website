@@ -131,12 +131,12 @@ export default function TeamHelix({ data }: { data: Record<TeamGroupKey, Member[
   );
 
   return (
-    <div className="relative h-[calc(100vh-4.25rem)] overflow-hidden border-b border-ink/8 bg-paper">
+    <div className="relative overflow-hidden border-b border-ink/8 bg-paper py-10 sm:py-14 lg:h-[calc(100dvh-4.25rem)] lg:min-h-[560px] lg:py-0">
       <div className="bg-dots absolute inset-0 opacity-30" />
       <div className="glow left-0 top-1/4 h-72 w-72 -translate-x-1/3 bg-leaf/15" />
       <div className="glow right-0 top-1/3 h-64 w-64 translate-x-1/3 bg-cyan/10" />
 
-      <div className="relative mx-auto grid h-full max-w-7xl grid-cols-1 items-center gap-4 px-4 sm:px-6 lg:grid-cols-[auto_1fr_1fr] lg:gap-8">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 sm:gap-8 sm:px-6 lg:h-full lg:grid-cols-[auto_1fr_1fr] lg:gap-8">
         {/* Desktop strand-progress slider — drag or click to seek */}
         <StrandProgress
           className="absolute left-4 top-1/2 hidden -translate-y-1/2 lg:static lg:flex lg:translate-y-0"
@@ -151,7 +151,7 @@ export default function TeamHelix({ data }: { data: Record<TeamGroupKey, Member[
         {/* DNA strand canvas — wheel/swipe here to navigate */}
         <div
           ref={helixAreaRef}
-          className="relative mx-auto h-[min(50vh,440px)] w-full max-w-md cursor-ns-resize select-none lg:h-[min(70vh,600px)] lg:max-w-lg"
+          className="relative mx-auto h-[280px] w-full max-w-xs cursor-ns-resize select-none sm:h-[340px] sm:max-w-sm lg:h-[min(70vh,600px)] lg:max-w-lg"
         >
           {/* Mask fades nodes in/out at top and bottom edges */}
           <div className="helix-canvas-mask h-full w-full">
@@ -165,19 +165,19 @@ export default function TeamHelix({ data }: { data: Record<TeamGroupKey, Member[
 
           {activeNode && (
             <div className="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 text-center">
-              <p className={cn("font-mono text-[9px] uppercase tracking-[0.2em]", activeNode.text)}>
+              <p className={cn("font-mono text-[8px] uppercase tracking-[0.18em] sm:text-[9px] sm:tracking-[0.2em]", activeNode.text)}>
                 {activeNode.groupLabel}
               </p>
             </div>
           )}
 
-          <p className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.28em] text-ink-mute">
+          <p className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.22em] text-ink-mute sm:text-[10px] sm:tracking-[0.28em]">
             Scroll ↕ · drag slider
           </p>
         </div>
 
         {/* Profile panel for the active node */}
-        <div className="flex items-center justify-center pb-16 lg:pb-0">
+        <div className="flex w-full items-center justify-center pb-14 lg:h-full lg:pb-0">
           <MemberProfilePanel node={activeNode} open={!!activeNode} />
         </div>
       </div>
