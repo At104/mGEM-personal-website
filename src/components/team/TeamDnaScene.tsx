@@ -84,6 +84,24 @@ export default function TeamDnaScene({
     addHelixBackbone(group, helixNodes, 0.15, DNA_PALETTE);
     markersRef.current = addMemberMarkers(group, helixNodes, colors, 0.13);
 
+    // Half-height (in world units) of what's actually visible at the strand's depth —
+    // used to clamp the scroll window so it can't travel far past the strand's real ends
+    // (which used to leave a dead gap above the first node / below the last one), while
+    // still leaving a small lead-in/lead-out margin so there's room to scroll and the
+    // top/bottom fade mask has something to fade against.
+    const visibleHalfHeight = camera.position.z * Math.tan((camera.fov * Math.PI) / 360);
+    const edgeMargin = visibleHalfHeight * 0.55;
+    const strandTop = helixNodes[0]?.y ?? 0;
+    const strandBottom = helixNodes[helixNodes.length - 1]?.y ?? 0;
+    const clampCenter = (y: number) => {
+      if (strandTop - strandBottom <= visibleHalfHeight * 2) {
+        return (strandTop + strandBottom) / 2;
+      }
+      const maxCenter = strandTop - visibleHalfHeight + edgeMargin;
+      const minCenter = strandBottom + visibleHalfHeight - edgeMargin;
+      return Math.min(maxCenter, Math.max(minCenter, y));
+    };
+
     let raf = 0;
     let currentY = 0;
     let currentRot = 0;
@@ -92,7 +110,7 @@ export default function TeamDnaScene({
       raf = requestAnimationFrame(animate);
       const p = progressRef.current;
       const idx = activeRef.current;
-      const targetY = -helixYAtProgress(helixNodes, p);
+      const targetY = -clampCenter(helixYAtProgress(helixNodes, p));
       const targetRot = p * Math.PI * 6;
 
       currentY += (targetY - currentY) * 0.1;

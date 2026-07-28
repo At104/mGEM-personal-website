@@ -6,11 +6,13 @@ export default function PageHeader({
   title,
   lede,
   aside,
+  wideAside,
 }: {
   eyebrow: string;
   title: string;
   lede?: string;
   aside?: ReactNode;
+  wideAside?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
 
@@ -40,7 +42,9 @@ export default function PageHeader({
         <div
           className={
             aside
-              ? "grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,22rem)] lg:gap-12 xl:grid-cols-[1fr_minmax(0,26rem)]"
+              ? wideAside
+                ? "grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,28rem)] lg:gap-12 xl:grid-cols-[1fr_minmax(0,34rem)]"
+                : "grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,22rem)] lg:gap-12 xl:grid-cols-[1fr_minmax(0,26rem)]"
               : undefined
           }
         >

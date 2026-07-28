@@ -74,9 +74,9 @@ export function ContainerScroll({ titleComponent, children, className, revealDel
   );
 
   return (
-    <div ref={containerRef} className={cn("relative h-[130vh] sm:h-[135vh]", className)}>
+    <div ref={containerRef} className={cn("relative h-[62dvh] sm:h-[135vh]", className)}>
       <div
-        className="sticky top-0 h-[100vh] w-full pt-[5.5rem] sm:pt-24"
+        className="sticky top-0 h-[52dvh] w-full pt-[5.5rem] sm:h-[100vh] sm:pt-24"
       >
         <div className="relative mx-auto h-full w-full max-w-6xl px-4 sm:px-6">
           <div
@@ -86,7 +86,7 @@ export function ContainerScroll({ titleComponent, children, className, revealDel
             {titleComponent}
           </div>
 
-          <div className="absolute inset-x-4 top-[52%] z-[2] flex justify-center sm:inset-x-6 md:top-[54%]">
+          <div className="absolute inset-x-4 top-[60%] z-[2] flex justify-center sm:inset-x-6 md:top-[54%]">
             {/* bg-maroon + p-1 simulates a 4 px border without a CSS border property,
                 which doesn't respect border-radius through a 3D transform.
                 The inner .hero-card-inner uses clip-path (3D-transform-safe) instead

@@ -190,7 +190,7 @@ export default function Hero() {
   );
 
   return (
-    <section ref={sectionRef} id="home" className="overflow-hidden bg-paper">
+    <section ref={sectionRef} id="home" className="sm:overflow-hidden bg-paper">
       <div className="bg-dots absolute inset-0 opacity-50" aria-hidden />
       <div className="glow left-[8%] top-[12%] h-72 w-72 bg-maroon/15" aria-hidden />
       <div className="glow right-[10%] top-[18%] h-64 w-64 bg-cyan/10" aria-hidden />
