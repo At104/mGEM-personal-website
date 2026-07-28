@@ -232,6 +232,14 @@ export default function SponsorsPage() {
         eyebrow="Sponsors"
         title="Powered by our partners"
         lede={sponsorsPitch.thanks}
+        wideAside
+        aside={
+          <img
+            src="/photos/sponsors/7.jpg"
+            alt="McMaster iGEM sponsors and partners"
+            className="aspect-[3/2] w-full max-w-md rounded-2xl object-cover shadow-lg shadow-ink/10 lg:max-w-none"
+          />
+        }
       />
 
       {sponsorTiers.map((tier) => (
