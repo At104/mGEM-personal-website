@@ -97,8 +97,8 @@ export default function TeamHelix({ data }: { data: Record<TeamGroupKey, Member[
       if (!touchAnchor) return;
       e.preventDefault();
       const dy = e.touches[0].clientY - touchAnchor.y;
-      // Normalize swipe distance against the element height; factor 2 for feel
-      const delta = -(dy / (el.clientHeight || 400)) * 2;
+      // Normalize swipe distance against the element height
+      const delta = -(dy / (el.clientHeight || 400)) * 0.5;
       updateProgress(touchAnchor.progress + delta);
     };
 
@@ -165,7 +165,7 @@ export default function TeamHelix({ data }: { data: Record<TeamGroupKey, Member[
 
           {activeNode && (
             <div className="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 text-center">
-              <p className={cn("font-mono text-[8px] uppercase tracking-[0.18em] sm:text-[9px] sm:tracking-[0.2em]", activeNode.text)}>
+              <p className={cn("font-mono text-[10px] uppercase tracking-[0.18em] sm:text-[12px] sm:tracking-[0.2em]", activeNode.text)}>
                 {activeNode.groupLabel}
               </p>
             </div>
@@ -344,11 +344,11 @@ function StrandProgress({
               <button
                 key={`label-${bp.label}`}
                 type="button"
-                className="absolute -translate-y-1/2 cursor-pointer text-left font-mono text-[8px] uppercase leading-tight tracking-wider hover:underline"
+                className="absolute -translate-y-1/2 cursor-pointer text-left font-mono text-[9px] uppercase leading-tight tracking-wider hover:underline"
                 style={{
                   top: `${adjPcts[i]}%`,
                   left: "1rem",
-                  width: "72px",
+                  width: "84px",
                   color: bp.color,
                 }}
                 onClick={() => onSeek?.(bp.progress)}

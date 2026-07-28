@@ -40,10 +40,12 @@ function MemberProfilePanel({
     const el = ref.current;
     if (!el || !node) return;
     if (open) {
+      // Keep a minimum opacity/scale so switching members crossfades smoothly
+      // instead of dropping to fully transparent — a jump to 0 read as a white flash.
       gsap.fromTo(
         el,
-        { autoAlpha: 0, y: 48, scale: 0.92 },
-        { autoAlpha: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" }
+        { autoAlpha: 0.4, y: 14, scale: 0.98 },
+        { autoAlpha: 1, y: 0, scale: 1, duration: 0.35, ease: "power2.out" }
       );
     } else {
       gsap.to(el, { autoAlpha: 0, y: 24, scale: 0.96, duration: 0.3, ease: "power2.in" });
