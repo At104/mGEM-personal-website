@@ -22,15 +22,15 @@ export default function Page() {
       <StatStrip />
       <WhatIsIgem />
 
-      <section className="border-y border-ink/8 bg-paper-warm py-24 sm:py-28">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="border-y border-ink/8 bg-paper-warm py-14 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-6">
           <SectionHeading
             eyebrow="How we work"
             title="One team, many disciplines"
             description="Synthetic biology is more than benchwork — every innovation relies on specialized subteams working in parallel."
             align="center"
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-3">
             {subteams.map((t, i) => (
               <Reveal key={t.id} delay={(i % 3) * 0.08}>
                 <Link
@@ -38,7 +38,7 @@ export default function Page() {
                   className="group block overflow-hidden rounded-3xl border border-ink/8 bg-paper transition hover:shadow-lg hover:shadow-leaf/10"
                 >
                   <span className={`block h-1.5 ${t.bar}`} />
-                  <span className="block p-6">
+                  <span className="block p-5 sm:p-6">
                     <span className={`font-mono text-xs font-bold ${t.text}`}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -53,16 +53,16 @@ export default function Page() {
       </section>
 
       {/* Photo bento */}
-      <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-6 lg:py-24">
         <SectionHeading eyebrow="Life at mGEM" title="From lab to Jamboree" align="center" />
-        <div className="mt-14 grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[220px] md:grid-cols-4">
+        <div className="mt-8 grid auto-rows-[140px] grid-cols-2 gap-3 sm:mt-10 sm:auto-rows-[180px] sm:gap-4 lg:mt-14 md:auto-rows-[220px] md:grid-cols-4">
           {showcasePhotos.map((p, i) => (
             <Reveal key={p.src} delay={i * 0.06} className={p.span}>
               <button
                 type="button"
                 onClick={() => setOpenIndex(i)}
                 aria-label={`View full size: ${p.alt}`}
-                className="group relative block h-full min-h-[180px] w-full overflow-hidden rounded-3xl border border-ink/8"
+                className="group relative block h-full min-h-[140px] w-full overflow-hidden rounded-2xl border border-ink/8 sm:min-h-[180px] sm:rounded-3xl"
               >
                 <img
                   src={p.src}

@@ -10,9 +10,12 @@ type ContainerScrollProps = {
   revealDelay?: number;
 };
 
+const CINEMATIC = "(min-width: 1024px)";
+
 /**
  * Sticky scroll hero — wordmark sits behind a tilted video card that overlaps it;
  * scrolling lifts the title and untilts the card into a flat frame.
+ * Below the cinematic breakpoint the wordmark and video stack so nothing clips.
  */
 export function ContainerScroll({ titleComponent, children, className, revealDelay = 0 }: ContainerScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,10 +44,10 @@ export function ContainerScroll({ titleComponent, children, className, revealDel
 
       const mm = gsap.matchMedia();
 
-      const setupScroll = (initialScale: number, finalScale: number) => {
+      mm.add(CINEMATIC, () => {
         gsap.set(card, {
           rotationX: 40,
-          scale: initialScale,
+          scale: 0.88,
           transformPerspective: 1000,
           transformOrigin: "50% 50%",
           force3D: true,
@@ -62,11 +65,13 @@ export function ContainerScroll({ titleComponent, children, className, revealDel
           })
           .to(title, { y: -100, autoAlpha: 0, ease: "none", duration: 1 }, 0)
           .to(card, { rotationX: 0, ease: "none", duration: 1 }, 0)
-          .to(card, { scale: finalScale, ease: "none", duration: 1 }, 0);
-      };
+          .to(card, { scale: 1.03, ease: "none", duration: 1 }, 0);
+      });
 
-      mm.add("(min-width: 769px)", () => setupScroll(0.88, 1.03));
-      mm.add("(max-width: 768px)", () => setupScroll(0.84, 1));
+      mm.add("(max-width: 1023px)", () => {
+        gsap.set(card, { rotationX: 0, scale: 1 });
+        gsap.set(title, { y: 0, autoAlpha: 1 });
+      });
 
       return () => mm.revert();
     },
@@ -74,19 +79,14 @@ export function ContainerScroll({ titleComponent, children, className, revealDel
   );
 
   return (
-    <div ref={containerRef} className={cn("relative h-[62dvh] sm:h-[135vh]", className)}>
-      <div
-        className="sticky top-0 h-[52dvh] w-full pt-[5.5rem] sm:h-[100vh] sm:pt-24"
-      >
-        <div className="relative mx-auto h-full w-full max-w-6xl px-4 sm:px-6">
-          <div
-            ref={titleRef}
-            className="pointer-events-none absolute inset-x-4 top-[2%] z-[1] text-center sm:inset-x-6 md:top-[3%]"
-          >
+    <div ref={containerRef} className={cn("hero-scroll-shell", className)}>
+      <div className="hero-scroll-sticky">
+        <div className="hero-scroll-stage">
+          <div ref={titleRef} className="hero-scroll-title pointer-events-none">
             {titleComponent}
           </div>
 
-          <div className="absolute inset-x-4 top-[60%] z-[2] flex justify-center sm:inset-x-6 md:top-[54%]">
+          <div className="hero-scroll-card-wrap">
             {/* bg-maroon + p-1 simulates a 4 px border without a CSS border property,
                 which doesn't respect border-radius through a 3D transform.
                 The inner .hero-card-inner uses clip-path (3D-transform-safe) instead
