@@ -39,14 +39,14 @@ export default function StatStrip() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden border-b-[6px] border-paper bg-maroon-deep py-16 text-white sm:py-20"
+      className="relative overflow-hidden border-b-[6px] border-paper bg-maroon-deep py-10 text-white sm:py-14 lg:py-20"
     >
       <div className="bg-dots-dark absolute inset-0 opacity-50" />
       <div className="glow left-1/4 top-0 h-64 w-64 -translate-x-1/2 bg-maroon/25" />
-      <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-10 px-6 lg:grid-cols-4">
+      <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-8 px-5 sm:gap-10 sm:px-6 lg:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="stat-cell text-center">
-            <p className={`font-display text-4xl font-bold sm:text-5xl ${s.accent}`}>
+            <p className={`font-display text-3xl font-bold sm:text-5xl ${s.accent}`}>
               {"numeric" in s && s.numeric != null ? (
                 <span
                   className="stat-num"
@@ -59,7 +59,7 @@ export default function StatStrip() {
                 s.value
               )}
             </p>
-            <p className="mx-auto mt-2 max-w-[14ch] text-sm text-white/60">{s.label}</p>
+            <p className="mx-auto mt-2 max-w-[18ch] text-xs leading-snug text-white/60 sm:text-sm">{s.label}</p>
           </div>
         ))}
       </div>

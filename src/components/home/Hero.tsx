@@ -35,7 +35,7 @@ function HeroVideo({ ready }: { ready: boolean }) {
     <div className="relative">
       <video
         ref={videoRef}
-        className="mx-auto aspect-video h-full w-full object-cover object-center"
+        className="mx-auto aspect-video w-full object-cover object-center"
         src="/Videos/what_is_igemf.mp4"
         loop
         muted={muted}
@@ -55,7 +55,7 @@ function HeroVideo({ ready }: { ready: boolean }) {
   );
 }
 
-const mgemSize = "font-bold text-7xl md:text-9xl lg:text-9xl xl:text-[14rem]";
+const mgemSize = "font-bold";
 
 
 // Three stacked "mGEM" rows that reveal on load.
@@ -95,7 +95,8 @@ function MgemWordmark() {
       // outward from a shared origin once it slides in.
       gsap.set(row1, { y: row2Top - row1Top, opacity: 0 });
       gsap.set(row3, { y: row2Top - row3Top, opacity: 0 });
-      gsap.set(row2, { x: -220, opacity: 0, filter: "blur(6px)" });
+      const slideOffset = Math.min(220, Math.round(window.innerWidth * 0.28));
+      gsap.set(row2, { x: -slideOffset, opacity: 0, filter: "blur(6px)" });
 
       gsap
         .timeline()
@@ -190,31 +191,33 @@ export default function Hero() {
   );
 
   return (
-    <section ref={sectionRef} id="home" className="sm:overflow-hidden bg-paper">
+    <section ref={sectionRef} id="home" className="relative overflow-x-hidden bg-paper">
       <div className="bg-dots absolute inset-0 opacity-50" aria-hidden />
       <div className="glow left-[8%] top-[12%] h-72 w-72 bg-maroon/15" aria-hidden />
       <div className="glow right-[10%] top-[18%] h-64 w-64 bg-cyan/10" aria-hidden />
 
       <ContainerScroll titleComponent={<MgemWordmark />} revealDelay={MGEM_INTRO_DURATION}>
         <HeroVideo ready={videoReady} />
-
       </ContainerScroll>
 
-      <div ref={subRef} className="relative z-[3] mx-auto max-w-7xl bg-paper px-6 pb-20 pt-6 text-center sm:pb-24">
+      {/* Keeps the headline below the video's bottom edge on short laptop heights */}
+      <div className="hero-video-stopper" aria-hidden />
+
+      <div ref={subRef} className="relative z-0 mx-auto max-w-7xl bg-paper px-4 pb-12 pt-6 text-center sm:px-8 sm:pb-16 sm:pt-8 lg:px-6 lg:pb-24 lg:pt-10">
         <h1
-          className="mx-auto max-w-4xl font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+          className="hero-headline mx-auto max-w-4xl font-display font-bold leading-[1.15] tracking-tight"
           style={{ perspective: "600px" }}
         >
-          <span className="block pb-1">
+          <span className="block whitespace-nowrap pb-1">
             <SplitChars text="Engineering " />
             <SplitChars text="synthetic biology" brand />
           </span>
-          <span className="mt-1 block">
+          <span className="mt-1 block whitespace-nowrap">
             <SplitChars text="for real problems." />
           </span>
         </h1>
 
-        <div className="hero-sub-actions mt-9 flex flex-wrap items-center justify-center gap-4">
+        <div className="hero-sub-actions mt-6 flex flex-wrap items-center justify-center gap-3 sm:mt-8 sm:gap-4">
           <ButtonLink href="/projects">Explore projects</ButtonLink>
           <ButtonLink href="/get-involved" variant="outline">
             Join mGEM
