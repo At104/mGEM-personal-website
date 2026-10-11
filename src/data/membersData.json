@@ -121,14 +121,6 @@
       "funFact": "I have a grandpa named Electron"
     },
     {
-      "name": "Cynthia Duan",
-      "role": "Member",
-      "about": "Health Sciences (Year 3)",
-      "link": "https://www.linkedin.com/in/cynthia-duan-586043225/",
-      "cover": "/photos/headshots/Cynthia.jpg",
-      "funFact": "I figure skate in my free time!"
-    },
-    {
       "name": "Pedram Tizghadam",
       "role": "Member",
       "about": "Honours Biochemistry (Year 2)",
@@ -181,7 +173,7 @@
     {
       "name": "Adelina Zhao",
       "role": "Co-Lead",
-      "about": "Honours Life Sciences (Year 2)",
+      "about": "Honours Biochemistry (Year 2)",
       "link": "https://www.linkedin.com/in/adelina-zhao-9b40a72b4/",
       "cover": "/photos/headshots/Adelina.jpg",
       "funFact": "I can do a mediocore cartwheel"
@@ -204,7 +196,7 @@
     },
     {
       "name": "Dilnoor Randhawa",
-      "role": "Member",
+      "role": "Outreach Member",
       "about": "Honours Health Sciences (Year 2)",
       "link": "",
       "cover": "/photos/headshots/Dilnoor.JPG",
@@ -212,7 +204,7 @@
     },
     {
       "name": "Shankave Sritharan",
-      "role": "Member",
+      "role": "Outreach Member",
       "about": "Honour Biochemistry (Year 4)",
       "link": "https://www.linkedin.com/in/sritharanshankave/",
       "cover": "/photos/headshots/Shankave.jpg",
@@ -220,7 +212,7 @@
     },
     {
       "name": "Nikhitha Marulappa",
-      "role": "Member",
+      "role": "Outreach Member",
       "about": "Honours Biology (Year 2)",
       "link": "https://www.linkedin.com/in/nikhithamarulappa/",
       "cover": "/photos/headshots/Nikhitha.JPG",
@@ -228,7 +220,7 @@
     },
     {
       "name": "Aarush Behal",
-      "role": "Member",
+      "role": "Entrepreneurship Member",
       "about": "Life Sciences Gateway (Year 1)",
       "link": "",
       "cover": "/photos/headshots/Aarush.JPG",
@@ -236,7 +228,7 @@
     },
     {
       "name": "Kishaani Thavaranjan",
-      "role": "Member",
+      "role": "Outreach Co-Lead",
       "about": "Honours Biology - Physiology Research Specialization (Year 2)",
       "link": "https://www.linkedin.com/in/kishaani-thavaranjan/",
       "cover": "/photos/headshots/Kishaani.jpg",
@@ -244,7 +236,7 @@
     },
     {
       "name": "Shreya Subramanian",
-      "role": "Outreach Member",
+      "role": "Outreach Co-Lead",
       "about": "Honours Molecular Biology and Genetics Research Specialization (Year 2)",
       "link": "https://www.linkedin.com/in/shreya-subramanian06/",
       "cover": "/photos/headshots/Shreya.JPG",
@@ -349,14 +341,6 @@
       "link": "https://www.linkedin.com/in/renee-he-b20280259/",
       "cover": "/photos/headshots/Renee.JPG",
       "funFact": "I eat froyo for the peanuts"
-    },
-    {
-      "name": "Melanie Seymour",
-      "role": "Member",
-      "about": "Honours Life Sciences, Origins of Disease Specialization (Year 2)",
-      "link": "https://www.linkedin.com/in/melanie-seymour-b46776220/",
-      "cover": "/photos/headshots/Melanie.JPG",
-      "funFact": "I have a pet guinea pig named Charlie!"
     }
   ],
   "webDev": [

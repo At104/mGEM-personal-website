@@ -215,7 +215,7 @@ export const testimonies = [
 
 export const sponsorsPitch = {
   thanks:
-    "Thank you to all our sponsors that make mcmaster iGEM possible!",
+    "Thank you to all our sponsors that make McMaster iGEM possible!",
   cta: "Interested in sponsorship or collaboration opportunities? Learn more about our sponsorship package by getting in touch with us.",
   email: "igem@mcmaster.ca",
 } as const;

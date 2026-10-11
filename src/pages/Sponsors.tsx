@@ -224,7 +224,7 @@ export default function SponsorsPage() {
         <title>Sponsors — McMaster iGEM</title>
         <meta
           name="description"
-          content="Thank you to the sponsors who make McMaster iGEM possible."
+          content="Thank you to all our sponsors that make McMaster iGEM possible!"
         />
       </Helmet>
 
