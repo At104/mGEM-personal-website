@@ -4,7 +4,6 @@ import { HiOutlineMail, HiArrowRight } from "react-icons/hi";
 import PageHeader from "@/components/ui/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import ButtonLink from "@/components/ui/ButtonLink";
-import { tierMedals } from "@/components/sponsors/SponsorBioDecor";
 import {
   sponsorTierMeta,
   sponsorTiers,
@@ -54,7 +53,6 @@ function SponsorCard({
   tier: SponsorTierName;
 }) {
   const { bio } = sponsorTierMeta[tier];
-  const Medal = tierMedals[tier];
 
   return (
     <a
@@ -67,10 +65,6 @@ function SponsorCard({
         bio.cardHover
       )}
     >
-      <div className="absolute right-6 top-6 z-10 opacity-90 transition-transform duration-300 group-hover:scale-110 sm:right-8 sm:top-8">
-        <Medal size="sm" />
-      </div>
-
       <div className="flex min-w-0 flex-1 flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
         {/* Logo in metal frame */}
         <div className="relative flex w-full shrink-0 items-center justify-center sm:w-44">
@@ -83,10 +77,11 @@ function SponsorCard({
           </div>
         </div>
 
-        <div className="relative min-w-0 flex-1 pr-14 sm:pr-16">
+        <div className="relative min-w-0 flex-1">
           <h3
             className={cn(
-              "line-clamp-2 font-display text-xl font-bold leading-snug text-ink transition-colors sm:text-2xl",
+              "text-balance break-words font-display font-bold leading-snug text-ink transition-colors",
+              sponsor.name.length > 40 ? "text-lg sm:text-xl" : "text-xl sm:text-2xl",
               bio.headingHover
             )}
           >
