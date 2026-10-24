@@ -164,6 +164,13 @@ export const sponsorTiers: SponsorTier[] = [
           "McMaster's Faculty of Health Sciences fosters interdisciplinary research in health, wellness, and illness across the university.",
       },
       {
+        name: "McMaster Faculty of Engineering",
+        link: "https://www.eng.mcmaster.ca/",
+        icon: "/photos/sponsors/mcmaster-engineering.png",
+        description:
+          "McMaster’s Faculty of Engineering advances engineering through innovation, research, experiential opportunities, and interdisciplinary collaboration.",
+      },
+      {
         name: "MindFuel",
         link: "https://mindfuel.ca/",
         icon: "https://mindfuel.ca/wp-content/uploads/2019/02/logo-full-colour-408px.png",
@@ -221,13 +228,6 @@ export const iridiumSponsors: Sponsor[] = [
       "They develop and commercialize technologies that keep populations healthy by preventing pathogen spread and providing diagnostics and therapeutics.",
   },
   {
-    name: "Twist Bioscience",
-    link: "https://www.twistbioscience.com/",
-    icon: "/photos/sponsors/twist.png",
-    description:
-      "A public biotechnology company manufacturing synthetic DNA. Their DNA-based tools help researchers across disciplines make groundbreaking discoveries."
-  },
-  {
     name: "Bramson Lab",
     link: "https://cdcr.mcmaster.ca/research/",
     icon: "/photos/sponsors/cdcr.png",
@@ -242,17 +242,24 @@ export const iridiumSponsors: Sponsor[] = [
       "Their research harnesses bacteriophages, viruses that infect bacteria, to build sustainable antimicrobial technologies where antibiotics fail.",
   },
   {
-    name: "Integrated DNA Technologies (IDT)",
-    link: "https://www.idtdna.com/page",
-    icon: "/photos/sponsors/idt.png",
+    name: "BioRender",
+    link: "https://www.biorender.com/",
+    icon: "/photos/sponsors/biorender.jpg",
     description:
-      "IDT is a global leader in custom nucleic acids, supplying high-quality DNA, RNA, and oligos for biotech, diagnostics, and pharma development."
+      "BioRender is a scientific illustration platform providing researchers with customizable graphics and templates to create professional biological figures and communicate complex scientific concepts.",
   },
   {
-    name: "GenScript",
-    link: "https://www.genscript.com/",
-    icon: "/photos/sponsors/genscript.svg",
+    name: "The Clinic",
+    link: "https://healthinnovation.mcmaster.ca/",
+    icon: "/photos/sponsors/the-clinic.jpg",
     description:
-      "GenScript Biotech accelerates biotech and healthcare innovation, providing services researchers need to develop groundbreaking treatments."
+      "The Clinic at McMaster University is a health innovation hub that equips students, clinicians and researchers with resources to develop and commercialize innovative healthcare solutions.",
+  },
+  {
+    name: "Twist Bioscience",
+    link: "https://www.twistbioscience.com/",
+    icon: "/photos/sponsors/twist.png",
+    description:
+      "A public biotechnology company manufacturing synthetic DNA. Their DNA-based tools help researchers across disciplines make groundbreaking discoveries."
   },
 ];
