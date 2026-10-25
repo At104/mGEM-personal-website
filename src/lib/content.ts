@@ -102,7 +102,7 @@ export const subteams = [
     id: "webDev",
     name: "Web Dev",
     short: "Codes scientific progress into websites.",
-    image: "/photos/about-us/webDev.jpg",
+    image: "/photos/about-us/webDev_hearts.jpg",
     imageAlt: "Web Dev lead",
     bar: "bg-coral",
     text: "text-coral-deep",
@@ -121,7 +121,7 @@ export const projects = {
     year: "2026",
     title: "Chariot - A platform technology for OMV-based therapeutics",
     wiki: "https://2026.igem.wiki/mcmaster-canada/",
-    video: "/Videos/Chariot Promo Video.mov",
+    video: "/Videos/Chariot Promo Video.mp4",
   },
   past: [
     {
