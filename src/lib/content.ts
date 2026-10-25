@@ -22,7 +22,7 @@ export const subteams = [
     id: "wetlab",
     name: "Wet Lab",
     short: "Designs, builds, and tests biological systems in the lab.",
-    image: "/photos/about-us/WLgroup.PNG",
+    image: "/photos/about-us/wl_W2.jpg",
     imageAlt: "Wet Lab group photo",
     bar: "bg-maroon",
     text: "text-maroon-deep",
@@ -53,7 +53,7 @@ export const subteams = [
     id: "hp",
     name: "Human Practices",
     short: "Explores real-world impact and ethical implications.",
-    image: "/photos/about-us/HP.jpeg",
+    image: "/photos/about-us/hp_prof.jpg",
     imageAlt: "Human Practices members",
     bar: "bg-amber",
     text: "text-amber-deep",
@@ -85,7 +85,7 @@ export const subteams = [
     id: "finance",
     name: "Finance & Sponsorship",
     short: "Secures the necessary funding and sponsorship.",
-    image: "/photos/about-us/Sponsorship.jpg",
+    image: "/photos/about-us/finance_silly.jpg",
     imageAlt: "Admin team members",
     bar: "bg-leaf",
     text: "text-leaf-deep",
@@ -102,7 +102,7 @@ export const subteams = [
     id: "webDev",
     name: "Web Dev",
     short: "Codes scientific progress into websites.",
-    image: "/photos/about-us/webdev.jpg",
+    image: "/photos/about-us/webDev.jpg",
     imageAlt: "Web Dev lead",
     bar: "bg-coral",
     text: "text-coral-deep",
@@ -118,12 +118,21 @@ export const subteams = [
 
 export const projects = {
   current: {
-    year: "2025",
-    title: "REACT - Renal Ease-of-use Assessment for Clinical Transplants",
-    wiki: "https://2025.igem.wiki/mcmaster-canada/",
-    video: "/Videos/React Promo Vid.mp4",
+    year: "2026",
+    title: "Chariot - A platform technology for OMV-based therapeutics",
+    wiki: "https://2026.igem.wiki/mcmaster-canada/",
+    video: "/Videos/Chariot Promo Video.mov",
   },
   past: [
+    {
+      year: "2025",
+      title: "REACT - Renal Ease-of-use Assessment for Clinical Transplants",
+      description:
+        "Revolutionizing kidney transplant monitoring through early detection with innovative urine-based biosensor technology. " +
+        "Our point-of-care device enables non-invasive, frequent testing to extend graft lifetime and improve patient outcomes.",
+      href: "https://2025.igem.wiki/mcmaster-canada/",
+      video: "/Videos/React Promo Vid.mp4",
+    },
     {
       year: "2024",
       title: "Hermes Project",
