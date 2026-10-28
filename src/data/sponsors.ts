@@ -223,7 +223,7 @@ export const iridiumSponsors: Sponsor[] = [
   {
     name: "Didar Lab",
     link: "https://didarlab.ca/",
-    icon: "/photos/sponsors/didar.JPG",
+    icon: "/photos/sponsors/didar.jpg",
     description:
       "They develop and commercialize technologies that keep populations healthy by preventing pathogen spread and providing diagnostics and therapeutics.",
   },

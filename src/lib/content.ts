@@ -245,7 +245,7 @@ export const showcasePhotos = [
   { src: "/photos/home/2025jamboree.png", alt: "mGEM at the 2025 iGEM Jamboree", span: "md:col-span-2 md:row-span-2" },
   { src: "/photos/home/teamstatue.jpg", alt: "Team photo at the statue", span: "" },
   { src: "/photos/home/2025booth.jpg", alt: "mGEM at the 2025 iGEM Jamboree booth", span: "" },
-  { src: "/photos/home/social.jpeg", alt: "mGEM social event", span: "md:col-span-2" }
+  { src: "/photos/home/social.jpg", alt: "mGEM social event", span: "md:col-span-2" }
 ] as const;
 
 export const socials = [
@@ -263,11 +263,11 @@ export const communityInitiatives = [
   {
     eyebrow: "A 3-part animated series and storybook",
     title: "The Inquirer's Quest",
-    image: "/photos/projects/inquirer1.JPG",
+    image: "/photos/projects/inquirer1.jpg",
     images: [
-      "/photos/projects/inquirer1.JPG",
-      "/photos/projects/inquirer2.JPG",
-      "/photos/projects/inquirer3.JPG",
+      "/photos/projects/inquirer1.jpg",
+      "/photos/projects/inquirer2.jpg",
+      "/photos/projects/inquirer3.jpg",
     ],
     description:
       "At its heart, this initiative was about connection: between our team and our stakeholders, between complex biology and accessible storytelling, " +
@@ -284,11 +284,11 @@ export const communityInitiatives = [
   {
     eyebrow: "Inspiring high school students",
     title: "Shad Canada Workshop",
-    image: "/photos/projects/shad1.JPG",
+    image: "/photos/projects/shad1.jpg",
     images: [
-      "/photos/projects/shad2.JPG",
-      "/photos/projects/shad3.JPG",
-      "/photos/projects/shad4.JPG",
+      "/photos/projects/shad2.jpg",
+      "/photos/projects/shad3.jpg",
+      "/photos/projects/shad4.jpg",
     ],
     description:
       "Every year, the McMaster iGEM team runs a workshop in partnership with SHAD McMaster, " +
@@ -306,10 +306,10 @@ export const communityInitiatives = [
   {
     eyebrow: "Officially publishing at iGEM",
     title: "Vector Review Article",
-    image: "/photos/projects/vector1.JPG",
+    image: "/photos/projects/vector1.jpg",
     images: [
-      "/photos/projects/vector1.JPG",
-      "/photos/projects/vector2.JPG",
+      "/photos/projects/vector1.jpg",
+      "/photos/projects/vector2.jpg",
     ],
     description:
       "In 2025, our team had the opportunity to contribute to Vector, an unofficial iGEM proceedings journal hosted by Maastricht University. " +
@@ -326,11 +326,11 @@ export const communityInitiatives = [
   {
     eyebrow: "Integrating sustainability with efficiency",
     title: "Waste Tracking ",
-    image: "/photos/projects/waste1.JPG",
+    image: "/photos/projects/waste1.jpg",
     images: [
-      "/photos/projects/waste1.JPG",
-      "/photos/projects/waste2.JPG",
-      "/photos/projects/waste3.JPG",
+      "/photos/projects/waste1.jpg",
+      "/photos/projects/waste2.jpg",
+      "/photos/projects/waste3.jpg",
     ],
     description:
       "The UN Environmental Programme ranks plastic pollution as one of the top 10 global environmental challenges, " +
@@ -350,10 +350,10 @@ export const communityInitiatives = [
   {
     eyebrow: "Skills farming for 6 weeks",
     title: "Health Innovation Bootcamp (HIB)",
-    image: "/photos/projects/hib1.JPG",
+    image: "/photos/projects/hib1.jpg",
     images: [
-      "/photos/projects/hib1.JPG",
-      "/photos/projects/hib2.JPG",
+      "/photos/projects/hib1.jpg",
+      "/photos/projects/hib2.jpg",
     ],
     description:
       "Hosted by The Clinic, McMaster's health innovation hub, this bootcamp was designed to provide young innovators with the building blocks of entrepreneurship. " +
