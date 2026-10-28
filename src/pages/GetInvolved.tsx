@@ -38,18 +38,19 @@ export default function GetInvolvedPage() {
                 </div>
                 <div className="flex flex-1 flex-col px-8 pb-8">
                   <p className="flex-1 text-sm leading-relaxed text-ink-soft">
-                    {p.body.split("@igemmcmaster").map((part, idx, parts) => (
+                    {p.body.map((seg, idx) => (
                       <Fragment key={idx}>
-                        {part}
-                        {idx < parts.length - 1 && (
+                        {seg.href ? (
                           <a
-                            href={INSTAGRAM_URL}
+                            href={seg.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-ink-soft underline underline-offset-2 transition hover:text-maroon"
+                            className="font-semibold text-leaf-deep underline underline-offset-2 transition hover:text-maroon"
                           >
-                            @igemmcmaster
+                            {seg.text}
                           </a>
+                        ) : (
+                          seg.text
                         )}
                       </Fragment>
                     ))}
