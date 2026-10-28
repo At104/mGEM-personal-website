@@ -170,12 +170,24 @@ export const getInvolved = {
     "this is the place for you!",
   joinTeam: {
     title: "Join The Team",
-    body:
-      "We've wrapped up recruitment for the 2026 cycle and are excited to welcome our new team members. " +
-      "If you're eager to join mGEM and contribute to groundbreaking research throughout the school year, " +
-      "the applications for next year's cycle will open in the fall term. " +
-      "Whether you're interested in Wet Lab, Dry Lab, Human Practices, or our Administrative subteams, " +
-      "it's a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact. " + "To stay the most updated on when our team applications open, follow us on Instagram @igemmcmaster.",
+    body: [
+      {
+        text:
+          "Applications for our 2027 iGEM team are now OPEN! " +
+          "For those eager to join mGEM and contribute to groundbreaking research throughout the school year, " +
+          "this is a remarkable opportunity to dive deep into the world of genetic engineering and make a real impact. " +
+          "You can find the application for our research subteams (Wet Lab, Dry Lab, and Human Practices) ",
+      },
+      {
+        text: "here",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSflsNC5cZ_PFsKBrMoWTAeG6vpdSy5gY-TK0I8xBwXaXHLdvg/viewform?usp=header",
+      },
+      { text: ", and the application for our administrative subteams (Web Development, Media, Finance & Sponsorships) " },
+      {
+        text: "here",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLScwi93gu5lUd50IOFTDtL95NdfhCjXQ7ar9CsMHuNag1QHCYg/viewform?usp=header",
+      },
+    ] as { text: string; href?: string }[],
   },
   mailingListBlurb:
   "Subscribe to our mailing list to get the latest updates on workshops, opportunities, and all the exciting things we are working on!",
